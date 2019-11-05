@@ -1,0 +1,10 @@
+<h1>MIDI Timing</h1>
+<p>MIDI defines the byte 248 as a Timing byte, and uses it to synchronize
+  devices that keep time. If the Digital Chroma receives this on any MIDI
+  input port, it is used to advance the phase of a timer that the sweep
+  generators in a Chroma program can synchronize to. This can also control the
+  arpeggiation rate. If these bytes stop, the internal timer continues to run
+  at its last rate. If this feature is used while recording a sequence, and the
+  synchronized sweep is used, rather than just arpeggiation, it is important
+  that the Timing bytes also be delivered to the Digital Chroma during
+  playback, to ensure that the sweeps run at the same speed.</p>

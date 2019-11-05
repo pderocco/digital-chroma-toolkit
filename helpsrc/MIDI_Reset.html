@@ -1,0 +1,14 @@
+<h1>MIDI Reset</h1>
+<p>MIDI defines the byte 255 as a Reset byte. If the Digital Chroma receives
+  this on any port or virtual jack, it treats it as though an All Sounds Off
+  control and an All Controls Off control were received on all sixteen
+  channels. This turns off all notes, and resets all performance controls to
+  their default values. It also turns off MPE mode on the USB host and serial
+  MIDI input ports.</p>
+<p>If Reset is received on the serial or USB host ports, and an input is
+  intercepted by the {_global_parameter global} MIDI Main Input or MIDI Link
+  Input parameter, then the Reset is passed on through to the Main and Link
+  {_player players}, but followed with additional messages that set the various
+  controls according to the actual positions of the physical controls. This
+  includes the two Reverb Room and Reverb Send controls, which come from the
+  global Reverb Room and Reverb Send parameters.</p>

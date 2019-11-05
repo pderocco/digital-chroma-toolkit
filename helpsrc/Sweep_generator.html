@@ -1,0 +1,31 @@
+<h1>Sweep generator</h1>
+<p>Each {_sweep} generator generates a repeating control signal pattern, at a
+  rate that is adjustable from one cycle every ten seconds up to thirty cycles
+  per second. The Mode parameter gives choices of several different things:</p>
+<ul>
+  <li>In the poly modes, each {_voice} has its own sweep generator. In the mono
+    modes, the {_instrument} generates a common sweep phase for all voices,
+    although amplitude control is still per-voice.</li>
+  <li>Normally, the sweep generators free-run, but they can also be
+    synchronized to the key press, so that they start at phase zero at the
+    start of each note. In the mono modes, the sweep can be synced either to
+    any key press, or to the first key of a chord or legato passage.</li>
+  <li>Whether free-running or key synced, the rate can also be slaved to
+    received MIDI clocks, with eight different ratios. The highest eight
+    {Sweep_rate Sweep Rate} parameter values choose the ratio.</li>
+  </ul>
+<p>Of course, these things are all independent for the A {_channel} and B
+  channel sweep generators.</p>
+<p>The sorts of shapes that the sweep can produce include the usual {_bipolar}
+  sine wave, and a {_unipolar} square wave for trill effects. You're
+  given a choice between sine and cosine, but this is only meaningful if
+  synchronized to key presses. There is also an offset sine and a half sine,
+  both of which are unipolar, and there is a triangle shape and a sawtooth
+  shape. Finally, there are a set of patterns that step at twice the sweep
+  rate, including a completely random pattern.</p>
+<p>Both the sweep rate and sweep amplitude can be modulated by other things. In
+  most cases, the amplitude will be modulated either by the left {_lever} or by
+  a delay envelope generator built into the sweep generator. Useful rate
+  modulations include Random, to make all voices' sweep generators run at
+  slightly different rates, and Pitch, to make the rate vary across the
+  keyboard.</p>

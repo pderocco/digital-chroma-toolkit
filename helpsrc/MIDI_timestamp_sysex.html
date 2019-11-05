@@ -1,0 +1,15 @@
+<h1>MIDI timestamp sysex</h1>
+<p>This contains eight bytes which encode a UTC time and date, representing the
+  creation or last modification time of a {_program}. The bytes are:</p>
+<ul>
+  <li>Year minus 2000 (0 to 99)</li>
+  <li>Month (1 to 12)</li>
+  <li>Day (1 to 31)</li>
+  <li>Hour (0 to 23)</li>
+  <li>Minute (0 to 59)</li>
+  <li>Second (0 to 59)</li>
+  <li>10ms (0 to 99)</li>
+  <li>100\us (0 to 99)</li>
+  </ul>
+<p>The last two provide four fractional digits, for 100 microsecond
+  resolution. Illegal combinations, like February 29, 2019, are invalid.</p>

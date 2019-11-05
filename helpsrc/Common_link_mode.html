@@ -1,0 +1,139 @@
+<h1>COMMON link mode</h1>
+<p>This controls whether the {_program} is {_link_program linked} to another
+  program, and how notes are distributed to the two programs.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_link_cluster <i>link</i> cluster} within
+  the {Common_section}. In general, though, it is set when a link is first
+  created from the {Programs_screen}, by {_long-press long-pressing} the link
+  program to view the {Program_popup}, and then selecting the mode there.</p>
+
+<h2>Chroma panel</h2>
+<p>A link is set up by pressing one or more of the Link switches on the left
+  panel at the same time, which starts it (them) flashing, then pressing one of
+  the numbered switches on the right panel to specify the target program. The
+  choice of Link switches determines the kind of link:</p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="5%">{sw-link-lower.png height=48}</td>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="75%"><em>link lower</em>: Keys below the
+      {Common_keyboard_split} play the link {_instrument}, those
+      above or equal to the split play the main instrument.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="5%">{sw-link-lower.png height=48}</td>
+    <td width="5%">{sw-link-unison.png height=48}</td>
+    <td width="5%"/>
+    <td width="75%"><em>link lower unison</em>: Keys below the keyboard split
+      play the link instrument, all the keys play the main instrument.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%">{sw-link-unison.png height=48}</td>
+    <td width="5%"/>
+    <td width="75%"><em>link unison</em>: All keys play both the main and link
+      instruments.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%">{sw-link-unison.png height=48}</td>
+    <td width="5%">{sw-link-upper.png height=48}</td>
+    <td width="75%"><em>link upper unison</em>: Keys above or equal to the
+      keyboard split play the link instrument, all the keys play the main
+      instrument.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%">{sw-link-upper.png height=48}</td>
+    <td width="75%"><em>link upper</em>: Keys above or equal to the keyboard
+      split play the link instrument, keys below play the main instrument.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="5%">{sw-link-lower.png height=48}</td>
+    <td width="5%"/>
+    <td width="5%">{sw-link-upper.png height=48}</td>
+    <td width="75%"><em>link external</em>: All keys play the main instrument,
+      an external keyboard or pedalboard plays the link instrument.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="5%">{sw-link-lower.png height=48}</td>
+    <td width="5%">{sw-link-unison.png height=48}</td>
+    <td width="5%">{sw-link-upper.png height=48}</td>
+    <td width="75%"><em>link internal</em>: All keys play the link instrument,
+      an external keyboard or pedalboard plays the main instrument.</td>
+    </tr>
+  </table>
+<p class="extra">The last two require that the {_global_parameter global}
+  <i>MIDI link input</i> parameter be set to the port and channel used for the
+  external device.</p>
+<p>This also sets the {Common_link_program} parameter, and selects
+  the {Common_link_balance} parameter for editing. You can change
+  the link mode by pressing one of the above combinations twice in a row.</p>
+<p>The link is normally to a program in the current bank. If the current
+  program is stored into a different bank, then the link will refer to a
+  program in that bank. To link to a program in a specific bank, press one of
+  the switches 1 through 9 while holding the above switch combinations.</p>
+<p>The link is disabled by pressing No Link twice in sequence.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,2.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="i u">mode</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>no link</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>link lower</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>link upper</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>link unison</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>link lower unison</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>link upper unison</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td>link external</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td>link internal</td>
+    </tr>
+  </table>

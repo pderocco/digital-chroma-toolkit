@@ -1,0 +1,38 @@
+<h1>MIDI Portamento Controller</h1>
+<p>The MIDI Specification defines CC84 as the Portamento Controller, because it
+  can be used to control which notes glide to which notes when portamento is
+  used polyphonically. But since it isn't only useful when portamento is
+  used, the Digital Chroma calls it the Note Select control, and even gives it
+  additional functionality. The value is a note number, which modifies the
+  following message, and is then consumed so that it has no further effect.
+  When used immediately before a Note On, it does one of two things:</p>
+<ul>
+  <li>If the note specified by the Note Select control is already assigned to a
+    voice, the voice is reused for the new note. If the old note was still on,
+    the envelopes are not retriggered. If glide is enabled, it glides from the
+    voice's current pitch.</p>
+  <li>If the note doesn't currently have a voice, a new one is assigned.
+    If glide is enabled, the Note Select control provides the starting pitch
+    for the glide.</li>
+  </ul>
+<p>This is an imperfect mechanism for controlling the pitches of notes, though.
+  If one plays note <i>x</i>, then note <i>y</i>, then moves <i>y</i> to
+  <i>x</i>, there would be two notes playing pitch <i>x</i>, and no way to
+  address them individually. When such a sequence is given to the Digital
+  Chroma, changing note <i>y</i> to <i>x</i> turns off the previous note
+  <i>x</i> first, so there is only one note playing <i>x</i>.</p>
+<p>Internally, the Digital Chroma maintains a note number remapping table that
+  initially maps every note number to itself. The use of Note Select <i>x</i>
+  followed by Note On <i>y</i> swaps their mapping, relying on
+  {MIDI_pitch_controls Pitch MSB} to specify the actual pitch, if sent out to a
+  DAW for recording. When Note Select <i>x</i> is used while note <i>x</i> is
+  still on, the Note On <i>y</i> will be translated into a duplicate Note On,
+  thus changing the pitch without retriggering the envelopes.</p>
+<p>Monophonic playing can be forced by preceding each Note On with a Note
+  Select containing the previous note number, and internally they will all end
+  up mapping to the same note number, using Pitch MSB for the pitches. Use of
+  this feature gradually scrambles the note remapping table, but this is
+  invisible to the user unless one sends the notes to an external DAW via the
+  MIDI device port and examines the note numbers. However the table is reset to
+  its unscrambled state on receipt of an {MIDI_mode_controls All Sounds Off} or
+  a {MIDI_Reset}.</p>

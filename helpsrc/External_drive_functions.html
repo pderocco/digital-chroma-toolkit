@@ -1,0 +1,33 @@
+<h1>External drive functions</h1>
+<p>The original Chroma had a cassette interface for off-line storage. The
+  Digital Chroma has many ways of getting {_program programs} in and out of the
+  instrument, including MIDI and Ethernet, but can still use the four switches
+  that invoked the cassette functions to access an external drive (e.g., a
+  flash drive) plugged into either {_USB_host_port}.</p>
+<p>The external drive can store all nine banks of programs, along with various
+  other miscellaneous files including the {_global_parameter global parameters}
+  and the Chroma's firmware. On the external drive, they are stored in a
+  folder usually called Chroma1, although the last digit may be changed via the
+  {Chroma_number} calibration. This means that one external drive could be used
+  to back up more than one Chroma, if assigned different Chroma number
+  settings.</p>
+<p>You can also load from, or save to, a folder with a different Chroma number.
+  This makes it easy to transfer programs from one Chroma to another if they
+  have different numbers. It also provides a way to archive multiple sets of
+  450 programs for a single Chroma, primarily useful for backup purposes.</p>
+<p>Any use of these functions if there is no external drive puts up a momentary
+  message indicating the error.</p>
+<p class="extra">Note: When you plug in an external drive, it takes a second or
+  two for the Chroma to recognize it. More important, if you save something to
+  the external drive, give it a second or two after it finishes before
+  unplugging the drive. The device may still be doing something internally
+  after it appears to have completed an operation.</p>
+<p>The functions are:</p>
+<ul>
+  <li>{Load_One}</li>
+  <li>{Save_One}</li>
+  <li>{Load_All}</li>
+  <li>{Save_All}</li>
+  <li>{Load_Miscellaneous}</li>
+  <li>{Save_Miscellaneous}</li>
+  </ul>

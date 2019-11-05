@@ -1,0 +1,8 @@
+<h1>MIDI Program Write Attributes</h1>
+<p>NRPN 21,0 on the Editor output channel reports the attributes and
+  {_timestamp} of a {_program} file, in response to
+  {MIDI_Program_Read_Attributes} NRPN 85,0 on the Editor input. The Bank MSB
+  and the Data MSB specify the bank and program number. If the file exists, it
+  is preceded by a {MIDI_timestamp_sysex}. A Data LSB contains the program
+  flags attribute, but the bottom two bits are never 2 because there is no such
+  thing as a "modified" file.</p>

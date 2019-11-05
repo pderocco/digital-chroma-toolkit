@@ -1,0 +1,52 @@
+<h1>Current Program popup</h1>
+<p>{current-program-popup.png width=288}</p>
+<p>This pops up when you {_long-press} the {Program_Info_button}, and
+  shows:</p>
+<ul>
+  <li>The optional program name</li>
+  <li>The optional description</li>
+  <li>The program's {_timestamp}</li>
+  <li>Five action {_button buttons}</li>
+</ul>
+<p class="extra">As with all popups, you can dismiss it by clicking or
+  tapping in the dimmed area around it, or on its title.</p>
+<p>The name can be modified by clicking or tapping within the <i>name</i> box,
+  and using the keyboard to edit the name. Press Enter to accept the new name,
+  and you'll see the <i>timestamp</i> change to the present.</p>
+<p class="extra">This only changes the {_current_program}. To keep the change,
+  you need to use the "store" button, below.</p>
+<p>The description can be modified in a similar manner. Since this may have
+  multiple lines, Enter starts a new line, but two Enters at the end accepts
+  the change.</p>
+<p>The timestamp shows when the program was created or most recently
+  modified, with 100\us resolution.</p>
+<p class="extra">Timestamps allow the Digital Chroma to know immediately if
+  two programs are the same, without comparing all the parameters.</p>
+<p>The "store" button stores the program under its current
+  number.</p>
+<p class="extra">You can always use the <i>Undo</i> button in the
+  Navigation bar if you do this by mistake.</p>
+<p>The "exchange" button exchanges the program with its stored
+  version.</p>
+<p class="extra">Exchanging them repeatedly while playing allows you to
+  compare them easily, which is why this button doesn't dismiss the
+  popup. You can keep track of which is which by looking at the timestamps.</p>
+<p>The "scratch" button resets all parameters to their default
+  values, and deletes the name and description.</p>
+<p class="extra">A scratch program doesn't have a timestamp until you
+  begin to edit it.</p>
+<p>The "stash" button stashes a copy of the current program, 
+  and the "recover" button recovers it. Since stashing occurs
+  in the Toolkit, and not in the Digital Chroma, it isn't undoable, but
+  it also has no effect on undo/redo.</p>
+<p class="extra">This means that you can go back in time with Undo, stash
+  that earlier program, Redo back to the "present", and then
+  recover and store that program. If you had used Undo to get back to that
+  earlier program, and immediately stored it, all the Redo information
+  would have been lost, and you wouldn't be able to get back to the
+  "present".</p>
+<h2>Hotkeys</h2>
+<p>Pressing <b>L</b> on the keyboard reloads the current program, discarding
+  any edits. Pressing <b>S</b> stores it under its current number.</p>
+<p class="extra">These obviously don't work while you're typing
+into the <i>name</i> or <i>description</i> fields.</p>

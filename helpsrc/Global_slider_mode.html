@@ -1,0 +1,77 @@
+<h1>GLOBAL slider mode</h1>
+<p>This controls how the Digital Chroma's sliders acquire control of a
+  parameter, when assigned to a new parameter, or when the parameter value was
+  changed by some other means. The choices are:</p>
+
+<table class="vt">
+  <tr>
+    <td width="5%">
+    <td width="10%">jump</td>
+    <td>Sets the parameter to the value corresponding to the slider position as
+      soon as it moves. Until then, a small triangle next to the value shows
+      which direction the current value is, relative to the slider
+      position.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>capture</td>
+    <td>The slider must be moved through the position that corresponds to the
+      current parameter value, before it takes control of the parameter. Until
+      then, the triangle shows which direction the slider must be moved to
+      capture the parameter.</td></tr>
+  <tr><td/>
+    <td>smooth</td>
+    <td>The parameter changes whenever the slider is moved, along a slope that
+      reaches the minimum or maximum value at the end of the slider travel.
+      However, the slope is limited to 4x the normal slope, so the minimum or
+      maximum value can be unreachable if the slider is already too close to
+      that end. In this zone, the triangle shows which direction the slider
+      must be moved to escape this zone.</td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-10.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Slider Mode.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,10.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">jump</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">capture</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td class="c">smooth</td>
+    </tr>
+  </table>

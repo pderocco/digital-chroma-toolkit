@@ -1,0 +1,21 @@
+<h1>MIDI Program Set Metadata</h1>
+<p>NRPN 17,0 sets the text metadata in the current {_program} in the Main
+  {_instrument}, or reports its {_timestamp}, metadata, and other
+  attributes.</p>
+<p><i>Editor input:</i> This replaces the text metadata in the program in the
+  Main instrument with the contents of the preceding Metadata Sysex, bumps the
+  timestamp to the present, and echoes the message. The timestamp,
+  architecture, version, link parameters, and sequence parameters in the Sysex
+  are validated and otherwise ignored, but the correct values, including the
+  updated timestamp, are contained in the echo. The Bank MSB and Data MSB
+  values are ignored, but the latter must still be sent to trigger the
+  operation. No new instrument is created, because the metadata has no effect
+  on the sound. If the current program is a scratch program, a Chroma program
+  is created containing all default values, plus whatever metadata are supplied
+  by the Sysex.</p>
+<p><i>Editor output:</i> This is sent in response to
+  {MIDI_Program_Get_Metadata} Sysex 81,0 on the Editor input channel. The
+  timestamp and architecture are current, the version is the latest, and the
+  Bank MSB and Data MSB values reflect the current program bank and number. For
+  a scratch program, no Sysex is sent.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>

@@ -1,0 +1,16 @@
+<h1>MIDI NRPNs</h1>
+<p>An NRPN is a MIDI Non-Registered Parameter Number, which is encoded like an
+  RPN but with different control numbers, and refers to something proprietary
+  to a specific device. The sequence is as follows:</p>
+<ul>
+  <li>CC99 with the MSB of the NRPN, CC98 with the LSB of the NRPN, in either
+    order.</li>
+  <li>CC6 with the Data value MSB.</li>
+  <li>CC38 with the Data value LSB, not used by most NRPNs but required by
+    several.</li>
+  </ul>
+<p>The Digital Chroma uses NRPNs for representing {_program} and
+  {_global_parameter global parameters}. But it also uses NRPNs for invoking
+  program-related functions (e.g., storing), because some of these functions
+  pertain to a specific {_player}, and therefore a specific MIDI channel. These
+  are documented in detail {MIDI_NRPN_functions here}.</p>

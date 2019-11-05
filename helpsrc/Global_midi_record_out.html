@@ -1,0 +1,101 @@
+<h1>GLOBAL midi record out</h1>
+<p>This selects the port and channel pair to send Main and Link output on, for
+  recording in an external sequencer.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}. It has separate buttons for the port and for the
+  channels. When you tap a channel button, it selects it and the next higher
+  channel.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-8.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as MIDI Record Output.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,8.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">none</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">devA 1,2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">16</td>
+    <td class="c">devA 16,1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">17</td>
+    <td class="c">devB 1,2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">32</td>
+    <td class="c">devB 16,1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">33</td>
+    <td class="c">devC 1,2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">48</td>
+    <td class="c">devC 16,1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">49</td>
+    <td class="c">devD 1,2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">devD 16,1</td>
+    </tr>
+  </table>

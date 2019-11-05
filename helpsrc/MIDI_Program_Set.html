@@ -1,0 +1,19 @@
+<h1>MIDI Program Set</h1>
+<p>NRPN 16,0 loads program data into a player from the preceding Sysex rather
+  than from a file, or reports such loading. The Bank MSB and the Data MSB set
+  the bank and program number. If the Sysex is missing or empty, it loads a
+  scratch program; if it is invalid, the operation is ignored.</p>
+<p><i>Editor input:</i> This loads a program into the Main player, and is
+  echoed to the Editor output. The link {_parameter parameters} can also set up
+  a link, generating additional messages into the Link player. The program
+  number and bank are shown in the 3-digit display.</p>
+<p><i>Editor output:</i> This is sent whenever a program is selected via
+  {MIDI_Program_Change} or from the control panel, or if {MIDI_Program_Get} is
+  received on the Editor input channel. It is preceded by a Sysex containing
+  the program data unless it is a scratch program.</p>
+<p><i>Record output:</i> This is sent whenever it is received by the Main or
+  Link player, whatever the source. The Undo/Redo mechanism can sometimes
+  generate this.</p>
+<p><i>Playback input:</i> Loads a program into a playback player. The common
+  parameters are ignored.</p>
+<p><i>External input:</i> Not supported.</p>

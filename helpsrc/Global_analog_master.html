@@ -1,0 +1,56 @@
+<h1>GLOBAL analog master</h1>
+<p>This controls the level of the analog audio output, relative to the digital
+  output. It has no effect on the digital output. It should normally be left at
+  100%, but if the output is driving low-impedance headphones, the result may
+  be clipped or too loud, in which case this may be reduced.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-3.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Analog Master Volume.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,3.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">1%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">100</td>
+    <td class="c">100%</td>
+    </tr>
+  </table>

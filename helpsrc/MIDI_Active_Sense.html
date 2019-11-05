@@ -1,0 +1,13 @@
+<h1>MIDI Active Sense</h1>
+<p>MIDI defines the byte 254 as an Active Sense byte, which does nothing but
+  indicate to the receiver that the sender is still alive and connected. The
+  Digital Chroma transmits Active Sensing bytes on all MIDI ports or virtual
+  jacks whenever 200ms has elapsed since the last output on that port. When
+  the output is busy with real messages, no Active Sense bytes are necessary,
+  but when the real messages stop, Active Sense bytes are sent instead.</p>
+<p>If the Digital Chroma ever receives an Active Sense byte on a particular
+  port or virtual jack, it assumes from then on that whatever it is connected
+  to will not allow its output to go idle for more than 300ms. If 300ms
+  elapses without any further messages, the Digital Chroma acts as though a
+  Reset had been received on that port. It won't do this again until
+  another Active Sense byte has been received.</p>

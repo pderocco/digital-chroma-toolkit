@@ -1,0 +1,78 @@
+<h1>GLOBAL high resolution</h1>
+<p>These three global parameters control the resolution of the MIDI output for
+  the {_lever levers}, {_pedal pedals}, and optional {_ribbon}. High-resolution
+  settings send twice as much data.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Global_parameters} section of the
+  {Tools_screen}, as three toggle buttons in the <i>high resolution</i>
+  row.</p>
+
+<h2>Chroma panel</h2>
+<p>These are accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter numbers:</p>
+
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">levers</td>
+    <td width="15%" class="i u">pedals</td>
+    <td class="i u">ribbon</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-16.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-17.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-18.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Lever Resolution, Pedal Resolution, and 
+  Ribbon Resolution.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">levers</td>
+    <td width="15%" class="i u">pedals</td>
+    <td class="i u">ribbon</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>15,16</td>
+    <td>15,17</td>
+    <td>15,18</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">low</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">high</td>
+    </tr>
+  </table>

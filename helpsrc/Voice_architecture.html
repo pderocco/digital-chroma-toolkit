@@ -1,0 +1,72 @@
+<h1>Voice architecture</h1>
+<p>The Digital Chroma has a large number of {_voice voices}, each of which is a
+  software entity capable of playing one note at a time. The resources
+  contained in each voice are shown in this diagram:</p>
+<p>{voice-architecture.png width=513}</p>
+<p>The vertical arrows show control signals, while the horizontal arrows in the
+  bottom section show audio signals. The disconnected arrows pointing into the
+  various resources are modulation inputs, most of which can be connected to
+  any single arrow pointing out of other resources, with an arbitrary amount
+  or "depth" factor.</p>
+<h2>Performance input</h2>
+<p>The top row shows the inputs from the keyboard, which produce notes,
+  velocities, and optionally polyphonic pressure. It also shows the inputs
+  from the two built-in {_lever levers}, the two inputs for optional
+  {_pedal pedals}, and the optional {_ribbon} controller.</p>
+<h2>Control signal generators</h2>
+<p>The middle section shows the user programmable control signals.</p>
+<ul>
+  <li>The {_glide GLIDE} modules are permanently driven from the
+    keyboard's note pitch, and can generate smooth slides (portamento) or
+    chromatic scales (glissando). The T input indicates the glide time can be
+    modulated by other things.</li>
+  <li>The {_sweep SWEEP} modules correspond to what are often called Low
+    Frequency Oscillators, or LFOs, in other synthesizers. They generate
+    repeating control signals, such as sine waves for vibrato, square waves for
+    trills, or more complex patterns. The R and A inputs indicate that both the
+    rate and the amplitude can be modulated by other things.
+  <li>The {_envelope ENVELOPE} modules generate time-varying signals that are
+    triggered at the start of each note, with a peak value that can be made
+    dependent on key velocity or other things. The Chroma's envelope
+    shape is ADR, meaning that each envelope has an Attack phase, a Decay
+    phase, and a Release phase. More complex shapes, such as the common ADSR
+    (Attack/Decay/Sustain/Release) shape are obtained by mixing two ADR
+    envelopes with different settings. The A, D, and R inputs indicate that
+    these three parameters can be modulated by other things, and the P input
+    indicates that the peak can be modulated. ENVELOPE 2A and 2B each have an
+    additional Trigger parameter which can either delay the start of the
+    envelope, or cause the envelope to be triggered by other things besides key
+    presses.</li>
+  </ul>
+<h2>Audio processing</h2>
+<p>The bottom section shows the audio modules.</p>
+<ul>
+  <li>The {_oscillator OSCILLATOR} modules determine the pitch of notes. Their
+    basic pitch is permanently controlled by the corresponding GLIDE
+    generators, but there are also five modulation inputs, for things like
+    pitch bend and vibrato.</li>
+  <li>The {_waveshaper WAVESHAPER} modules determine the initial harmonic
+    content of notes. They can generate pulse waves with a variable width, a
+    "saws" shape which combines two sawteeth with a variable phase
+    delay between them, or white or pink noise. Unlike the original Chroma,
+    they can also generate simple single-operator FM sounds. There are two
+    modulation inputs for the pulse width, saws phase, or FM depth.</li>
+  <li>The {_filter FILTER} modules modify the harmonic content of the sounds.
+    Each can be configured as a 2-pole or 4-pole lowpass, bandpass, or highpass
+    filter. They have continuously variable resonance (unlike the original
+    Chroma's eight fixed settings), and can be made to self-oscillate by
+    setting the resonance to maximum. They have five modulation inputs for the
+    tuning, plus one for the resonance.</li>
+  <li>The {_amplifier AMPLIFIER} modules adjust the volume of the sound, and
+    have three modulation inputs for volume, plus one for output panning. The
+    first two modulation inputs come from any of the four envelopes, and the
+    third is for post-modulation by other sources like a pedal.</li>
+  </ul>
+<p>The diagram shows the default interconnection among the audio modules, as
+  two independent single-oscillator {_channel channels} that are mixed at the
+  output. These are often programmed to have the same sound, with slight
+  detuning between them, and with the outputs panned to left and right for
+  spaciousness. But the {_patch PATCH} parameter in each program allows the
+  modules to be interconnected in a number of different ways, and allows for
+  special effects like Sync and Ring Mod. Details of this can be found
+  {Control_patch here}.</p>

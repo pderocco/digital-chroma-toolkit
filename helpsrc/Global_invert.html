@@ -1,0 +1,95 @@
+<h1>GLOBAL invert</h1>
+<p>These five global parameters control the polarities of the {_lever levers},
+  {_pedal pedals}, and optional {_ribbon}. The pedal and ribbon polarities
+  should be set according to how they are wired up, so that they operate in the
+  expected manner. The lever polarities should be set according to the
+  user's preference; pushing generates positive values if not
+  inverted.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Global_parameters} section of the
+  {Tools_screen}, as five toggle buttons in the <i>invert</i> row.</p>
+
+<h2>Chroma panel</h2>
+<p>These are accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter numbers:</p>
+
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">lever 1</td>
+    <td width="15%" class="i u">lever 2</td>
+    <td width="15%" class="i u">pedal 1</td>
+    <td width="15%" class="i u">pedal 2</td>
+    <td class="i u">ribbon</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-11.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-12.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-13.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-14.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-15.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Lever 1 Polarity, Lever 2 Polarity, Pedal 1
+  Polarity, Pedal 2 Polarity, and Ribbon Polarity.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">lever 1</td>
+    <td width="15%" class="i u">lever 2</td>
+    <td width="15%" class="i u">pedal 1</td>
+    <td width="15%" class="i u">pedal 2</td>
+    <td class="i u">ribbon</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>15,11</td>
+    <td>15,12</td>
+    <td>15,13</td>
+    <td>15,14</td>
+    <td>15,15</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">lever display</td>
+    <td width="25%" class="c i u">pedal, ribbon display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">positive push</td>
+    <td class="c">normal</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">positive pull</td>
+    <td class="c">invert</td>
+    </tr>
+  </table>

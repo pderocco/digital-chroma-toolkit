@@ -1,0 +1,68 @@
+<h1>FILTER tune</h1>
+<p>These control the basic pitch of each {_filter} before modulation. The
+  values are shown as the scale pitch heard if the {_resonance} is cranked all
+  the way up so that the filter becomes an oscillator, and middle C is played.
+  The default value is C11, the highest the filter can be tuned to, so that you
+  hear an unfiltered sound when you begin to edit a {_scratch_program}.</p>
+<p>If you want the pitch to track the keyboard, you should set this to C5
+  (middle C), choose Glide A or Glide B for one of the Mod Select inputs, and
+  set the corresponding Mod Depth to 32, since there are 32 semitones per
+  modulation {_unit}.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Filter_tune_cluster Filter tune clusters}
+  within the {Filter_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>CUTOFF</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-39.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Filter Tune.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,58</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,58</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<p>The values are displayed as scale pitches:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" align="center"><i><u>MIDI</u></i></td>
+    <td width="10%" align="center"><i><u>display</u></i></td>
+    </tr>
+  <tr>
+    <td/>
+    <td align="center">0</td>
+    <td align="center">F0</td>
+    <td>(about 11Hz)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="i s">\n(semitones)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td align="center">127</td>
+    <td align="center">D#10</td>
+    <td>(default, about 16KHz)</td>
+    </tr>
+  </table>

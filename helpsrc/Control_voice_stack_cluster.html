@@ -1,0 +1,23 @@
+<h1>CONTROL voice stack cluster</h1>
+<p>{control-voice-stack-cluster.png width=373}</p>
+<p>This {_cluster} allows multiple {_voice voices} to be played for each note.
+  The <i>{Control_voice_count}</i> parameter specifies the number
+  of voices, up to four. All voices have the same sound, but the following
+  {_parameter parameters} introduce differences; they have no effect if the
+  Voice count is one.</p>
+<p>The <i>{Control_tune_spread}</i> parameter causes the voices to
+  be detuned. This is a half-scale detuning, in which the beat frequency
+  doubles for each two-octave increase in pitch. The range is zero to 50\c,
+  with a default value of 1\c so that the instrument doesn't sound
+  completely dry. However, there are two special values at the high end of
+  range, which connect this parameter to either {_pedal}. You can quickly set
+  either of these values with the {_button buttons} below the {_slider}.</p>
+<p>The <i>{Control_pan_spread}</i> parameter causes the voices to be
+  spread out across the pan range. At zero, it does nothing, and all voices are
+  controlled by the same Pan parameters so have the same position. At 45\d
+  (the default), the pan range is cut in half, so that when two voices are
+  assigned to the same note, the first can be panned from left to center
+  (centered around \-45\d) and the second can be panned from center to
+  right (centered around +45\d). 90\d forces one voice all the way to the
+  left and the other all the way to the right, no matter what the Pan
+  parameters say.</p>

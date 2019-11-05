@@ -1,0 +1,17 @@
+<h1>ENVELOPE attack cluster</h1>
+<p>{envelope-attack-cluster.png width=373}</p>
+<p>This contains a {Envelope_attack_time <i>time</i>} {_slider} to set the time
+  it takes for the envelope to rise to its peak. The
+  {Envelope_attack_mod_select <i>mod select</i>} {_button buttons} and
+  {Envelope_attack_mod_depth <i>mod depth</i>} {_slider} allow the attack time
+  to be modulated by either {_lever} or {_pedal}, the note pitch, the
+  {_velocity}, or the optional pressure sensor. It can also be modulated by its
+  own value, which changes the shape of the attack curve. Positive modulation
+  increases the attack time, negative modulation decreases it.</p>
+<p>This also includes the {Envelope_attack_conservation <i>conservation</i>}
+  parameter, which determines how much of the previous note's leftover
+  envelope is added to the amplitude of the new envelope when a note is
+  retriggered. It has six choices, from none to 50%, where the higher settings
+  cause the envelope amplitude to grow with each restrike (but still limited to
+  two {_unit units}). The "truncate" setting does the opposite,
+  forcing the envelope to zero at the start of each note.</p>

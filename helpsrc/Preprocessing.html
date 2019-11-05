@@ -1,0 +1,25 @@
+<h1>Preprocessing</h1>
+<p>Certain aspects of the Digital Chroma note and control processing are
+  performed before the {_player players}, so that the {MIDI_record_output} can
+  reflect the results of this processing. This includes the following:</p>
+<ul>
+  <li>The Main and {_link_program Link} layering or keyboard splitting,
+    including the keyboard split point.</li>
+  <li>The Main and Link octave transpositions.</li>
+  <li>The Link Balance, Spread and Detune {_parameter parameters}.</li>
+  <li>The Keyboard Algorithms in both the Main and Link programs, including
+    {_arpeggiation}.</p>
+  <li>Those aspects of the Footswitch Mode parameter, in both the Main and Link
+    programs, that affect the sounding of the notes, or the enabling or
+    reinterpretation of the {_footswitch footswitches}.</li>
+  <li>The translation of raw {_ribbon} controller values according to the
+    Ribbon Algorithm parameters, in both the Main and Link programs.</li>
+  </ul>
+<p>The preprocessing is controlled by the relevant parameters in the Main and
+  Link players. The reason certain parts of the performance processing is
+  performed prior to the where the Main and Link channels are output to the
+  {_USB_device_port} for recording is so that sequences will contain the actual
+  notes heard, and not the keys pressed. Note that this means that the players
+  connected to the 64 USB device port channels don't do any of this
+  processing (e.g., arpeggiation), because they assume that what is being
+  played into them is already the result of this processing.</p>

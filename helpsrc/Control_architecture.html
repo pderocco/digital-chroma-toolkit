@@ -1,0 +1,28 @@
+<h1>Control architecture</h1>
+<p>The vast majority of programming {_parameter parameters} are tonal
+  parameters. But there are a some that affect the behavior of the instrument
+  without changing the sound of individual {_voice voices}:</p>
+<ul>
+  <li>A {Control_voice_count} parameter that can assign up to four
+    voices to each note played. The voices play the same sound, but the
+    {Control_tune_spread} and {Control_pan_spread}
+    parameters introduce differences into them that makes the overall sound
+    spacious and animated, rather like having a flanger or phaser per key.</li>
+  <li>A {Common_keyboard_algorithm} parameter determines how
+    keys are assigned to voices. The full complement of keyboard algorithms
+    from the original Chroma are still present, except for two that don't
+    make sense in the context of such a large number of available voices. There
+    are also a pair of new "strum" algorithms, in which the bottom
+    or top two keys are intercepted and used not to play notes but to generate
+    triggers that replay whatever notes are held elsewhere on the keyboard. If
+    the other keys are released, then playing the trigger notes will replay the
+    last chord but with a very short duration, to roughly simulate the sound of
+    strumming on muted strings.</li>
+  <li>A {Common_footswitch_mode} parameter determines whether
+    the right Sustain {_footswitch} is enabled or not, and what function the
+    left footswitch should be assigned to. Its usual function is Sostenuto, but
+    can also be used as a note gate (only playing notes if the footswitch is
+    depressed), or an inverted note gate (only playing notes if it is not
+    depressed). And unlike the original Chroma, it can also function as a
+    {_glide} enable.</li>
+  </ul>

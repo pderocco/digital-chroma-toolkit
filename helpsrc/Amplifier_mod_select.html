@@ -1,0 +1,86 @@
+<h1>AMPLIFIER mod select</h1>
+<p>These select a primary modulation source for modulating the volume of each
+  {_amplifier}. These sources are the {_envelope envelopes}, but there is also
+  a "fixed" setting that provides a constant 1 {_unit} value, which
+  is useful when the {_patch} uses Amplifier B to adjust the mix between the A
+  and B {_oscillator oscillators}.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Amplifier_mod_cluster Amplifier mod clusters}
+  within the {Amplifier_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>VOLUME</i> section of the right panel, under
+  the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{sw-46.png height=48}</td>
+    <td>{sw-48.png height=48}</td>
+    </tr>
+  </table>
+<p>They appear in the display as Amp Mod1/2 Select.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,70</td>
+    <td>1,72</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,70</td>
+    <td>2,72</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>envelope 1A</td>
+    <td>(mod 1 default)
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>envelope 2A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>envelope 1B</td>
+    <td>(mod 2 default)
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>envelope 2B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>fixed</td>
+    </tr>
+  </table>

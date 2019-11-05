@@ -1,0 +1,23 @@
+<h1>MIDI Program Write Metadata</h1>
+<p>NRPN 20,0 writes text metadata to a file, or reports the metadata when
+  requested, or when the file changes. The Bank MSB and the Data MSB specify
+  the bank and program number.</p>
+<p><i>Editor input:</i> This replaces the text metadata in the specified file
+  with the contents of the preceding
+  {MIDI_metadata_sysex}, bumps the {_timestamp} to the present,
+  and echoes the message. The timestamp, architecture, version, link
+  parameters, and sequence parameters in the Sysex are validated but otherwise
+  ignored, but the correct values, including the updated timestamp, are
+  included in the echo. If the file didn't exist, a Chroma program is
+  created with default parameter values plus the specified metadata.</p>
+<p><i>Editor output:</i> This is sent back in response to
+  {MIDI_Program_Read_Metadata} NRPN 84,0 on the Editor input channel, preceded
+  by a Program Sysex containing the file data, or no Sysex if the file is
+  missing. It is also sent in response to {MIDI_Program_Write} NRPN 19,0,
+  {MIDI_Program_Write_Metadata} NRPN 20,0, or any modification of a file via
+  the network or an external drive operation, under the assumption that an
+  editor needs to keep track of the metadata and timestamp of every file, but
+  not all its data. The link and sequence parameters are included in the
+  metadata because they are considered generally useful to an editor, since
+  they describe the relationships among programs.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>

@@ -1,0 +1,50 @@
+<h1>COMMON main transpose</h1>
+<p>This allows the notes going into the main {_instrument} to be transposed up
+  or down one octave. It takes effect regardless of whether there is a
+  {_link_program link} in effect. It also affects notes that go out over
+  MIDI.</p>
+
+<h2>Toolkit</h2>
+<p>This is represented by three {_button buttons} in the {Common_section},
+  which are mutually exclusive.</p>
+
+<h2>Chroma panel</h2>
+<p>This is set by pressing either of:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-main-down-1-oct.png height=48}
+      {sw-main-up-1-oct.png height=48}</td>
+    </tr>
+  </table>
+<p>Pressing one that is off turns it on and the other one off. Pressing the one
+  that is on turns it off.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,7. Since it is a {_bipolar} parameter, the
+  values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">63</td>
+    <td class="c">main \-1 oct</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">main normal</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">65</td>
+    <td class="c">main +1 oct</td>
+    </tr>
+  </table>

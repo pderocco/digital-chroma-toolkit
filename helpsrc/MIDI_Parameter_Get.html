@@ -1,0 +1,36 @@
+<h1>MIDI Parameter Get</h1>
+<p>These NRPNs, when received on the Editor input, request the value of a
+  parameter to be sent back on the Editor output in a {MIDI_Parameter_Set}
+  NRPN. The NRPN MSB specifies the page number plus 64, the NRPN LSB specifies
+  the parameter number. The NRPNs for program parameters are:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">NRPN 64, 0\.35</td>
+    <td width="20%">Parameter Get 0</td>
+    <td>Common and non-channelized control parameters</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td>NRPN 65, 0\.78</td>
+    <td>Parameter Get 1</td>
+    <td>A channel parameters</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>NRPN 66, 0\.78</td>
+    <td>Parameter Get 2</td>
+    <td>B channel parameters</td>
+    </tr>
+  </table>
+<p>The NRPN for global parameters is:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">NRPN 79, 1\.23</td>
+    <td>Parameter Get Global</td>
+    <td/>
+    </tr>
+  </table>
+<p>If a parameter number is out of range, the message is ignored.</p>

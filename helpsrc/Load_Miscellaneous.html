@@ -1,0 +1,56 @@
+<h1>Load Miscellaneous</h1>
+<p>Pressing SET SPLIT, LOAD ONE loads various miscellaneous files. This
+  differs from loading programs in that a missing file on the external drive
+  does not cause the corresponding file to be deleted from the Chroma. The
+  operation is performed in stages, giving the user the opportunity to copy or
+  not copy each file or group of files. The things that may be copied
+  (including their file names) are:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">main firmware</td>
+    <td width="15%"><code>chroma</code></td>
+    <td>The firmware that generates the sound. If this is copied, it will be
+      executed when the Digital Chroma is restarted</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>panel firmware</td>
+    <td><code>panel.bin</code></td>
+    <td>The firmware for the small microprocessor on the control panel
+      responsible for scanning inputs, driving the display, and handling the
+      {_USB_device_port}. If new versions of <code>chroma</code> and
+      <code>panel.bin</code> are both provided, they must both be loaded before
+      the Digital Chroma is restarted, or they may be unable to communicate
+      with each other.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>calibration data</td>
+    <td><code>cal.ini</code></td>
+    <td>The calibration data.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>configuration file</td>
+    <td><code>config.ini</code></td>
+    <td>An optional configuration file that can modify some of the startup
+      parameters to the main firmware.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>global parameters</td>
+    <td><code>globals.ini</code></td>
+    <td>The {_global_parameter} settings.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>reverb definitions</td>
+    <td><code>rev0-3.ini</td>
+    <td>These four files contain parameters that control the reverb algorithm
+      for the four "rooms".</td>
+    </tr>
+  </table>
+<p>Any file or group of files that doesn't exist on the external drive,
+  or that matches the corresponding file or files in the Chroma, is skipped
+  over.</p>

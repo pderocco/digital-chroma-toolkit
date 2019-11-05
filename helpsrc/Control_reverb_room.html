@@ -1,0 +1,64 @@
+<h1>CONTROL reverb room</h1>
+<p>This controls the reverb room used by the sound. This is normally set to
+  "performance", allowing the room selection and send level to be controlled by
+  performance controls, which come from the <i>reverb room</i> and <i>reverb
+  send</i> {_global_parameter global parameters}. But if this is set to one of
+  the actual room sizes, this parameter and the
+  {Control_reverb_send} parameter override the reverb performance
+  controls.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Control_tone_cluster tone cluster} within the
+  {Control_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>WIDTH</i> section of the right panel, under the
+  following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-33.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Reverb Room.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,34.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">performance</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">small</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td class="c">medium</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td class="c">large</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td class="c">huge</td>
+    </tr>
+  </table>

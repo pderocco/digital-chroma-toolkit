@@ -1,0 +1,71 @@
+<h1>COMMON link spread</h1>
+<p>This nudges or forces the main and link {_instrument instruments} toward
+  opposite sides whenever a {_link_program link} is in effect. It has no
+  effect when there is no link.</p>
+<p>This is expressed in degrees, representing the center of the main
+  instrument's available pan range; the center of the link range is the
+  opposite. When this is zero, the instruments have the full pan range; when
+  this is at either extreme, the instrument pan controls do nothing:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="90%">{link-spread.png width=500}</td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_link_cluster} within the
+  {Common_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>CONTROL</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-1.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Link Spread.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,4. Since it is a {_bipolar} parameter, the
+  values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">\-90\d</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">0\d</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+90\d</td>
+    </tr>
+  </table>

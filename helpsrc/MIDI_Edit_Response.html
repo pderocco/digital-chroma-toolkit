@@ -1,0 +1,10 @@
+<h1>MIDI Edit Response</h1>
+<p>NRPN 49,0 is sent on the Editor output channel by the Digital Chroma in
+  response to {MIDI_Edit_Request} NRPN 113,0 with a nonzero Data MSB. It is
+  preceded by a {MIDI_text_sysex} containing an indentification string, in the
+  following format:</p>
+<pre>Digital Chroma copyright 2019 Hereford Software Inc.,
+main=190522 panel=190311 linux=180412</pre>
+<p>without the line break. The last three items are the datestamps (in
+  <i>yymmdd</i> format) of the main firmware, the panel firmware, and the Linux
+  build. The dates may vary.</p>

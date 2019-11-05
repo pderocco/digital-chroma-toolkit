@@ -1,0 +1,179 @@
+<h1>ENVELOPE trigger</h1>
+<p>These control the delay time of each {_envelope Envelope 2} generator, up to
+  over two seconds. The highest twelve settings instead allow it to be
+  triggered by something other than the key press:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">release</td>
+    <td>The envelope is triggered when the key is released.</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="15%">release sustain</td>
+    <td>The envelope is triggered when the key and sustain footswitch are
+      released, whichever happens last.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>mono multiple</td>
+    <td>All voices share a common envelope computed by the virtual
+      {_instrument}, and that envelope is retriggered on any key press.
+    </tr>
+  <tr>
+    <td/>
+    <td>mono single</td>
+    <td>All voices share a common envelope computed by the virtual
+      {_instrument}, and that envelope is triggered when the number of held
+      keys goes from zero to one. This can be useful for simulating the
+      percussion envelope of a Hammond organ.
+    </tr>
+  <tr>
+    <td/>
+    <td>envelope 1A\nenvelope 1B</td>
+    <td>These trigger the envelope when either Envelope 1 starts its decay
+      phase. Obviously, that is only useful if the Envelope 1 attack time is
+      set to something other than "instant".
+    </tr>
+  <tr>
+    <td/>
+    <td>sweep A\nsweep B</td>
+    <td>These trigger the envelope at the start of each sweep cycle, and
+      release it (unless the sustain footswitch is held) in the middle of the
+      cycle.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>\-sweep A\n\-sweep B</td>
+    <td>These trigger the envelope in the middle of each sweep cycle, and
+      release it (unless the sustain footswitch is held) at the start of the
+      cycle.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>\+sweep A\n\+sweep B</td>
+    <td>These trigger the envelope at the start of each sweep cycle, and again
+      in the middle.</td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  {Envelope_trigger_cluster Envelope trigger clusters} within the
+  {Envelope_sections Envelope 2 section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>ENVELOPE 2</i> section of the right panel,
+  under the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-19.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Env2 Trigger.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,23</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,23</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">20ms</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">115</td>
+    <td class="c">2.3s</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">116</td>
+    <td colspan=2>release</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">117</td>
+    <td colspan=2>release sustain</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">118</td>
+    <td colspan=2>mono multiple</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">119</td>
+    <td colspan=2>mono single</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">120</td>
+    <td colspan=2>envelope 1A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">121</td>
+    <td colspan=2>envelope 1B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">122</td>
+    <td colspan=2>sweep A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">123</td>
+    <td colspan=2>sweep B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">124</td>
+    <td colspan=2>\-sweep A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">125</td>
+    <td colspan=2>\-sweep B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">126</td>
+    <td colspan=2>\+sweep A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td colspan=2>\+sweep B</td>
+    </tr>
+  </table>

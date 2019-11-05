@@ -1,0 +1,39 @@
+<h1>Sequence Program</h1>
+<p>In performance, it is sometimes useful to be able to switch from one
+  {_program} to another under control of a {_footswitch}. The Sequence Program
+  Bank and Number {_parameter parameters} allow each program to contain a
+  "pointer" to another program, which will be switched to when the
+  Sequence Program footswitch is pressed and released. It is a fairly limited
+  feature\mafter all, if program 119 sequences to program 123, then
+  program 119 always sequences to program 123, regardless of context. But given
+  the 450-program storage space, if you want program 119 to sequence to program
+  137 in a different context, you can store a copy of program 119 somewhere
+  else, with a different Sequence Program parameter.</p>
+<p>The Sequence Program function is invoked by pressing and releasing the
+  Sequence Program footswitch, without any intervening panel switch presses;
+  the change occurs when the footswitch is released. The Sequence Program
+  parameters are set by holding the footswitch like a shift key and pressing a
+  number. This is as it was in the original Chroma; in the Digital Chroma, this
+  implies a sequence to a program in the same bank as the main program, and is
+  represented by a Sequence Program Bank parameter of zero. To sequence to a
+  program in any specific different bank, you first hold PROG SELECT like a
+  shift key and press the bank number (just as you would if you were going to
+  select a program in that bank), then hold the footswitch and press the
+  program number. In this case, the Sequence Program Bank parameter is set to
+  the bank number, from 1 to 9.</p>
+<p>The Digital Chroma also allows a "sequence to previous". If you
+  hold the Sequence Program footswitch like a shift key and press PROG SELECT,
+  it sets both the Sequence Program Bank and Number parameters to zero. When
+  you subsequently press and release the footswitch, it selects the program
+  that was in effect before the current one was selected (even if it was
+  selected manually), including any modifications that may have been made to
+  that previous program.</p>
+<p>When the Sequence Program parameter was changed in the original Chroma, it
+  was changed in the stored program as well as in the Main {_instrument}, even
+  if they were different. The Digital Chroma only does this if the program in
+  the Main instrument is unmodified; actually, it changes the two parameters,
+  and then does a Store operation, so the program MODIFIED indicator still
+  remains off. If the program was already modified (or
+  {_scratch_program scratch}), the Sequence Program parameters are changed but
+  the result isn't stored; it is up to the user to do the Store
+  operation, if the other unrelated changes should be kept.</p>

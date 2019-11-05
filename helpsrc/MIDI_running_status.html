@@ -1,0 +1,13 @@
+<h1>MIDI running status</h1>
+<p>Serial MIDI allows the status byte of a channel message to be dropped if it
+  is the same as the preceding non-real-time status byte, to reduce the data
+  rate. Reusing the preceding status is called "running status",
+  and isn't allowed for system messages. The Digital Chroma MIDI output
+  uses this feature for Control Change, Pitch Bend, Mono Pressure, and Poly
+  Pressure messages, because they are the only messages that are likely to be
+  transmitted at a high rate. The input properly handles running status for
+  all channel messages, though. (None of this is meaningful for USB MIDI.)</p>
+<p>Note that the even though the MIDI specification calls the Reset byte (255)
+  a system real-time message, it also requires that it clear running status.
+  This makes it effectively a system common message, which is how the Digital
+  Chroma treats it.</p>

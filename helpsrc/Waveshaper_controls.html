@@ -1,0 +1,31 @@
+<h1>Waveshaper controls</h1>
+<p>Like the original Chroma, the Digital Chroma separates the controls over
+  pitch and wave shape into separate modules, the {_oscillator} and
+  {_waveshaper}. The original Chroma's waveshaper had four wave shapes,
+  saws, pulse, white noise and pink noise. The Digital Chroma has these, as
+  well as various simple FM wave shapes, and an impulse wave shape.</p>
+<p>The saws and pulse function sound exactly like the original Chroma. The
+  white noise and pink noise also sound the same, but with one important
+  difference: each voice has its own noise generator, so playing two noise
+  "notes" results in a natural 3db increase in volume instead of
+  the annoying 6db increase in volume in the original Chroma. Also, the noise
+  is cleaner and smoother.</p>
+<p>The FM wave shapes are single-operator sounds, with a single modulator and
+  a single carrier. Technically, they use phase modulation, not frequency
+  modulation, but FM is what such sounds are usually called. For most settings,
+  both the modulator and carrier frequencies are small integer multiples of the
+  nominal pitch of the oscillator, and the modulation index is controlled by
+  the Width, which of course can be modulated by various control signals. Two
+  settings, however, use a sine wave carrier frequency but then modulate it
+  with the oscillator or low-pass filter output of the opposite channel in the
+  voice. This allows more dissonant or complex forms of FM to be generated.</p>
+<p>Finally, there is an impulse shape. This is a single impulse, whose duration
+  is proportional to the period of the oscillator, making a click sound. This
+  is primarily useful when fed into a filter whose resonance is set extremely
+  high, as the filter will ring at a pitch determined by its tuning.</p>
+<p>While the original Chroma only had one width modulation input, in the
+  Digital Chroma the extended parameters behind Mod Select and Mod Depth are
+  used for a second modulation input, whose parameters are called Mod 2 Select
+  and Mod 2 Depth. This is particularly useful because it allows the width to
+  be modulated in a conventional manner with a sweep or envelope, and then also
+  be modulated by a glide to voice it across the keyboard.</p>

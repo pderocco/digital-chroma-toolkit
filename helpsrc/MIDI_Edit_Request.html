@@ -1,0 +1,18 @@
+<h1>MIDI Edit Request</h1>
+<p>NRPN 113,0 on any MIDI input channel instructs the Digital Chroma to open or
+  close the Editor channel. If the Data MSB is zero, it closes the Editor
+  channel without acknowledgment, even if it is a different channel. If the
+  Data MSB is nonzero, it makes the channel it was received on the Editor
+  channel, and sends back {MIDI_Edit_Response} NRPN 49,0 on that channel.</p>
+<p class="extra">Note that the serial MIDI port is too slow to be used
+  effectively by an external editor.</p>
+<p>The Digital Chroma assumes the editor maintains a copy of the
+  {_parameter parameters}, {_timestamp}, and metadata of the program in the
+  Main {_instrument}, as well as the timestamp, metadata, and link and sequence
+  parameters of all the stored parameters. It is up to the editor to request
+  this information after opening the Editor channel, but the Digital Chroma
+  always transmits messages to the editor whenever something is done in the
+  Main program or any stored program, even if those changes were done in
+  response to commands form the editor. This includes parameter changes,
+  program operations, and Undo/Redo status changes. It does not include notes
+  played, or control changes.</p>

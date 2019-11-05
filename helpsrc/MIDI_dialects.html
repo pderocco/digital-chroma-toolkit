@@ -1,0 +1,36 @@
+<h1>MIDI dialects</h1>
+<p>The Digital Chroma supports most standard MIDI messages, and defines a
+  number of proprietary messages. However, some messages are only supported on
+  input, or only appear in output, on certain ports or channels. The Digital
+  Chroma MIDI language actually has five different "dialects",
+  which are subsets of the complete language. They are:</p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="20%">{MIDI_external_input External input}</td>
+    <td>External keyboard or controller input via a {_USB_host_port} or serial
+      MIDI input.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{MIDI_record_output Record output}</td>
+    <td>Main and Link output to an external DAW via the
+      {_USB_device_port}.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{MIDI_playback_input Playback input}</td>
+    <td>Up to 64 channels of playback from an external DAW via the USB device
+      port.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{MIDI_editor_input Editor input}</td>
+    <td>One channel of commands from the Toolkit or other editor.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{MIDI_editor_output Editor output}</td>
+    <td>One channel of status or responses to the Toolkit or other editor.</td>
+    </tr>
+  </table>

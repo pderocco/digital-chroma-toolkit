@@ -1,0 +1,76 @@
+<h1>GLOBAL bipolar</h1>
+<p>These two global parameters control whether each {_pedal} is to be treated
+  as a normal {_unipolar} control, or a special {_bipolar} control that works
+  like the levers. Since such pedals aren't commercially available, this
+  would require a custom modified center-sprung pedal.</p>
+<p>When configured as bipolar, a pedal uses two different MIDI controls for
+  each side of the pedal, just like the levers do. When configured as unipolar,
+  the MIDI control assigned to the negative side is never used, making it
+  available for use by an alternative external controller. In this case, the
+  alternative controller can be selected as a modulation source by specifying
+  \-pedal 1 or \-pedal 2 as the source.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Global_parameters} section of the
+  {Tools_screen}, as two toggle buttons in the <i>bipolar</i> row.</p>
+
+<h2>Chroma panel</h2>
+<p>These are accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter numbers:</p>
+
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">pedal 1</td>
+    <td class="i u">pedal 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-19.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-20.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Pedal 1 Bipolar and Pedal 2 Bipolar.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">pedal 1</td>
+    <td class="i u">pedal 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>15,19</td>
+    <td>15,20</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">on</td>
+    </tr>
+  </table>

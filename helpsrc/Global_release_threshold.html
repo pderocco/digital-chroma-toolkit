@@ -1,0 +1,51 @@
+<h1>GLOBAL release threshold</h1>
+<p>This adjusts the MIDI release velocity below which a key release is
+  considered "slow" for the purpose of the
+  {Envelope_release_mod_select} parameters. Low values make it easier to get a
+  fast release, and higher values make it easier to get a slow release.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-5.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Release Threshold.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,5.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">16</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td class="c">112</td>
+    </tr>
+  </table>

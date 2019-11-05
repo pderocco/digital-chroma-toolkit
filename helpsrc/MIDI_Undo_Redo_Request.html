@@ -1,0 +1,31 @@
+<h1>MIDI Undo/Redo Request</h1>
+<p>NRPN 114,0 on the Editor input channel optionally request an Undo or a Redo
+  operation. Its Data MSB must be one of:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="5%">0</td>
+    <td>Query only</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>1</td>
+    <td>Undo the last operation, if any</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>2</td>
+    <td>Redo the next operation, if any</td>
+    </tr>
+  </table>
+<p>It sends back {MIDI_Undo_Redo_Status} NRPN 50,0, after any messages produced
+  by the requested Undo/Redo operation. However, 1 and 2 only send the status
+  if it changes as a result of the Undo or Redo.</p>
+<p>The Redo request has one additional function. If the current program is
+  edited, all edits are coalesced into a single delta, until some other
+  operation like a Program Change takes place, or until a certain idle time has
+  expired, after which further edits become part of a new delta. In this
+  situation, there is nothing to redo, so it instead closes the delta and
+  starts a new one immediately. This allows one to mark a point during editing
+  that one can come back to via Undo, without waiting for the timeout to
+  expire.</p>

@@ -1,0 +1,80 @@
+<h1>WAVESHAPER width</h1>
+<p>These control the basic pulse or FM width of each {_waveshaper} before
+  modulation. The values are shown as percentages if the "saws" or
+  "pulse" {Waveshaper_shape shape} is selected, or as a number of
+  cycles of phase modulation if any of the FM shapes are selected. (This has no
+  effect for the noise or impulse shapes.)</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  {Waveshaper_shape_cluster Waveshaper shape cluster} within the
+  {Waveshaper_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>WIDTH</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-34.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Wave Width.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,49</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,49</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<p>The values are displayed as percentages or cycles:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">percent</td>
+    <td width="10%" class="c i u">cycles</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">0%</td>
+    <td class="c">0cyc</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">50%</td>
+    <td class="c">8cyc</td>
+    <td>(significant)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">100%</td>
+    <td class="c">16cyc</td>
+    </tr>
+  </table>

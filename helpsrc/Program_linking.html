@@ -1,0 +1,61 @@
+<h1>Program linking</h1>
+<p>The Chroma has the ability to select two sounds at a time, either for the
+  purpose of layering them (to get four oscillators per note), or for
+  splitting the keyboard. This is done by creating a {_link_program} from one
+  {_program} to another stored program, embodied in three panel
+  {_parameter parameters} in the Main program, called the Link Mode, Link
+  Number and Link Bank. When a program containing a link is selected, a second
+  {_instrument} is enabled, whose sound is controlled by the program linked to.
+  This program can't be edited from the panel; all editing controls only
+  affect the Main program.</p>
+<p>The link modes inherited from the original Chroma are Link Unison, which
+  causes all notes to be played on both the main and link sound, Link Lower,
+  which steers the notes below the keyboard split to the link sound, and Link
+  Upper, which steers the notes above or equal to the keyboard split to the
+  link sound.</p>
+<p>A link to a program in the current bank is set up by pressing LINK LOWER,
+  LINK UNISON or LINK UPPER and then pressing a number. The link mode is
+  changed, without changing what program is linked to, by pressing one of
+  those three link switches twice. A link is removed by pressing NO LINK
+  twice.</p>
+<p>In the Digital Chroma, setting up a link in this manner always links to a
+  sound in the same bank as the main sound. Internally, it records the program
+  number, but records the link bank parameter as zero, meaning "current
+  bank". If the main program is later stored into a different bank, it
+  will automatically link to the corresponding program in that bank, which is
+  useful if an entire bank full of programs is moved to another bank.</p>
+<p>To link to any specific bank, not surprisingly, you hold LINK LOWER, LINK
+  UNISON or LINK UPPER, press the bank number, release the link switch, and
+  press the program number. This sort of link always links to the specified
+  bank, even of the main program that contains the link is moved to a different
+  bank. (Again, you can select the bank first with PROG SELECT, but
+  that's less efficient.)</p>
+<p>The Digital Chroma has another feature which the original Chroma
+  didn't have, which is Link to Self. If one of the three LINK switches
+  is held like a shift key, and PROG SELECT is pressed, then a link is set up
+  to the same program as the main program. But this is somewhat different from
+  linking to the stored version of the program, because all parameter changes
+  are sent to both instruments, affecting both sounds. This is primarily useful
+  with a LINK UNISON, to double the number of oscillators while allowing
+  separate octave transposition. But it also means that the link will always be
+  to "self", even if the main program is stored under a different
+  number, or into a different bank.</p>
+<p>Another new feature: you can combine a Link Unison with either Link Lower
+  or Link Upper, in which case the link sound plays on part of the keyboard
+  while the main plays over the entire keyboard. This is done by pressing LINK
+  LOWER or LINK UPPER concurrently with LINK UNISON, and then pressing the
+  program number. All the other variations work: for instance, you can hold
+  LINK LOWER and LINK UNISON and press 1\.9, then separately press 1\.50 to
+  set up a Link Lower Unison to a specific bank; or you can press LINK UPPER
+  and LINK UNISON together twice to change the link mode to Link Upper
+  Unison.</p>
+<p>Finally, you can create a split between the entire keyboard going to the
+  main instrument, and an external keyboard going to the link instrument, or
+  vice versa. The former is done by pressing LINK LOWER and LINK UPPER
+  concurrently, and then pressing the program number, or using any of the
+  other analogous variations to specify a different bank or just change the
+  link mode. The latter is done by pressing all three LINK switches
+  concurrently. The external keyboard may be connected to the serial MIDI port
+  or to either {_USB_host_port}, and the {_global_parameter global}
+  {Global_midi_link_in MIDI Link Input} parameter must set to the appropriate
+  port and channel.</p>

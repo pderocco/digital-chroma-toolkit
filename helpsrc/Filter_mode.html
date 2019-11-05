@@ -1,0 +1,79 @@
+<h1>FILTER mode</h1>
+<p>These select one of six modes for Filter A or B. Usually, this should be set
+  to one of the "lowpass" modes, which pass frequencies below the
+  filter tuning, emphasize frequencies around the tuning, and attenuate
+  frequencies above the tuning. The "bandpass" modes attenuate
+  frequencies below and above the filter tuning, and the "highpass"
+  modes attenuate frequences below the filter tuning and pass frequences above
+  it. The four-pole, or "4p" modes attenuate more than the
+  two-pole, or "2p" modes.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Filter_tune_cluster Filter tune clusters} within
+  the {Filter_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>CUTOFF</i> section of the right panel, under the
+  following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-37.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Filter Mode.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,54</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,54</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>2p lowpass</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>4p lowpass</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>2p bandpass</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>4p bandpass</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>2p highpass</d>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>4p highpass</td>
+    </tr>
+  </table>

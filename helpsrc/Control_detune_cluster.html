@@ -1,0 +1,13 @@
+<h1>CONTROL detune cluster</h1>
+<p>{control-detune-cluster.png width=373}</p>
+<p>The <i>{Control_detune}</i> {_parameter} shifts the tuning of
+  {_oscillator} B without altering oscillator A. The
+  <i>{Control_detune_scale scale}</i> parameter determines how the detuning
+  varies across the keyboard, and has three choices, a constant cents detune,
+  a constant Hertz detune, or a compromise between the two.</p>
+<p>The <i>{Control_tune_shift}</i> parameter alters the pitch of
+  both oscillators, either by stretching the tuning or randomizing it.</p>
+<p>Detuning is applied to the {_glide} generators, and through them to the
+  oscillators. It therefore also affects {_filter filter} tuning if glide is
+  used as a mod source, which is the normal case if a filter's
+  {_resonance} is turned all the way up to make it oscillate.</p>

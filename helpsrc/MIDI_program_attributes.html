@@ -1,0 +1,57 @@
+<h1>MIDI program attributes</h1>
+<p>When a {_program} is copied into a virtual {_instrument} for playing,
+  several attributes of the program file are remembered in the instrument:</p>
+<ul>
+  <li>The Program Number (1 to 50).</li>
+  <li>The Program Bank (1 to 9).</li>
+  <li>The Program Flags, which is the modification status (0 = scratch, 1 =
+    unmodified, 2 = modified), plus 4 if the program has text metadata.</li>
+  </ul>
+<p>The program also has a timestamp that indicates when the program data was
+  last modified, and is recorded as part of the program. If a file
+  doesn't exist, it has no timestamp, and loading the file produces a
+  {_scratch_program}. The timestamp of the program in an instrument is set to
+  the present whenever a parameter is changed. When a program is stored, the
+  Bank and Number are changed according to where the program is stored, and the
+  timestamp is written to the file along with its parameters.</p>
+<p>The comparison between the timestamp of the program in the instrument and
+  the file corresponding to the Program Number and Bank determines the bottom
+  two bits of the Program Flags attribute, which can have three values:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="5%">0</td>
+    <td width="15%">Scratch</td>
+    <td>The program in the instrument has no timestamp. This means it was
+      loaded from a non-existent file, and no parameters have been modified
+      since, so all parameter have their default values.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>1</td>
+    <td>Unmodified</td>
+    <td>The program in the instrument has a valid timestamp which matches the
+      file it is associated with. This means the program was loaded from (or
+      stored into) the file identified by the Program Number and Bank
+      attributes, and no parameters have been modified since.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>2</td>
+    <td>Modified</td>
+    <td>The program in the instrument has a valid timestamp that doesn't
+      match the file it is associated with. This means that at least one
+      parameter in the program has been modified (or that the program file
+      itself was independently modified).</td>
+    </tr>
+  </table>
+<p>Changing a parameter sets these two bits to Modified because it bumps the
+  timestamp on the program in the player to the present, so that it no longer
+  matches the timestamp on the file. Loading a program sets them to Unmodified
+  (or Scratch) because it receives the same timestamp as the file. And storing
+  a modified program sets them to Unmodified because the file is given the
+  same timestamp.</p>
+<p>Bit 2 of the Program Flags attribute is set if the program has any text
+  metadata. This is text appended to a program by an external editor to hold
+  additional information about the program. The Digital Chroma preserves
+  this, but never changes it.</p>

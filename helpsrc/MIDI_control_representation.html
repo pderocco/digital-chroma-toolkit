@@ -1,0 +1,40 @@
+<h1>MIDI control representation</h1>
+<p>The {_lever}, {_pedal}, and {_ribbon} controls can be configured by
+  {_global_parameter global parameters} as either lo-res (low resolution) or
+  hi-res. For instance, CC1 specifies the MSB (the most significant byte
+  containing the top seven bits) of the modulation control, which maps to the
+  positive side of Lever 1. If configured as hi-res, CC33 specifies the LSB
+  (the least significant byte containing the bottom seven bits).</p>
+<p>Internally, controls are represented as floating point values with a range
+  of 0 to 1, or \-1 to +1 for bipolar controls. (Floating point values
+  have fractional parts, unlike the integers that MIDI deals with.) The fact
+  that n-bit binary numbers don't go quite all the way to 2<sup>n</sup>
+  is dealt with by simply incrementing the highest value. Thus, the Digital
+  Chroma treats lo-res performance control values as being in units of
+  <sup>1</sup>/<sub>128</sub>, but treats the maximum value of 127 as meaning
+  1, not <sup>127</sup>/<sub>128</sub>. This means that a mid-scale value of 64
+  translates into exactly <sup>1</sup>/<sub>2</sub>. Similarly, the Digital
+  Chroma treats 14-bit values as being in units of
+  <sup>1</sup>/<sub>16384</sub>, but treats the maximum value of 16383 as
+  meaning 1, not <sup>16383</sup>/<sub>16384</sub>.
+<p>On input, the Digital Chroma defers processing of the MSB of any control
+  that supports high resolution until the next message is received on the same
+  channel, or until three milliseconds have elapsed. If the corresponding LSB
+  isn't received within that time, the MSB is processed as a lo-res
+  control. This avoids the tiny glitches that can result when the MSB changes
+  on a very slow ramp.</p>
+<p>An LSB that isn't preceded by its MSB, or whose MSB has already been
+  processed by the 3ms timeout, is processed immediately, using the current
+  MSB value. The Digital Chroma never transmits an LSB by itself.</p>
+<p>NRPN or RPN data is treated differently. If a Data MSB is expected, a Data
+  MSB must be received to trigger the processing. If a Data MSB and a Data LSB
+  are both expected, they must both be received, MSB first, to trigger the
+  processing.</p>
+<p>MSB/LSB controls that are prefixes to other controls may be sent into the
+  Digital Chroma in either order. The Digital Chroma always transmits MSB
+  first.</p>
+<p>The Digital Chroma only generates the low numbered Control Changes
+  containing the MSB (the seven most significant bits) of the value, unless
+  the controls are configured to be hi-res. Three global parameters allow this
+  to be done for the levers, the pedals, and the optional ribbon controller.
+  Other controls are always lo-res.</p>

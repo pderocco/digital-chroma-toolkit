@@ -1,0 +1,8 @@
+<h1>MIDI Program Copy</h1>
+<p>NRPN 25,0 on the Editor input copies a program file into another location.
+  The Bank MSB and Data MSB specify the destination, and the Bank LSB and Data
+  LSB specify the source. This is echoed back to the editor.</p>
+<p>If the source and destination both exist, the source overwrites the
+  destination; if the source doesn't exist, the destination is deleted. If the
+  source and destination are the same, nothing happens, but it is still
+  echoed.</p>

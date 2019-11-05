@@ -1,0 +1,39 @@
+<h1>The patch</h1>
+<p>This one {_parameter} has probably the most dramatic effect on the sound of
+  a {_voice}, because it controls how the sound processing modules are
+  interconnected. You can see all the choices {Control_patch here}.</p>
+<p>The first patch, called independent, is the most generally useful, because
+  it treats the two {_channel channels} as separate synthesizers. The
+  modulation sources can still be freely mixed between the two channels, but
+  the sound of each channel basically goes from {_oscillator} to {_waveshaper}
+  to {_filter} to {_amplifier} to pan to tone control to reverb to output.
+  Since the Digital Chroma has four-pole filters, many four-pole sounds can
+  still be accomplished in the independent patch, allowing the two oscillators
+  to be panned to opposite sides and detuned slightly, for a rich, spacious
+  sound.</p>
+<p>The patch also controls special effects. These mimic the analog special
+  effects (sync, ring mod and filter FM) of the original Chroma, but also add
+  multiply. Ring mod replaces oscillator A's sound with the digital
+  cross-product of the two oscillator's pulse outputs, while multiply
+  replaces A's sound with the analog cross-product of the two
+  oscillator's outputs, whatever wave shapes are selected. For the more
+  technically minded, the ring mod effect is implemented with an exclusive-OR
+  gate on the two pulse outputs, while the multiply just multiplies the two
+  oscillator outputs. The two are equivalent only of both oscillators are set
+  to produce square waves (Shape = pulse, Width = 50%). The multiply effect is
+  generally cleaner because it produces only sum and difference frequencies,
+  while the ring mod effect leaves some of the original harmonics intact. They
+  produce sounds that are weird in different ways, so just choose between them
+  by ear.</p>
+<p>The sync effect was a standard effect in many early analog synthesizers,
+  because it was easy to implement in hardware: when the A oscillator's
+  sawtooth reset, it would force the B oscillator's sawtooth to reset as
+  well. This guarantees the B oscillator to be locked to the A
+  oscillator's pitch, but allows it to produce very rich harmonic spectra
+  that change dramatically as the B oscillator's pitch control is
+  varied. It can also be useful for ensuring that two oscillators that have the
+  same frequency maintain a predictable phase relationship.<p>
+<p>The filter FM effect uses the output of the B channel to modulate the A
+  channel's filter frequency. This can be used for strange alien
+  voice-like sounds, and is the basis for the "Oh, Yeah" program in
+  the factory presets.</p>

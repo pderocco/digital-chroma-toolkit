@@ -1,0 +1,63 @@
+<h1>COMMON keyboard split</h1>
+<p>This defines the bottom key of the upper portion of the keyboard, when the
+  {Common_link_mode} is set to one of the split keyboard modes.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_link_cluster link cluster} within the
+  {Common_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is set by pressing:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-set-split.png height=48}</td>
+    </tr>
+  </table>
+<p>and then pressing the desired key. You can also press</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-set-split.png height=48}
+      {sw-set-split.png height=48}</td>
+    </tr>
+  </table>
+<p>to set it to the same point it was last set to by this mechanism.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,4.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">C0</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">60</td>
+    <td class="c">C5</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">G10</td>
+    </tr>
+  </table>

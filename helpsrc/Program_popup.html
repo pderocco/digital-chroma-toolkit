@@ -1,0 +1,97 @@
+<h1>Program popup</h1>
+<p>{program-popup.png width=288}</p>
+<p>This pops up when you {_long-press} a {_program} {_button} on the
+  {Programs_screen <em>Programs</em>} screen, and shows:</p>
+<ul>
+  <li>The optional program name</li>
+  <li>The optional description</li>
+  <li>The program's {_timestamp}</li>
+  <li>Thirteen action buttons</li>
+</ul>
+<p class="extra">As with all popups, you can dismiss it by clicking or
+  tapping in the dimmed area around it, or on its title.</p>
+<p>The name can be modified by clicking or tapping within the <i>name</i> box,
+  and using the keyboard to edit the name. Press Enter to accept the new name,
+  and you'll see the <i>timestamp</i> change to the present.</p>
+<p class="extra">If the modified program is also the {_current_program}, this
+  only changes the stored program, thus introducing a discrepancy between the
+  two.</p>
+<p>The description can be modified in a similar manner. Since this may have
+  multiple lines, Enter starts a new line, but two Enters at the end accepts
+  the change.</p>
+<p>The timestamp shows when the program was created or most recently
+  modified, with 100\us resolution.</p>
+<p>The "select" button does the same as tapping the program button
+  on the main screen.</p>
+<p>The "store" button stores the current program under this program
+  number.</p>
+<p>The "exchange" button exchanges the current program with this
+  stored program. The current program number doesn't change.</p>
+<p>The "store stash" button stores the stashed program under this
+  program number. This is whatever was previously "stashed" in the
+  {Current_program_popup}.</p>
+<p>The "delete" button deletes the stored program, turning its
+  button gray.</p>
+<p>The various "link" buttons set the {_link_program link} parameter in
+  the current program to refer to this stored program, and sets the link mode.
+  The seven choices are:</p>
+<table class="vt">
+  <tr><td width="2%"/>
+    <td width="20%">link upper</td>
+    <td>The portion of the keyboard below the keyboard split point plays the
+      Main program, and the upper portion plays the Link program.</td></tr>
+  <tr><td/>
+    <td>link upper unison</td>
+    <td>The entire keyboard plays the Main program, and the upper portion also
+      plays the Link program.</td></tr>
+  <tr><td/>
+    <td>link unison</td>
+    <td>The entire keyboard plays both the Main and Link programs.</td></tr>
+  <tr><td/>
+    <td>link lower unison</td>
+    <td>The entire keyboard plays the Main program, and the lower portion also
+      plays the Link program.</td></tr>
+  <tr><td/>
+    <td>link lower</td>
+    <td>The upper portion of the keyboard plays the Main program, and the lower
+      portion plays the Link program.</td></tr>
+  <tr><td/>
+    <td>link external</td>
+    <td>The internal keyboard plays the Main program, and an external keyboard
+      plays the Link program.</td></tr>
+  <tr><td/>
+    <td>link internal</td>
+    <td>An external keyboard plays the Main program, and the internal keyboard
+      plays the Link program.</td></tr>
+  </table>
+<p class="extra">The last two require that an external keyboard be connected to
+  the serial MIDI port or one of the {_USB_host_port USB host ports}, and that
+  the global {Global_midi_link_in MIDI Link Input} parameter select a channel
+  on that particular port.</p>
+<p>The "sequence program" button sets that {_parameter} in the
+  current program to refer to this stored program. This means that when the
+  {_sequence_program Sequence Program} footswitch is pressed, this program will
+  automatically be selected.</p>
+<p class="extra">Note: if the current program isn't otherwise modified,
+  changing the sequence program parameter also stores the current program after
+  making the change, since this parameter isn't useful except if it is
+  made part of a stored program. If the current program has already been
+  modified, it isn't automatically stored, since it is up to you whether
+  you want those other modifications to be stored or not.</p>
+<h2>Bank parameters</h2>
+<p>When you select a program to link to (or a program to sequence to), it
+  matters whether the current bank selection at the top of the
+  <em>Programs</em> screen is a number, or <i>current</i>. If it is
+  <i>current</i> (the usual case), the link (or sequence program) parameter is
+  set to a one- or two-digit number, with no bank number specified, indicating
+  a reference to the bank containing the current program. If a bank number is
+  highlighted, then the parameter is set to a three-digit number, in which the
+  bank is explicit.</p>
+<p>The difference is important if you later store or move the program to a new
+  bank. If the bank number is only one or two digits, then it will refer to the
+  new bank, and perhaps the wrong program. On the other hand, if you are likely
+  to move an entire bank of programs, by saving them to a flash drive and then
+  reloading them into a different bank, then one- and two-digit bank numbers
+  are correct, since the targets will have been moved too. If you want a
+  3-digit program number, you must explicitly select the appropriate bank
+  button at the top of the screen before displaying the popup.</p>

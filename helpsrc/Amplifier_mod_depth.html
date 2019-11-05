@@ -1,0 +1,85 @@
+<h1>AMPLIFIER mod depth</h1>
+<p>These adjust the amount of {_envelope} (or "fixed") signal that
+  goes into each {_amplifier}. These two sources are added together, then
+  multiplied by the {Amplifier_post_mod_cluster post mod} input.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Amplifier_mod_cluster Amplifier mod clusters}
+  within the {Amplifier_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>VOLUME</i> section of the right panel, under
+  the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{sw-47.png height=48}</td>
+    <td>{sw-49.png height=48}</td>
+    </tr>
+  </table>
+<p>They appear in the display as Amp Mod1/2 Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,71</td>
+    <td>1,73</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,71</td>
+    <td>2,73</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    <td>(mod 1 significant, mod 2 default)
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">90</td>
+    <td class="c">0db</td>
+    <td>(mod 1 default, mod 2 significant)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+6db</td>
+    </tr>
+  </table>

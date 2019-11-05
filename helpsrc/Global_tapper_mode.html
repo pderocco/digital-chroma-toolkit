@@ -1,0 +1,52 @@
+<h1>GLOBAL tapper mode</h1>
+<p>This controls the Digital Chroma's panel {_tapper}. It has three
+  settings: "off" to disable it; "switches" to enable
+  it only for switch presses; and "on" to enable it for switch
+  presses and for changes in the value of
+  {_selector_parameter selector parameters}.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-9.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Tapper Mode.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,9.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">switches</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td class="c">on</td>
+    </tr>
+  </table>

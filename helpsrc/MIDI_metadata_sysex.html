@@ -1,0 +1,51 @@
+<h1>MIDI metadata sysex</h1>
+<p>This contains the timestamp and metadata from a {_program}. It also includes
+  five {_parameter parameters} that describe the relationships among programs.
+  It begins with 15 bytes:</p>
+<ul>
+  <li>Year minus 2000 (0 to 99)</li>
+  <li>Month (1 to 12)</li>
+  <li>Day (1 to 31)</li>
+  <li>Hour (0 to 23)</li>
+  <li>Minute (0 to 59)</li>
+  <li>Second (0 to 59)</li>
+  <li>10ms (0 to 99)</li>
+  <li>100\us (0 to 99)</li>
+  <li>The program architecture, currently always 0</li>
+  <li>The program version, currently always 0</li>
+  <li>The {Common_link_program link bank} parameter</li>
+  <li>The {Common_link_program} parameter</li>
+  <li>The {Common_link_mode} parameter</li>
+  <li>The {Common_sequence_program sequence bank} parameter</li>
+  <li>The {Common_sequence_program} parameter</li>
+  </ul>
+<p>This may be followed by one or more lines of text, using only ASCII blanks
+  and printables, and each line must end with a newline (ASCII 10). Any
+  violation of this renders the sysex invalid.</p>
+<p>Typically, the text metadata contains lines in the form <i>name=value</i>.
+  The Toolkit uses the following three:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">name</td>
+    <td>The name of the program. This is the only metadata the Digital Chroma
+      understands; it displays the name briefly when the program is
+      selected.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>descr</td>
+    <td>The description of the program. There can be more than one of these, to
+      represent a multi-line description.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>gangs</td>
+    <td>An 8-digit hex number using lower-case letters (00000000 to ffffffff),
+      where each set bit indicates that the corresponding A/B pair of parameter
+      {_cluster clusters} is ganged. The lsb refers to Glide, and the msb
+      refers to Pan.</p>
+    </tr>
+  </table>
+<p>Other tools could add other text metadata; the Digital Chroma and the
+  Toolkit both preserve metadata they don't understand.</p>

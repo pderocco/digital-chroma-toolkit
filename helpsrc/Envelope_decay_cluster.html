@@ -1,0 +1,20 @@
+<h1>ENVELOPE decay cluster</h1>
+<p>{envelope-decay-cluster.png width=373}</p>
+<p>This contains a {Envelope_decay_time <i>time</i>} {_slider} to set the time
+  it takes for the envelope to drop toward zero once it has completed its
+  attack phase. Since it slows down as it approaches zero, and theoretically
+  never gets there, this is actually the "time constant",
+  indicating how long it would have taken to get to zero if it didn't
+  slow down. The {_default_value} is infinity, for a note that lasts as long as
+  the key is held.</p>
+<p>This also includes two modulation inputs. The
+  {Envelope_decay_self_mod <i>self mod</i>} slider determines how much the
+  decay time is affected by its own value. When set to a negative value, it
+  causes the initial decay to be sped up; setting it to a large negative value
+  yields a very short initial spike and a long tail, but the lower the
+  envelope amplitude, the less of a spike.</p>
+<p>The {Envelope_decay_mod_select <i>mod select</i>} {_button buttons} and
+  {Envelope_decay_mod_depth <i>mod depth</i>} {_slider} allow the decay time
+  to be modulated by either {_lever} or {_pedal}, the note pitch, the
+  {_velocity}, or the optional pressure sensor. Positive modulation increases
+  the decay time, negative modulation decreases it.</p>

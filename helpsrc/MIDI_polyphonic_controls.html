@@ -1,0 +1,17 @@
+<h1>MIDI polyphonic controls</h1>
+<p>The Digital Chroma also uses CC84, Portamento Controller, which it calls
+  "Note Select", for another purpose: to direct an immediately
+  following control to a specific note. If that control doesn't support
+  polyphony, it is ignored, rather than being treated as a mono control. But
+  whether it is ignored or not, the Note Select control is consumed so that
+  subsequent controls are unaffected.</p>
+<p>This feature works on Pitch Bend, and Control Changes for the levers,
+  pedals, ribbon, volume, and pan. It doesn't work for Mono Pressure,
+  because MIDI already provides a Poly Pressure message. Also, only one Note
+  Select control is needed before hi-res controls.</p>
+<p>The Digital Chroma only generates these when an External input port is
+  placed in MPE Mode, an external controller uses it to generate polyphonic
+  controls, and the MIDI output is being sent to an external DAW for
+  recording.</p>
+<p class="extra">Portamento Controller/Note Control isn't recognized on
+  any of the channels in an MPE zone.</p>

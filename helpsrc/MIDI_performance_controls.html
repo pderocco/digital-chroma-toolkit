@@ -1,0 +1,23 @@
+<h1>MIDI performance controls</h1>
+<p>Each lever generates two non-overlapping {_unipolar} controls, such that
+  when one is nonzero the other is zero. However, from MIDI the two sides of
+  each lever are two completely independent controls. When a program uses lever
+  1 as a modulation source, it is really subtracting the \-lever value
+  from the +lever value. When it uses +lever or \-lever, it only listens
+  to that one control. Note that {_global_parameter global parameters}
+  determines the physical polarity of each lever, and should be set based on
+  the performer's preference.</p>
+<p>The pedals normally generate unipolar controls, and the ribbon generates a
+  {_bipolar} control. They too have global parameters to invert them, to allow
+  the Digital Chroma to be used with as many different devices as possible.
+  There are also global parameters to support custom bipolar pedals using two
+  controls for each, but if this isn't done, the \-pedal 1 and
+  \-pedal 2 controls could be used by other completely independent
+  external controllers.</p>
+<p>The Volume control comes from the VOLUME slider, and has an x<sup>2</sup>
+  curve in the player. The nominal value is 90, which is 6db below maximum. The
+  LSB isn't supported.</p>
+<p>On input, the Pan control, when set to a nonzero value, reduces the
+  available pan range for the player's stereo output, nudging or forcing
+  it to the left or right. Nothing in the Digital Chroma generates this. The
+  LSB isn't supported.</p>

@@ -1,0 +1,11 @@
+<h1>MIDI Program Write</h1>
+<p>NRPN 19,0 writes program data to a file, or reports the contents of the
+  file when requested. The Bank MSB and the Data MSB specify the bank and
+  program number.</p>
+<p><i>Editor input:</i> This writes the data from the preceding
+  {MIDI_program_sysex} to the specified file, or deletes it if the Sysex is
+  missing or empty. It sends back {MIDI_Program_Write_Metadata} NRPN 20,0,</p>
+<p><i>Editor output:</i> This is sent back in response to {MIDI_Program_Read}
+  NRPN 83,0 on the Editor input channel, preceded by a Program Sysex containing
+  the file data, or no Sysex if the file is missing.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>

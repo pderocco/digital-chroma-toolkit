@@ -1,0 +1,27 @@
+<h1>MIDI Program Change</h1>
+<p>While this isn't an {_NRPN}, it is describe among the other NRPN messages
+  because it is logically part of the same structure of program manipulation
+  commands and responses. It causes the loading of a {_program} from a file
+  into a {_player}, or reports such loading.</p>
+<p><i>Editor input:</i> This loads a program into the Main player, just like
+  selecting a program from the panel, and creates a new virtual {_instrument}.
+  The link parameters can also set up a link, generating additional messages
+  into the Link player. The program number and bank from which the program is
+  loaded become attributes of the program, and are shown in the 3-digit
+  display. If the file exists, the timestamp is read from the file, which
+  causes the bottom two bits of the {MIDI_program_attributes Program Flags}
+  attribute to be set to Unmodified. If the file doesn't exist, there is no
+  timestamp, so the flags are set to Scratch. In either case, this sends a
+  {MIDI_Program_Set} message back to the editor, containing the contents of the
+  program.</p>
+<p><i>Editor output:</i> This is never sent. {MIDI_Program_Set} is sent
+  instead, because an external editor always needs to know the contents of the
+  current program.</p>
+<p><i>Record output:</i> This is sent whenever it is received by the Main or
+  Link player, whatever the source. It is also used in lieu of Program Load No
+  Link, since link parameters are meaningless in Playback input.</p>
+<p><i>Playback input:</i> This loads a program into a playback player.
+  Parameters having to do with links are ignored.</p>
+<p><i>Main external input:</i> Same as <i>Editor input</i>.</p>
+<p><i>Link external input:</i> Not supported, because the Link program is
+  always selected by the link parameters in the Main program.</p>

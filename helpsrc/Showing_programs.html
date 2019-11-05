@@ -1,0 +1,32 @@
+<h1>Showing programs</h1>
+<p>The <em>Programs</em> screen normally shows one bank of {_program programs},
+  as an array of fifty {_button buttons}. Each button shows a program number,
+  and if that program exists and has a name, shows the name as well. If a
+  particular numbered program doesn't exist, its button is gray.</p>
+<p>If a stored program matches the {_current_program}, its button is tinted
+  light green. If its number matches, but its contents don't, it is
+  tinted pink instead.</p>
+<p class="extra">This happens as soon as you begin to edit the current program.
+  It also can happen if you use the <em>Programs</em> screen to modify the
+  stored program.</p>
+<p>To show a different bank, click one of the bank numbers at the top. To show
+  the current bank (the bank containing the current program) again, you can
+  either click its number at the top, or the <i>current</i> button.</p>
+<p class="extra">The difference between the two is that when <i>current</i> is
+  selected, and you select a program in another bank from the Chroma's
+  control panel, the <em>Programs</em> screen automatically switches to that
+  bank. There is also a difference when you set up a
+  {Linking_programs link}.</p>
+<p>There are also some indicators that can appear in program buttons:</p>
+<p style="margin-left: 30px">{link2.png height=16} appears if
+  the stored program contains a {_link_program link}, and shows what program it
+  links to. A 1- or 2-digit number implicitly refers to the same bank; a
+  3-digit number refers to a specific bank.</p>
+<p style="margin-left: 30px">{seq2.png height=16} appears if
+  the stored program contains a {_sequence_program} parameter, and shows what
+  program it refers to.</p>
+<p style="margin-left: 30px">{l.png height=16} means that the
+  program is linked to by the currently selected program.</p>
+<p style="margin-left: 30px">{s.png height=16} means that the
+  program is the "sequence program" of the current program, so it
+  will be selected next if the sequence program footswitch is pressed.</p>

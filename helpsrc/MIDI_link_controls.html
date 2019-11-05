@@ -1,0 +1,30 @@
+<h1>MIDI link controls</h1>
+<p>The Link Balance, Spread and Detune controls use non-standard high-numbered
+  MIDI controls to introduce differences between the main and
+  {_link_program link} sounds, without having to modify the {_program programs}
+  controlling those sounds. The {_preprocessor} automatically injects these,
+  with complementary values, into the main and link channels whenever a link is
+  set up, or sets them to mid-scale when a link is turned off. These controls
+  are lo-res, are always monophonic, and set values that are sampled once by
+  each voice at the start of a note, so that when a link is turned on or off,
+  the sounds of currently held notes don't suddenly change. It also
+  means that when they're edited, a note must be restruck in order to
+  hear the changes.<p>
+<p>The Link Balance control is a linear volume control. As the Link Balance
+  parameter is varied from \-15 to 15, it chooses values that make the
+  main and link differ by \-15db to 15db, in 1db steps, while retaining a
+  constant power sum. At mid-scale, both channels are set to 90, and at either
+  extreme one is set to 22 and the other to 125.</p>
+<p>The Link Spread squeezes the panning range of the sound toward one side or
+  the other. When set to 64 midscale, the sound can pan itself from full left
+  to full right; when set to 32 or 96, panning is constrained to the left or
+  right half of the range; and when set to zero or 127, the sound is forced all
+  the way to the left or right. Since the Link Spread parameter normally
+  injects these into the main and link players with opposite values, the two
+  sounds are spread to opposite sides.</p>
+<p>The Link Detune detunes the sound slightly, and is scaled in half cents at
+  middle C, with the beat frequency doubling with every two octaves
+  (half-scale detuning). Since the Link Detune parameter normally injects these
+  into the main and link players with opposite values, the effective scaling is
+  in cents at middle C, just like the Tune Shift parameter, or the Detune
+  parameter with Detune Scale set to half scale.</p>

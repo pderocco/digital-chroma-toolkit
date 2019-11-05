@@ -1,0 +1,17 @@
+<h1>MIDI program numbering</h1>
+<p>The Digital Chroma contains nine banks of 50 {_program programs}. Over MIDI,
+  the bank is specified by the Bank MSB (CC0), and the Bank LSB (CC32) is
+  ignored. It uses zero-based numbering, so the valid bank number range is 0 to
+  8 and the valid program number range is 0 to 49. On MIDI input, the Bank
+  value persists, so isn't needed before every Program Change or
+  program-related {_NRPN}, but on MIDI output, every program message (Program
+  Change or NRPN) is preceded by a Bank MSB.</p>
+<p>Selecting a Bank MSB outside the 0 to 8 range causes any subsequent message
+  that uses the bank number to be ignored completely. The same is true of any
+  message that contains a program number outside the 0 to 49 range. Such
+  ignored messages are filtered out, and don't even generate a response
+  or echo to an external editor or sequence recorder.</p>
+<p>The only time one-based numbering is used for programs and banks over MIDI
+  is in the values of parameters or attributes that refer to programs, because
+  these values are seen by the user, and zero is often a valid value with a
+  special meaning (e.g., current bank, previous program).</p>

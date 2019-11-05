@@ -1,0 +1,82 @@
+<h1>COMMON link program</h1>
+<p>This controls what {_program} the current program is {_link_program linked}
+  to. It can be either a 1- or 2-digit number to link to the same bank as the
+  current program, or a 3-digit number to link to a specific bank. The
+  difference is meaningful when the current program is stored in a different
+  bank.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_link_cluster <i>link</i> cluster} within
+  the {Common_section}, but this only allows it to be viewed, and possibly
+  reset to its default value of "self" by
+  {_long-press long-pressing} the <i>link program</i> button. In general, it is
+  set from the {Programs_screen} by {_long-press long-pressing} the program you
+  want to link to, to view the {Program_popup}, and then selecting the mode
+  there.</p>
+
+<h2>Chroma panel</h2>
+<p>A link is set up as described under the {Common_link_mode}
+  parameter. A 1- or 2-digit link is set by pressing one or more of the Link
+  switches on the left panel, then pressing a numbered switch on the right
+  panel. A 3-digit link is set by holding one or more of the Link switches,
+  pressing 1 to 9 on the right panel to specify the bank, then separately
+  pressing the link program number.</p>
+<p>You can also link to "self", which means that the main and link
+  {_instrument instruments} play the same program (although they can still have
+  separate octave transpositions), and both are edited in parallel. This is
+  really only useful with a unison link, and can be selected by holding Link
+  Unison and then pressing Prog Select.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed as two separate parameters. The bank is set via {_NRPN}
+  0,0, and the program by NRPN 0,1. Changing the bank without changing the
+  program doesn't immediately load a new program into the link
+  instrument.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">bank</td>
+    <td width="15%" class="c i u">program</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">current bank</td>
+    <td class="c">self</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">1</td>
+    <td class="c">1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td class="c">9</td>
+    <td class="c">9</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">50</td>
+    <td/>
+    <td class="c">50</td>
+    </tr>
+  </table>
+<p>The bank is ignored if the program is set to "self".</p>

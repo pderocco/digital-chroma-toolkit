@@ -1,0 +1,14 @@
+<h1>MIDI Program Load No Link</h1>
+<p>NRPN 22,0 loads a {_program} into the Main {_instrument}, but retains the
+  settings of the first nine link-related parameters from the current program.
+  (This supports the panel function where NO LINK is followed by a program
+  number.) The Bank MSB and Data MSB specify the program bank and number.</p>
+<p><i>Editor input:</i> This loads a program into the Main player, creating a
+  new instrument. Since the link parameters are copied over, this effectively
+  creates a new program, so the timestamp is set to the present. This echoes a
+  {MIDI_Program_Set} NRPN 16,0 containing the updated timestamp.</p>
+<p><i>Editor output:</i> This is never sent. {MIDI_Program_Set} is sent
+instead.</p>
+<p><i>Record output:</i> This is translated into {MIDI_Program_Change}, since
+  the link parameters have no effect in playback players.</p>
+<p><i>Playback input, External input:</i> Not supported.</p>

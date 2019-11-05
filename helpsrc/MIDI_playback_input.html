@@ -1,0 +1,8 @@
+<h1>MIDI playback input</h1>
+<p>The {_USB_device_port} is used to play back sequences from an external DAW.
+  All 64 channels have their own {_player players}, and sending anything that
+  was previously recorded back into the Digital Chroma results in a precise
+  duplicate performance. {_NRPN NRPNs} that alter stored programs are not
+  supported.</p>
+<p>The only difference between this dialect and the {MIDI_record_output}
+  dialect is that on input an {MIDI_Edit_Request} message is recognized.</p>

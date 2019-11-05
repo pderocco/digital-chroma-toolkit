@@ -1,0 +1,12 @@
+<h1>MIDI Program Store</h1>
+<p>NRPN 23,0 stores the {_program} from the Main {_instrument} to a file, or
+  reports such storing. The Bank MSB and the Data MSB specify the bank and
+  program number. If the program is a scratch program, the file is deleted
+  instead.</p>
+<p><i>Editor input:</i> This stores the program from the Main instrument, and
+  changes the program number and bank attributes accordingly, which clears the
+  {_modified_flag}. It also echoes the operation back to the editor.</p>
+<p><i>Editor output:</i> This is sent whenever it is performed on the Main
+  instrument, either as an echo of a received Program Store, or because the
+  STORE switch was pressed.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>

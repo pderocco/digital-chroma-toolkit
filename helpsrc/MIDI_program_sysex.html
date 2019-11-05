@@ -1,0 +1,23 @@
+<h1>MIDI program sysex</h1>
+<p>This contains a complete Digital Chroma {_program}. It begins with the same
+  ten bytes as a {MIDI_metadata_sysex}:</p>
+<ul>
+  <li>Year minus 2000 (0 to 99)</li>
+  <li>Month (1 to 12)</li>
+  <li>Day (1 to 31)</li>
+  <li>Hour (0 to 23)</li>
+  <li>Minute (0 to 59)</li>
+  <li>Second (0 to 59)</li>
+  <li>10ms (0 to 99)</li>
+  <li>100\us (0 to 99)</li>
+  <li>The program architecture, currently always 0</li>
+  <li>The program version, currently always 0</li>
+  </ul>
+<p>It is then followed by a complete set of parameters:</p>
+<ul>
+  <li>36 bytes of Common and Control parameters</li>
+  <li>79 bytes of A channel parameters</li>
+  <li>79 bytes of B channel parameters</li>
+  </ul>
+<p>This may be followed by one or more lines of text
+  {MIDI_metadata_sysex metadata}.</p>

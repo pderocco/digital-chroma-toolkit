@@ -1,0 +1,16 @@
+<h1>MIDI Program Exchange</h1>
+<p>NRPN 24,0 exchanges the {_program} in the Main {_instrument} with a file, or
+  reports such an exchange. The Bank MSB and the Data MSB specify the bank and
+  program number.</p>
+<p><i>Editor input:</i> This exchanges the program in the Main instrument, and
+  sends back {MIDI_Program_Store} NRPN 23,0 and {MIDI_Program_Set} NRPN 16,0.
+  If the program in the Main instrument is a scratch program, the file is
+  deleted. If the file didn't exist, a scratch program is loaded into the
+  instrument. The current program number and bank attributes are unchanged.<p>
+<p><i>Editor output:</i> This is never sent. Program Store NRPN 23,0 and
+  Program Set NRPN 16,0 are sent instead, whether the operation was caused by
+  receipt of Program Exchange, or the user pressed SET SPLIT, STORE. This is
+  because it is assumed the editor needs to know the complete contents of the
+  current program, but doesn't know the complete contents of stored
+  programs.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>

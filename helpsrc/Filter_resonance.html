@@ -1,0 +1,80 @@
+<h1>FILTER resonance</h1>
+<p>These control the basic {_resonance} of each {_filter} before modulation.
+  The values are shown as the mathematical "Q" values, ranging from
+  0.5 to 200. There are also three more settings at the high end of the scale
+  that have an infinite Q, which causes the filter to oscillate, superimposing
+  a sine wave on top of whatever signal is going into the filter, with three
+  different levels of overdrive.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  {Filter_resonance_cluster Filter resonance clusters} within the
+  {Filter_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>CUTOFF</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-38.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Resonance.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,55</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,55</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<p>The values are displayed as Q values, except for the top three values which
+  cause self-oscillation:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">0.5</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">124</td>
+    <td class="c">200</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">125</td>
+    <td class="c">low self-osc</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">126</td>
+    <td class="c">med self-osc</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">high self-osc</td>
+    </tr>
+  </table>

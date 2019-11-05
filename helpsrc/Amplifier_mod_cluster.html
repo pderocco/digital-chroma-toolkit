@@ -1,0 +1,22 @@
+<h1>AMPLIFIER mod cluster</h1>
+<p>{amplifier-mod-cluster.png width=373}</p>
+<p>The <i>AMPLIFIER</i> section has two of these for each {_channel}, called
+  <i>mod 1</i> and <i>mod 2</i>. Each one contains a
+  {Amplifier_mod_select <i>mod select</i>} {_parameter} that chooses a
+  modulation source, and a {Amplifier_mod_depth <i>mod depth</i>} parameter
+  that adjusts its level. The two modulations are added together, and then
+  multiplied by the {Amplifier_post_mod_cluster <i>post mod</i>} value.</p>
+<p>The <i>mod select</i> parameter can select any {_envelope}. The default is
+  envelope 1A for <i>mod 1</i>, envelope 1B for <i>mod 2</i>. You can also
+  choose a fixed 1-unit value, which is only useful in the B channel, when the
+  {Control_patch_cluster <i>patch</i>} parameter uses the B amplifier to
+  control the mix of the B oscillator with the A oscillator. If you use it on
+  an amplifier that is connected to the output, the note will never turn off,
+  which is likely not what you want. But in the original Chroma, you
+  couldn't set the mix of the B oscillator without wasting an envelope
+  generator.</p>
+<p>The mod depth is shown in decibels, and has a range from off to +6db above
+  the nominal level. The default value for mod 1 is 0db, and the default for
+  mod 2 is off. However, the mod 1 sliders have a "significant"
+  value of off, and the mod 2 sliders have a "significant" value of
+  0db, which you can quickly set by tapping.</p>

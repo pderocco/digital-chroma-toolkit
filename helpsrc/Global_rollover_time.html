@@ -1,0 +1,51 @@
+<h1>GLOBAL rollover time</h1>
+<p>This sets the delay when playing in certain keyboard algorithms, to allow a
+  complete chord to be acquired before assigning the notes to {_voice voices}.
+  The higher this is set, the more delay you'll feel, but the sloppier
+  you can be about playing chord notes simultaneously.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-4.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Rollover Time.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,4.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">5ms</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">20</td>
+    <td class="c">100ms</td>
+    </tr>
+  </table>

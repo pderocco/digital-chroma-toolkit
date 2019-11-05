@@ -1,0 +1,16 @@
+<h1>MIDI Program Set Attributes</h1>
+<p>NRPN 18,0 sets the program bank and number associated with the current
+  {_program} in the Main {_instrument}, or reports its {_timestamp}, bank,
+  number, and flags with a preceding {MIDI_timestamp_sysex}.</p>
+<p><i>Editor input:</i> This sets the Program Bank and Number associated with
+  the current program in the Main instrument to the Bank MSB and Data MSB
+  values in the message. Any preceding timestamp Sysex is consumed but ignored.
+  Any Data LSB is ignored.</p>
+<p><i>Editor output:</i> This is sent in response to
+  {MIDI_Program_Get_Attributes} Sysex 82,0 on the Editor input channel. It is
+  preceded by a Timestamp Sysex, and includes a Data LSB containing the
+  {MIDI_program_attributes}.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>
+<p class="extra">When the Digital Chroma sends this, the editor must expect a
+  Data MSB followed by a Data LSB. When the Digital Chroma receives this, it
+  only expects a Data MSB, and will ignore any subsequent Data LSB.</p>

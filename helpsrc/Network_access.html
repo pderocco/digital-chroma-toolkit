@@ -1,0 +1,15 @@
+<h1>Network access</h1>
+<p>The Digital Chroma makes a certain part of its internal file system
+  accessible over the Ethernet interface using the SMB networking protocol
+  (which is what Windows uses natively, MacOS understands, and which Linux
+  accesses via a Samba client). The machine name is "Chroma#",
+  where # is a digit in the range 1 through 9 set by the {Chroma_number}
+  calibration setting, to allow for multiple Digital Chromas on the same
+  network. The share name is simply "chroma". (These names may be
+  displayed by the computer in upper case.) So, in Windows, assuming the
+  default setting of 1, one could open the folder
+  "\\\\CHROMA1\\CHROMA" and see the nine program subdirectories and
+  various other files.</p>
+<p>When this is first opened, it asks for a username and password. The username
+  can be anything, and the default password is "1234567890", but
+  the latter can be changed via the {Chroma_password} setting.</p>

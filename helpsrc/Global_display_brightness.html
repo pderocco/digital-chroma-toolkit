@@ -1,0 +1,49 @@
+<h1>GLOBAL display brightness</h1>
+<p>This selects the brightness of the Digital Chroma's displays and
+  LEDs.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-22.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Display Brightness.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,22.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">low</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">medium</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td class="c">high</td>
+    </tr>
+  </table>

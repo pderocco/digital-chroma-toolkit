@@ -1,0 +1,58 @@
+<h1>GLOBAL reverb room</h1>
+<p>This controls the reverb room used by the sound. On startup, and whenever it
+  is changed, it injects a {MIDI_reverb_controls reverb room} control into the
+  Main and Link {_instrument instruments}. MIDI playback instruments use the
+  recorded value of this control, not this {_global_parameter}.</p>
+<p>Note that this may be overridden by the {_program program's}
+  {Control_reverb_room} {_parameter}.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-1.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Reverb Room.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,1.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">small</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td class="c">medium</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td class="c">large</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td class="c">huge</td>
+    </tr>
+  </table>

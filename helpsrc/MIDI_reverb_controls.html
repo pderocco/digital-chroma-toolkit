@@ -1,0 +1,14 @@
+<h1>MIDI reverb controls</h1>
+<p>The Reverb Room control divides the 0 to 127 range into quarters, since
+  there are four rooms. On output, it always transmits values 0, 32, 64 or 96.
+  The Reverb Send control uses an x<sup>2</sup> transfer function, and also
+  turns down the dry sound up to 12db when raised past 96. For the Main and
+  Link instruments, these controls come from global parameters, and are sent
+  on startup or whenever those parameters are changed. But since they're
+  controls and not program parameters, they can be recorded as part of a
+  sequence, and each separately recorded channel can have different reverb
+  control values.</p>
+<p class="extra">A {_program} that needs specific reverb settings can override
+  the performance controls, in which case the latter are ignored. This is done
+  with the {Control_reverb_room} and
+  {Control_reverb_send} program parameters.</p>

@@ -1,0 +1,84 @@
+<h1>GLIDE time</h1>
+<p>These control how long it takes for a voice's pitch to change from one
+  note to another, when {_glide} is being used.</p>
+<p>Glide normally only functions in monophonic
+  {Common_keyboard_algorithm} and the poly ordered and poly
+  buffered algorithms. However, it can also be enabled on the normal poly mode
+  via the left {Common_footswitch_mode}. When the footswitch is
+  pressed, voice assignment temporarily becomes monophonic, and glides from
+  note to note.</p>
+<p>Glide A always controls {_oscillator} A, and glide B always controls
+  oscillator B, so to use glide one normally {_gang gangs} the
+  {Glide_cluster glide clusters} together.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Glide_cluster Glide clusters} within the
+  {Glide_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>GLIDE</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-6.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Glide Time.</p>
+<p>The switch graphics call this a "rate", but since larger values
+  produce longer times, this is really a "time", and this
+  terminology is corrected in the Toolkit and the display.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,0</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,0</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<p>The values are displayed as times, in milliseconds (ms) or seconds (s). The
+  constant time and exponential shapes use the values in the second column,
+  while the constant slope and glissando shapes use the values in the third
+  column:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">time</td>
+    <td width="10%" class="c i u">per semi</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">instant</td>
+    <td class="c">instant</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">10ms</td>
+    <td class="c">40ms</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">15s</td>
+    <td class="c">980ms</td>
+    </tr>
+  </table>

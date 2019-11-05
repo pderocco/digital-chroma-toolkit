@@ -1,0 +1,36 @@
+<h1>Scratch programs</h1>
+<p>The original Chroma introduced the concept of the "scratch"
+  program, which was a {_program} in which all {_parameter parameters} had
+  default values, and those values were chosen to yield a raw sawtooth wave
+  sound, as a useful place to start programming. A scratch program has most
+  parameter set to zero, or to 1 if that is the minimum parameter value, but
+  there are some exceptions:</p>
+<ul>
+  <li>The two envelope Decay Time parameters are set to
+    "infinite".</li>
+  <li>The filter Tune parameter is set to maximum, for a wide-open filter.</li>
+  <li>The volume Mod 1 Depth parameter is set to 0db, for a nominal modulation
+    by envelope 1A.</li>
+  <li>Although the various mod depths are set to zero, their corresponding mod
+    selects are preset to different useful choices.</li>
+  </ul>
+<p>In the original Chroma, the only way to obtain a scratch sound was to turn
+  on both EDIT A and EDIT B, hold PARAM SELECT down, and press each number
+  switch; doing so would reset the corresponding parameter to its default
+  value. The Digital Chroma still supports this, and allows extended parameters
+  to be reset by holding SET SPLIT in Parameter Select mode and pressing
+  number switches. But you can also press SET SPLIT in Program Select mode and
+  then press 25 to clear all parameters. Note that this doesn't actually change
+  the program number in the display.</p>
+<p>In the original Chroma, all fifty stored programs always existed, because
+  they were stored in fixed areas of the non-volatile CMOS RAM. The Digital
+  Chroma, on the other hand, stores programs in files on a flash file system
+  (very much like an ordinary thumb drive), and it represents a scratch
+  program by the absence of the corresponding file. If you select a
+  non-existent program, you get a scratch program; if you store a scratch
+  program over an existing program, it deletes that file.</p>
+<p>Since "scratch" is therefore an easily recognizable condition,
+  not just some magic set of a couple hundred different parameter values, the
+  program number display has two annunciators in it, one saying SCRATCH and
+  the other saying MODIFIED. (The original Chroma just turned on a decimal
+  point in the seven-segment readout to indicate MODIFIED.)</p>

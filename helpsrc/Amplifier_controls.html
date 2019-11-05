@@ -1,0 +1,30 @@
+<h1>Amplifier controls</h1>
+<p>In the original Chroma, the architecture of each {_channel channel's} volume
+  control is simple: two {_envelope envelopes} are selected and scaled by their
+  corresponding depth {_parameter}, added together, and then multiplied by an
+  optional third modulation source such as a pedal. The Digital Chroma keeps
+  this same structure, but provides more third modulation choices, and allows
+  its depth to be varied.</p>
+<p>There is also one more choice for the first two modulation sources, called
+  "fixed", which outputs a perpetual value of one unit. It is
+  intended for use in the B channel, in those {_patch patches} which mix the B
+  amplifier output with the A oscillator output. In the original Chroma, you
+  had to waste an envelope for this purpose.</p>
+<h2>Panning controls</h2>
+<p>The channel's output can be panned between the left and right
+  instrument outputs under control of the extended Pan parameter. It has
+  extended modulation select and depth controls. For those patches which have
+  independent outputs from the A and B channels, the two channels can be panned
+  separately; for those patches which have only a single output, the B channel
+  panning is ignored.</p>
+<p>There is also a {Common_link_spread Link Spread} parameter, which only takes
+  effect when a link is in effect. If set to something other than zero, it
+  constrains the entire pan range toward one side or the other. For instance,
+  if it is set to 45\d, the regular pan control in the Main sound will be
+  centered around 45 degrees, and will therefeore pan from center to 90 degrees
+  to the right; the Link sound will be coaxed to the opposite side. If set to
+  90\d, the Main sound will be forced all the way to the right, regardless
+  of its own pan control, and the Link sound will be forced all the way to the
+  left. There is also a {Control_pan_spread} parameter, which does
+  the same thing when the {Control_voice_count} parameter is used
+  to assign multiple voices per note.</p>

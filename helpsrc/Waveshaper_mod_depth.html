@@ -1,0 +1,98 @@
+<h1>WAVESHAPER mod depth</h1>
+<p>These control the amount of waveshaper width modulation. The displayed
+  values are the percentage width variation per {_unit} of modulation, if the
+  "saws" or "pulse" shape is selected, or the number of
+  cycles of FM per unit of modulation if one of the "FM" shapes are
+  selected. This has no effect for a "noise" or
+  "impulse" shape is selected.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Waveshaper_mod_cluster Waveshaper mod clusters}
+  within the {Waveshaper_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>WIDTH</i> section of the right panel, under
+  the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>{sw-36.png height=48}</td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-36.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Wave Mod1-2 Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,51</td>
+    <td>1,53</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,51</td>
+    <td>2,43</td>
+    </tr>
+  </table>
+<p>Since these are {_bipolar} parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<p>The values are displayed as percentages or cycles:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">percent</td>
+    <td width="10%" class="c i u">cycles</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">\-100%</td>
+    <td class="c">\-16cyc</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td class="c">off</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+100%</td>
+    <td class="c">+16cyc</td>
+    </tr>
+  </table>

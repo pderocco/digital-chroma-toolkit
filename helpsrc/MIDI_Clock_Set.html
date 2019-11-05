@@ -1,0 +1,13 @@
+<h1>MIDI Clock Set</h1>
+<p>NRPN 48,0 sets or reports the current UTC time in the preceding
+  {MIDI_time_sysex}.</p>
+<p><i>Editor input:</i> If the time in the preceding Time sysex is valid, this
+  sets the Digital Chroma's clock. The Data MSB value is ignored, but must
+  still be set to trigger the operation. If the Digital Chroma is connected to
+  the Internet, though, any change will be overridden by the correct time as
+  read from an Internet time server. Nothing is sent back to the editor.</p>
+<p><i>Editor output:</i> This reports the current time in the Digital
+  Chroma's clock in response to {MIDI_Clock_Get} NRPN 112,0. The data
+  value is 1 if the clock is synchronized to the Internet, 0 if it is
+  free-running.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>

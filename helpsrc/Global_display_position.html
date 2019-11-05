@@ -1,0 +1,50 @@
+<h1>GLOBAL display position</h1>
+<p>This shifts the Digital Chroma's displays up or down a little, to
+  compensate for parallax that depends upon your position relative to the
+  keyboard.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-21.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Display Position.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,21.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">\-10</td>
+    <td class="c">\-10</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">10</td>
+    <td class="c">+10</td>
+    </tr>
+  </table>

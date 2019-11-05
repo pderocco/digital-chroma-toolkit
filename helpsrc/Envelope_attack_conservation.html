@@ -1,0 +1,113 @@
+<h1>ENVELOPE attack conservation</h1>
+<p>These select one of seven "conservation" amounts for the
+  {_envelope} generators. This represents how much of the preceding
+  note's amplitude is added to this note's amplitude when the same
+  {_voice} is used for a new note.</p>
+<p>The default is "none". The 10% to 50% choices take that
+  percentage the envelope amplitude at the start of the new note and add it to
+  the amount computed from the envelope {Envelope_peak_cluster peak}
+  parameters, but still limited to a maximum of two units. This allows restruck
+  notes to build in amplitude.</p>
+<p>The "truncate" setting turns off conservation, but it also
+  causes every envelope to be forcibly started at zero (assuming it has some
+  non-zero attack time). Normally, when a voice is reused, the attack starts at
+  the current value, but this can be undesireable when the envelope is used in
+  certain ways.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  {Envelope_attack_cluster Envelope attack clusters} within the
+  {Envelope_sections}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>ENVELOPE 1</i> and <i>ENVELOPE 2</i> sections
+  of the right panel, under the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">Env 1</td>
+    <td class="i u">Env 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-14.png height=48}
+      </td>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-21.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Env1/2 Conservation.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">Env 1</td>
+    <td class="i u">Env 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,14</td>
+    <td>1,27</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,14</td>
+    <td>2,27</td>
+    </tr>
+  </table>
+<p>Since these are {_bipolar} parameters, with a \-1 to +5 internal range,
+  the values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">63</td>
+    <td>truncate</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td>none</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">65</td>
+    <td>10%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">66</td>
+    <td>20%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">67</td>
+    <td>30%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">68</td>
+    <td>40%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">69</td>
+    <td>50%</td>
+    </tr>
+  </table>

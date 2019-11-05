@@ -1,0 +1,95 @@
+<h1>COMMON sequence program</h1>
+<p>This controls what {_program} will be selected when the
+  {_sequence_program Sequence Program} footswitch is pressed. It can be either
+  a 1- or 2-digit number to step to a program in the same bank as the current
+  program, or a 3-digit number to step to a program in a specific bank. The
+  difference is meaningful when the current program is stored in a different
+  bank.</p>
+<p>This can also be set to "previous", which means that the
+  footswitch will re-select whatever was selected before the current program.
+  This can be useful if you have a program that you want to be able to step to,
+  and then step back to wherever it came from. For instance, programs 1, 2, and
+  3 might be set to step to program 50, and program 50 set to revert to
+  previous, in which case pressing the footswitch twice could step 1-50-1,
+  2-50-2, or 3-50-3. When it steps to "previous", it restores any
+  unsaved edits that may have been in effect in that earlier program.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_sequence_cluster <i>sequence</i> cluster}
+  within the {Common_section}, but this only allows it to be viewed, and
+  possibly reset to its default value of "previous" by
+  {_long-press long-pressing} the <i>program</i> button. In general, it is set
+  from the {Programs_screen} by {_long-press long-pressing} the program you
+  want to sequence to, to view the {Program_popup}, and then pressing the
+  "sequence program" button.</p>
+<p>Note that if this is changed in an otherwise unmodified program, the
+  modification is also automatically stored, so the program continues to appear
+  "unmodified". This reduces the number of steps needed to set up a chain of
+  sequenced programs. If the program was already modified, it is up to you to
+  store it, if you want all the changes stored.</p>
+
+<h2>Chroma panel</h2>
+<p>A 1- or 2-digit sequence program is set up by holding the Sequence Program
+  footswitch and pressing a numbered switch on the right panel. A 3-digit
+  sequence program is set up by holding PROGRAM SELECT and pressing the bank
+  number, then holding the footswitch and pressing the program number. Neither
+  operation actually switches to the new program; you have to press and release
+  the footswitch to do that.</p>
+<p>This can also be set to "previous" by holding the footswitch and
+  pressing PROGRAM SELECT.</p>
+<p>Note that if this is changed in an otherwise unmodified program, the
+  modification is also automatically stored, so the program continues to appear
+  "unmodified". If the program was already modified, it is up to
+  you to store it, if you want all the changes stored.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed as two separate parameters. The bank is set via {_NRPN}
+  0,11, and the program by NRPN 0,12.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">bank</td>
+    <td width="15%" class="c i u">program</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">current bank</td>
+    <td class="c">previous</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">1</td>
+    <td class="c">1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td class="c">9</td>
+    <td class="c">9</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">50</td>
+    <td/>
+    <td class="c">50</td>
+    </tr>
+  </table>
+<p>The bank is ignored if the program is set to "previous".</p>

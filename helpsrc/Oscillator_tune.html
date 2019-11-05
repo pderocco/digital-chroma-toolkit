@@ -1,0 +1,77 @@
+<h1>OSCILLATOR tune</h1>
+<p>These control the basic pitch of each {_oscillator} before modulation. Note
+  that each oscillator is always modulated by the corresponding {_glide}
+  output. The values are shown as the scale pitch heard when middle C is
+  played; the default value is C5, which is middle C, 5 octaves above MIDI
+  note zero.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  {Oscillator_tune_cluster Oscillator tune clusters} within the
+  {Oscillator_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>PITCH</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-26.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Osc Tune.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,36</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,36</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<p>The values are displayed as scale pitches:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">40</td>
+    <td class="c">C3</td>
+    <td>(down 2 octaves)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="i s">(semitones)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">C5</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="i s">(semitones)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">124</td>
+    <td class="c">C10</td>
+    <td>(up 5 octaves)</td>
+    </tr>
+  </table>

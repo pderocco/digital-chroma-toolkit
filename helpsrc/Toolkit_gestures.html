@@ -1,0 +1,119 @@
+<h1>Toolkit gestures</h1>
+<p>There are only a few simple gestures that you use to interact with the
+  Toolkit. It was designed with touch in mind, but can be used with a mouse as
+  well, although only the left mouse button is used. The gestures are:</p>
+<table class="vt">
+  <tr>
+    <td width="2%"/>
+    <td width="15%"><i>tap</i></td>
+    <td>Touching momentarily. You can also do this with the left mouse button,
+      but these pages always refer to "tapping" for simplicity.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>long-press</i></td>
+    <td>Touching for more than half a second.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>drag</i></td>
+    <td>Touching, sliding somewhere else, and releasing.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>long-drag</i></td>
+    <td>Touching for more than half a second, sliding somewhere else, and
+      releasing.</td>
+    </tr>
+  </table>
+<p>Except for the last one, these are all standard gestures, but what they do
+  depends upon what kind of {Toolkit_controls control} you touch or click:</p>
+<table class="vt">
+  <tr>
+    <td width="2%"/>
+    <td width="15%"><i>program button</i></td>
+    <td>Tapping selects the {_program} in that location, so that you can play
+      it. Long-pressing it displays a {_popup} that lets you do various other
+      things with the program, or with that program location. Dragging it onto
+      an empty program slot moves it to that location, while dragging it onto
+      an existing program swaps them.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>program bank button</i></td>
+    <td>Tapping selects that bank, so that you can then select a program within
+      it. Long-pressing it splits the screen and displays the bank in the lower
+      half, or changes the bank in the lower half if it is already split.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>Program Info button</i></td>
+    <td>Tapping this button in the {_Navigation_bar} reloads the current
+      program, discarding any edits you may have made. Long-pressing displays a
+      popup that lets you do other things, like store the program under its
+      current number, change the name, and so on.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><em>HELP</em> <i>button</i></td>
+    <td>Tapping switches to the current tab of the <em>Help</em> screen.
+      Long-pressing also navigates to the Home page.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td valign="middle">{question.png height=24} <i>button</i><br></td>
+    <td>Tapping switches to the current tab of the <em>Help</em> screen, and
+      navigates to the help page for whatever contained the button.
+      Long-pressing it opens it in a new tab.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>cluster button</i></td>
+    <td>Tapping displays a popup that provides access to all the
+      {_parameter parameters} in that {_cluster}. Long-pressing it resets all
+      the parameters in the cluster to their {_default_value default values}.
+      Dragging it onto another cluster button of the same type copies all the
+      parameters; if this is done between two paired A and B channel clusters,
+      it also {_gang gangs} them together, so that the A channel controls
+      operate both channels in parallel. Tapping a ganged B cluster (labeled
+      "=") ungangs them. Long-dragging a cluster button onto another of the
+      same type first resets the source to its defaults, but then swaps the
+      original values of those parameters with the target cluster.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>value button</i></td>
+    <td>Tapping sets a parameter to that value. Long-pressing resets it to its
+      default value instead.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>slider</i></td>
+    <td>Dragging horizontally changes the value. Long-pressing resets the
+      parameter to its default value. Tapping usually does nothing, but in a
+      few cases, it sets the parameter to a commonly used non-default value,
+      like 50% for a pulse width. This is called its "significant"
+      value.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>help link</i></td>
+    <td>Tapping shows a different page in the current tab if the link is blue,
+      or pops up a definition if green. Long-pressing a blue link shows it in a
+      new tab.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>help tab</i></td>
+    <td>Tapping switches to that tab. Long-pressing closes the tab, and if it
+      was the only tab, opens a new tab on the Home page. Dragging horizontally
+      scrolls the tabs, if there are more than fit onto the screen.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>help page</i></td>
+    <td>Dragging vertically scrolls the page, if it is longer than the screen.
+      Long-pressing in the bottom half (not on a link) scrolls to the bottom of
+      the page, and long-pressing in the top half scrolls to the top.</td>
+    </tr>
+  </table>

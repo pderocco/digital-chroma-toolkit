@@ -1,0 +1,75 @@
+<h1>COMMON edit number</h1>
+<p>This controls which numbered parameter the {_parameter_control} is connected
+  to.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_edit_cluster <i>edit</i> cluster} within
+  the {Common_section}. To set this to a particular parameter, you must first
+  manipulate that parameter elsewhere on the {Editor_screen} (or in some other
+  {_cluster} {_popup}), then tap the <i>edit</i> button to display this cluster
+  popup, then click the <i>parameter</i> button. This also initializes the
+  <i>mode</i> according to whether you manipulated an A parameter, a B
+  parameter, or two {_gang ganged} parameters.<p>
+<p>You can also reset this to its default, "patch", by
+  {_long-press long-pressing} the <i>parameter</i> button, or the <i>edit</i>
+  cluster button.</p>
+
+<h2>Chroma panel</h2>
+<p>This is set by placing the panel in {_parameter_select_mode}, and then
+  pressing a numbered switch to select a regular parameter that existed in the
+  original Chroma, or SET SPLIT followed by a numbered switch to select an
+  extended parameter added in the Digital Chroma.</p>
+<p>This is automatically set to the {Common_link_balance link balance}
+  parameter whenever a new link is set up, or the link mode is changed by
+  pressing a link switch or combination of switches twice in a row. This can be
+  re-selected by pressing current link switch or combination twice in a
+  row.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,10. Since it is a {_bipolar} parameter, the
+  values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="28%" class="i u">value</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">14</td>
+    <td>X50: amplifier post mod depth</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">63</td>
+    <td>X1: link spread</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td>link balance</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">65</td>
+    <td>P1: patch</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">114</td>
+    <td>P50: amplifier post mod select</td>
+    </tr>
+  </table>

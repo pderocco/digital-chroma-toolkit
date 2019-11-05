@@ -1,0 +1,34 @@
+<h1>Players</h1>
+<p>The {_player players} are the interface to the sound generation system. At
+  any moment, each player is playing on an active {_instrument} whose sound is
+  defined by its own private copy of a {_program}. When a new program is
+  selected for a player, either from the control panel or by a received MIDI
+  Program Change message, it isn't the same as changing all the parameters,
+  because a new instrument is created for the player, containing a copy of the
+  new program, and all subsequent notes are played on the new instrument.
+  However, if the old instrument is still generating sound, it continues to
+  exist as an inactive instrument until all its notes have died out. Notes are
+  never artificially truncated or changed in sound by the selection of a new
+  program.</p>
+<p>When a parameter is changed, it affects the current program in the active
+  instrument, but has no effect on any voices that may still be sounding from
+  an old instrument. It also has no effect on the original program stored in
+  the Digital Chroma's file system. It takes an explicit command, from
+  the STORE switch on the panel or from a MIDI message received from the
+  Toolkit, to cause a program to be stored from the Main player's active
+  instrument back to a file. (Players used for sequence playback aren't
+  allowed to modify stored programs.)</p>
+<p>If a performance control is changed, on the other hand, it affects all
+  notes in a player, regardless of what instrument they are playing on. When a
+  program is changed, all performance controls retain their current values,
+  because performance controls are attributes of the player, not the
+  instrument.</p>
+<p>The active instrument of the Main player is special in that its state is
+  made visible on the control panel, and accessible to the Toolkit. The program
+  number and bank attributes of its program are shown in the program number
+  display, the Edit Number and Edit Mode {_parameter parameters} in that
+  program determine which other parameter (or A/B pair of parameters) is shown
+  in the parameter display, and various {_link_program link}-related
+  parameters determine how the preprocessor performs link operations and
+  control the states of the link-related LEDs. These panel-related parameters
+  have no effect in other players.</p>

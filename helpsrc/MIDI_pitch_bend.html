@@ -1,0 +1,20 @@
+<h1>MIDI pitch bend</h1>
+<p>The Pitch Bend message isn't used for the usual pitch bend control,
+  lever 2. This is because Pitch Bend is supposed to be scaled not by a
+  program parameter but by {_RPN} 0,0. The MIDI inputs do support Pitch Bend
+  and RPN 0,0, but the resulting bend value is added to the output of both
+  glide generators, rather than being treated as a general modulation
+  source.</p>
+<p>If an explicit {MIDI_polyphonic_controls Note Select} control is used to
+  address Pitch Bend to a specific note, the range comes from an RPN 0,0 whose
+  Data MSB is also preceded by a Note Select control. The latter note number is
+  ignored; there is only one range for poly controls, and one range for mono
+  controls, and the two differently scaled values are added together. This is
+  different from all other polyphonic controls, which are overridden if a mono
+  control is received.</p>
+<p>When MPE is enabled, the master Pitch Bend is scaled by RPN 0,0 received on
+  the master channel, the individual Pitch Bend is scaled by RPN 0,0 received
+  on any member channel, and the two are added together, as required by the
+  MPE specification. Any other control received on the master channel
+  overrides the same control received on any member channel, rather than adding
+  to it.</p>

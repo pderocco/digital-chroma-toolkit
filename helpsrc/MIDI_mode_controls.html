@@ -1,0 +1,38 @@
+<h1>MIDI mode controls</h1>
+<p>The following special Control Changes are also recognized on input (the
+actual value is ignored):</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="10%">CC120</td>
+    <td width="20%">All Sounds Off</td>
+    <td>All notes are turned off, and all voices are forcibly squelched and
+      returned to the idle state.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>CC121</td>
+    <td>All Controllers Off</td>
+    <td>All controls are set to their nominal values. Bend, ribbon, pan, link
+      spread and link detune are set to midscale, volume and link balance are
+      set to 90, portamento switch (glide enable) is turned on, and everything
+      else is set to zero.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>CC123</td>
+    <td>All Notes Off</td>
+    <td>All notes are turned off, but may continue to sound if they have long
+      releases or the Sustain control is on.</td>
+    </tr>
+  </table>
+<p>The other special Control Changes defined by MIDI, Omni Mode, Mono Mode,
+  Poly Mode and Local Control, are not supported. However, when an input port
+  is placed in MPE mode, the member channels are effectively placed in Mono
+  Mode, because the MPE converter forces each new note to be played on the same
+  voice(s) as the last note.</p>
+<p>A SET SPLIT panel function is provided that issues All Sounds Off and All
+  Controllers Off controls into all MIDI input players, to fix stuck notes and
+  controls received from MIDI. Another function does this for the main and
+  link players, but follows them with controls that reflect the physical
+  control settings, and the global reverb parameters.</p>

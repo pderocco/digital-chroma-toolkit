@@ -1,0 +1,22 @@
+<h1>MIDI record output</h1>
+<p>The {_USB_device_port}, which contains four virtual jacks, can be used to
+  send the Main and Link messages to a computer for recording. This is done by
+  setting the {_global_parameter global} MIDI Record Output parameter to the
+  desired jack and channel number for the Main output, and the Link
+  automatically uses the next higher channel on the same jack.</p>
+<p>If you use something other than the normal polyphonic
+  {Common_keyboard_algorithm}, the recorded messages will
+  use the proprietary Digital Chroma {MIDI_pitch_controls}. If you use the
+  {MIDI_external_input} in MPE mode, the recorded messages will also use the
+  proprietary {MIDI_polyphonic_controls}. These work correctly when played back
+  via the Digital Chroma, but other software (e.g., music notation) will not
+  understand them.</p>
+<p>If a MIDI Start byte is received on the jack used for recording, the
+  Digital Chroma sends the entire state of the Main and Link instruments. This
+  uses a Program Change if the Main program is unmodified, or a
+  {MIDI_Program_Set} {_NRPN} containing the actual program data in a
+  {MIDI_program_sysex Sysex} if it is modified, followed by all control values
+  except pressure. This is useful when starting recording.</p>
+<p>During recording, one shouldn't do anything that modifies any stored
+  programs, because the NRPNs that represent these operations are not sent to
+  the Record output, or recognized on the Playback input.</p>

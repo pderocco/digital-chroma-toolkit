@@ -1,0 +1,25 @@
+<h1>Local source</h1>
+<p>Performance events come from the following hardware:</p>
+<ul>
+  <li>The keyboard, which generates Note On and Note Off messages. When output
+    via MIDI, these have the obvious MIDI equivalents.</li>
+  <li>The {_lever levers}, {_pedal pedals} and {_footswitch footswitches},
+    which generate monophonic Note Control messages. When output via MIDI,
+    these are encoded as various Control Changes.</li>
+  <li>The optional pressure sensor, which generates polyphonic Note Control
+    messages. When output via MIDI, these are encoded as Note Pressure.</li>
+  <li>The optional {_ribbon} controller, which generates monophonic Note
+    Control messages. When output via MIDI, these are encoded as Control
+    Changes.</li>
+  </ul>
+<p>In addition, the panel generates the following programming controls:</p>
+<ul>
+  <li>Parameter messages specifying {_parameter} changes. This includes tonal
+    parameters changed by the parameter slider, and panel parameters changed as
+    a result of pressing buttons. These are encoded as {_NRPN NRPNs}.</li>
+  <li>Program messages to select a {_program}. Over MIDI, these are encoded as
+    a Bank MSB Control Change followed by a Program Change.</li>
+  <li>Program messages to store a program, or perform other functions on a
+    program. Over MIDI, these are encoded as a Bank MSB Control Change followed
+    by an NRPN, sometimes preceded by a {_Sysex}.</li>
+  </ul>

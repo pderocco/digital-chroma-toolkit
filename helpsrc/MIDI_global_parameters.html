@@ -1,0 +1,153 @@
+<h1>MIDI global parameters</h1>
+<p>This lists the global parameters that appear in page 15. <i>PN</i> is the
+  parameter number (the NRPN LSB in a {MIDI_Parameter_Set Parameter Set}).
+  <i>Min</i> and <i>Max</i> are the minimum and maximum values. For {_bipolar}
+  parameters, the actual values sent over MIDI are higher by 64, so that they
+  remain within the 0 to 127 range.</p>
+<table style="width: 45%" cellspacing=-1 class="b p0">
+  <tr>
+    <td width="5%" class="c i">PN</td>
+    <td width="30%" class="i pl3">Parameter</td>
+    <td width="5%" class="c i">Min</td>
+    <td width="5%" class="c i">Max</td>
+    </td>
+    </tr>
+  <tr>
+    <td class="c">1</td>
+    <td class="pl3">{Global_reverb_room Reverb Room}</td>
+    <td class="r">1</td>
+    <td class="r">4</td>
+    </tr>
+  <tr>
+    <td class="c">2</td>
+    <td class="pl3">{Global_reverb_send Reverb Send}</td>
+    <td class="r">0</td>
+    <td class="r">127</td>
+    </tr>
+  <tr>
+    <td class="c">3</td>
+    <td class="pl3">{Global_analog_master Analog Master Volume}</td>
+    <td class="r">0</td>
+    <td class="r">100</td>
+    </tr>
+  <tr>
+    <td class="c">4</td>
+    <td class="pl3">{Global_rollover_time Rollover Time}</td>
+    <td class="r">1</td>
+    <td class="r">20</td>
+    </tr>
+  <tr>
+    <td class="c">5</td>
+    <td class="pl3">{Global_release_threshold Release Threshold}</td>
+    <td class="r">1</td>
+    <td class="r">7</td>
+    </tr>
+  <tr>
+    <td class="c">6</td>
+    <td class="pl3">{Global_midi_main_in MIDI Main Input}</td>
+    <td class="r">0</td>
+    <td class="r">48</td>
+    </tr>
+  <tr>
+    <td class="c">7</td>
+    <td class="pl3">{Global_midi_link_in MIDI Link Input}</td>
+    <td class="r">0</td>
+    <td class="r">48</td>
+    </tr>
+  <tr>
+    <td class="c">8</td>
+    <td class="pl3">{Global_midi_record_out MIDI Record Output}</td>
+    <td class="r">0</td>
+    <td class="r">64</td>
+    </tr>
+  <tr>
+    <td class="c">9</td>
+    <td class="pl3">{Global_tapper_mode Tapper Mode}</td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">10</td>
+    <td class="pl3">{Global_slider_mode Slider Mode}</td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">11</td>
+    <td class="pl3">{Global_invert Lever 1 Polarity}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">12</td>
+    <td class="pl3">{Global_invert Lever 2 Polarity}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">13</td>
+    <td class="pl3">{Global_invert Pedal 1 Polarity}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">14</td>
+    <td class="pl3">{Global_invert Pedal 2 Polarity}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">15</td>
+    <td class="pl3">{Global_invert Ribbon Polarity}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">16</td>
+    <td class="pl3">{Global_high_resolution Lever Resolution}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">17</td>
+    <td class="pl3">{Global_high_resolution Pedal Resolution}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">18</td>
+    <td class="pl3">{Global_high_resolution Ribbon Resolution}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">19</td>
+    <td class="pl3">{Global_bipolar Bipolar Pedal 1}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">20</td>
+    <td class="pl3">{Global_bipolar Bipolar Pedal 2}</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">21</td>
+    <td class="pl3">{Global_display_position Display Position}</td>
+    <td class="r">\-10</td>
+    <td class="r">10</td>
+    </tr>
+  <tr>
+    <td class="c">22</td>
+    <td class="pl3">{Global_display_brightness Display Brightness}</td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">23</td>
+    <td class="pl3">{Global_edit_timeout Edit Timeout}</td>
+    <td class="r">0</td>
+    <td class="r">10</td>
+    </tr>
+  </table>

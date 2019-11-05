@@ -1,0 +1,102 @@
+<h1>SWEEP mode</h1>
+<p>These select one of five synchronization modes for the {_sweep}
+  generators:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">poly</td>
+    <td>Each voice has its own sweep generator. The initial phase when a voice
+      is allocated is random, and it runs continuously even if the voice is
+      retriggered.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>poly synced</td>
+    <td>Each voice has its own sweep generator. The phase starts at 0\d at
+      the start of each note.</p>
+    </tr>
+  <tr>
+    <td/>
+    <td>mono</td>
+    <td>All voices share the same sweep phase computed by the virtual
+      instrument, but each has its own amplitude control. This phase runs
+      continuously, independent of the playing of notes.</p>
+    </tr>
+  <tr>
+    <td/>
+    <td>mono multiple</td>
+    <td>Like the mono mode, except that the phase is reset to 0\d whenever a
+      key is pressed.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>mono single</td>
+    <td>Like the mono mode, except that the phase is reset to 0\d whenever
+      the number of keys held goes from zero to one.</td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>These are contained in the {Sweep_rate_cluster Sweep rate clusters} within
+  the {Sweep_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>SWEEP</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-8.png height=48}</td>
+    </tr>
+  </table>
+<p>These appear in the display as Sweep Mode.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,4</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,4</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>poly</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>poly synced</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>mono</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>mono multiple</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>mono single</td>
+    </tr>
+  </table>

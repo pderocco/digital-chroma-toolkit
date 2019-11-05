@@ -1,0 +1,53 @@
+<h1>CONTROL middle frequency</h1>
+<p>This controls the frequency of the middle section of the virtual
+  {_instrument instrument's} parametric equalizer.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Control_tone_cluster tone cluster} within the
+  {Control_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is manipulated by pressing SET SPLIT, and then using the MIDDLE slider
+  on the left panel. When SET SPLIT is first pressed, and when any of the five
+  short sliders is moved, the display shows the secondary parameters connected
+  to the five sliders for a couple seconds. Press SET SPLIT, or PARAM SELECT,
+  or PROG SELECT, to exit this mode.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,19. Since it is a {_bipolar} parameter with a
+  \+5 internal range, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">59</td>
+    <td class="c">170Hz</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">480Hz</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">69</td>
+    <td class="c">1350Hz</td>
+    </tr>
+  </table>

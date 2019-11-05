@@ -1,0 +1,7 @@
+<h1>MIDI Program Move</h1>
+<p>NRPN 26,0 on the Editor input moves a program file into another location.
+  The Bank MSB and Data MSB specify the destination, and the Bank LSB and Data
+  LSB specify the source. This is echoed back to the editor.</p>
+<p>If the source and destination both exist, the source overwrites the
+  destination; if the source doesn't exist, the destination is deleted. The
+  source ends up empty.</p>

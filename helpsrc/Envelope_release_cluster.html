@@ -1,0 +1,14 @@
+<h1>ENVELOPE release cluster</h1>
+<p>{envelope-release-cluster.png width=373}</p>
+<p>This contains a {Envelope_release_time <i>time</i>} {_slider} to set the
+  time it takes for the envelope to drop toward zero when the key is released.
+  Since it slows down as it approaches zero, and theoretically never gets
+  there, this is actually the "time constant", indicating how long
+  it would have taken to get to zero if it didn't slow down.</p>
+<p>This also contains a {Envelope_release_mod_select <i>mod select</i>}
+  {_parameter} that can slow the release by various ratios, for
+  "slow" key releases, defined as a release {_velocity} less than
+  the {_global_parameter global} <i>release threshold</i> parameter. It can
+  also use either {_pedal} to vary the release time from its nominal setting to
+  whatever the {Envelope_decay_cluster decay} time is set to, rather like a
+  variable sustain pedal.</p>

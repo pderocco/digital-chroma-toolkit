@@ -1,0 +1,252 @@
+<h1>COMMON keyboard algorithm</h1>
+<p>This determines how key presses and releases are pre-processed, after the
+  keyboard splitting but before the main or {_link_program link}
+  {_instrument instruments} and MIDI output.</p>
+<p>There are three polyphonic modes:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">polyphonic</td>
+    <td>For normal polyphonic playing. {_glide Glide} is normally disabled, but
+      if the {Common_footswitch_mode} parameter assigns the
+      left footswitch to the "glide" function, it can be
+      conditionally enabled, although it effectively switches to mono single
+      mode (see below) while it is enabled. This is the default.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>poly ordered</td>
+    <td>Whenever a new chord is played, the notes are assigned to voices in
+      pitch order, from top to bottom, so that the voices will remain in the
+      same pitch order when gliding from one chord to another. This involves
+      delaying by an amount specified by the {_global_parameter global}
+      <i>rollover time</i> parameter, to make sure the entire chord has been
+      captured.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>poly buffered</td>
+    <td>Notes are not directly played, but are added to a buffer, and then
+      played in pitch order, from top to bottom, when the left footswitch is
+      pressed (irrespective of the footswitch mode parameter). The buffer is
+      cleared whenever the number of held keys goes from zero to one.</td>
+    </tr>
+  </table>
+<p>There are five monophonic modes:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">single</td>
+    <td>Only one note is played at a time, and new notes reuse the same
+      voice(s). New notes only retrigger the envelopes if no note was already
+      held.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>multiple</td>
+    <td>Only one note is played at a time, and new notes reuse the same
+      voice(s). New notes always only retrigger the envelopes.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>first</td>
+    <td>Only one note is played at a time, and only if no notes were previously
+      held.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>bottom</td>
+    <td>Only one note is played at a time, and only the bottom note if a chord
+      is played. When playing an ascending scale, new notes are only played if
+      there is a gap between them, or at least less overlap than the time
+      specified by the global <i>rollover time</i> parameter.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>top</td>
+    <td>Only one note is played at a time, and only the top note if a chord is
+      played. When playing a descending scale, new notes are only played if
+      there is a gap between them, or at least less overlap than the time
+      specified by the global <i>rollover time</i> parameter.</td>
+    </tr>
+  </table>
+<p>There are four arpeggiation modes, which involve repeated playing of
+  buffered notes. The buffer is cleared whenever the number of held keys goes
+  from zero to one. The arpeggiation continues as long as at least one key is
+  held, or the sustain footswitch is held. Once all keys are released, 
+  releasing and pressing sustain can stop and restart the arpeggio. The
+  patterns are:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">up</td>
+    <td>Ascending pitch order.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>down</td>
+    <td>Descending pitch order.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>up/down</td>
+    <td>Bidirectional, starting on the bottom note.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>down/up</td>
+    <td>Bidirectional, starting on the top note.</td>
+    </tr>
+  </table>
+<p>There are two sequence modes, which are similar to the arpeggiation modes
+  except that they keep notes in the order they were played, rather than pitch
+  order. This means that the same note can be added to the buffer more than
+  once. The patterns are:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">sequence</td>
+    <td>In order of playing.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>random</td>
+    <td>In random order. Notes that have multiple copies in the buffer are
+      played more often.</td>
+    </tr>
+  </table>
+<p>There are two strum modes. In this mode, the lowest or highest two notes of
+  the keyboard are filtered out even before the keyboard split takes place, and
+  used as triggers. They cause any other notes held on the keyboard to be
+  replayed. Held notes are also added to a buffer, which isn't cleared
+  until the next time the number of held notes goes from zero to one, and the
+  trigger plays all released notes that are still in the buffer but with a very
+  short duration, simulating strumming on damped strings. (The apparent
+  duration of the short notes can be adjusted via its envelope release
+  parameters.)</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%">strum low</td>
+    <td>The lowest two keys are used as the triggers.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>strum high</td>
+    <td>The highest two keys are used as the triggers.</td>
+    </tr>
+  </table>
+<p class="extra">If using the strum modes with an external keyboard, you should
+  play the lowest and highest note of the keyboard once before the performance,
+  so that the Digital Chroma will know the range of the keyboard. This
+  isn't necessary on the internal keyboard.</p>
+
+<h2>Toolkit</h2>
+<p>These are presented in the {Common_controllers_cluster controllers cluster}
+  within the {Common_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>CONTROL</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-3.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Kybd Alg.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,15.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>polyphonic</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>poly ordered</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>poly buffered</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>mono single</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>mono multiple</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>mono first</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td>mono bottom</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td>mono top</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">8</td>
+    <td>arpeg up</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td>arpeg down</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">10</td>
+    <td>arpeg up/down</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">11</td>
+    <td>arpeg down/up</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">12</td>
+    <td>arpeg sequence</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">13</td>
+    <td>arpeg random</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">14</td>
+    <td>strum low</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">15</td>
+    <td>strum high</td>
+    </tr>
+  </table>

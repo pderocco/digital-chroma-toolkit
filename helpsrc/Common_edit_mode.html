@@ -1,0 +1,59 @@
+<h1>COMMON edit mode</h1>
+<p>This controls whether the {_parameter_control} is connected to an A
+  {_parameter}, a B parameter, or both in parallel. It has no effect if the
+  parameter currently selected on the Chroma's control panel isn't
+  one of the channelized parameters.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Common_edit_cluster <i>edit</i> cluster} within
+  the {Common_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>This is set with the following switches:<p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="15%">{sw-edit-a.png height=48}</td>
+    <td valign=middle>A</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="15%">{sw-edit-b.png height=48}</td>
+    <td valign=middle>B</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="15%">{sw-edit-a.png height=48}
+      + {sw-edit-a.png height=48}</td>
+    <td valign=middle>A\&B</td>
+    </tr>
+  </table>
+<p>The two switches must be pressed concurrently for A\&B.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,9.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="i u">mode</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>Edit A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>Edit B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>Edit A\&B</td>
+    <td>(default)</td>
+    </tr>
+  </table>

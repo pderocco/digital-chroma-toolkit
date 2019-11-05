@@ -1,0 +1,88 @@
+<h1>GLOBAL midi link in</h1>
+<p>This selects the port and channel to accept Link input on. This is the
+  input that is used when the {_link_program link} mode is set to "link
+  external" or "link internal". The former uses the external
+  input to play the Link sound, while the internal keyboard plays the Main
+  sound. The latter does the reverse.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}. It has separate buttons for the port and for the
+  channels.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-7.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as MIDI Link Input.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,7.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">none</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">serial 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">16</td>
+    <td class="c">serial 16</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">17</td>
+    <td class="c">hostA 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">32</td>
+    <td class="c">hostA 16</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">33</td>
+    <td class="c">hostB 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">48</td>
+    <td class="c">hostB 16</td>
+    </tr>
+  </table>

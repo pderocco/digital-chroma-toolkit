@@ -1,0 +1,35 @@
+<h1>Load One</h1>
+<p>Pressing LOAD ONE normally loads the currently selected {_program} bank from
+  the external drive into the Chroma. First, it prompts the user with a display
+  like the following:</p>
+<p>{load-one-prompt.png}</p>
+<p>"new 13" means that 13 of the programs on the external drive
+  don't exist in the Chroma.</p>
+<p>"chg 11" means that 11 of the programs on the external drive
+  also exist in the Chroma, but they are changed, as indicated by their having
+  different timestamps.</p>
+<p>"del 3" means that 3 of the programs in the Chroma don't
+  exist on the external drive, and will therefore be deleted.</p>
+<p>If there are programs on the external drive that match those in the Chroma,
+  they aren't shown or copied.</p>
+<p>"Store=Y, Set Split=N" tells you to press the STORE switch if
+  you wish to copy the bank, or press SET SPLIT if you want to skip it. Both
+  LEDs flash, as a reminder that you can press either switch. While copying,
+  the display flashes a message saying what bank it is copying. When done, the
+  display shows the results with a display like the following:</p>
+<p>{load-one-result.png}</p>
+<p>If there are any errors accessing the device, it will also show the number
+  of operations that failed. The display reverts to the current parameter
+  whenever the parameter slider is moved, or most any other panel operation is
+  performed.</p>
+<p>Holding PROG SELECT and pressing 1 to 9 temporarily selects a different bank
+  (and puts 100 to 900 in the program number display). Pressing LOAD ONE then
+  loads from and to that bank instead of the currently selected bank.</p>
+<p>Holding LOAD ONE and pressing 1 to 9 changes what bank on the external drive
+  will be loaded, allowing programs to be moved from one bank to another. You
+  can do this even after holding PROG SELECT and pressing 1 to 9 to select a
+  different internal bank, for complete flexibility. For instance, holding
+  PROG SELECT and pressing 3, then holding LOAD ONE and pressing 5, will load
+  external bank 5 into bank 3.</p>
+<p>So remember, PROG SELECT plus a number sets both the internal and external
+  bank, LOAD ONE plus a number sets only the external bank.</p>

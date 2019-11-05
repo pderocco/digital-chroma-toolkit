@@ -1,0 +1,119 @@
+<h1>AMPLIFIER post mod depth</h1>
+<p>These adjust the amount of post modulation that applies to each
+  {_amplifier amplifier's} volume. They apply a reduction <i>after</i>
+  the two primary sources (normally {_envelope envelopes}) are added
+  together.</p>
+<p>When set to "off", the post modulation has no effect, and the
+  volume is normal. When set to 50%, most sources can vary the volume from 50%
+  to 100%. When set to 100%, most sources can vary the volume from zero to
+  100%. When set to a negative value, the modulation reduces the volume across
+  its range, rather than increasing it.</p>
+
+<h3>Unipolar modulation</h3>
+<p>Most mod sources have a 0 to 1 {_unit} range. The following graphs show the
+  response at various positive and negative depths:<p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>{amplifier-post-mod-graph-unipolar.png width=700}</td>
+    </tr>
+  </table>
+<p>The blue lines represent 0 units of input and output, and the green lines
+  represent 1 unit of input and output. The red dots show where the curve
+  pivots around, which is different for positive and negative depths. (These
+  dots aren't shown in the graph in the cluster popup.)</p>
+
+<h3>Bipolar modulation</h3>
+<p>Most sweep wave shapes have a \+1 unit range, as does the optional
+  {_ribbon} controller. Since the volume can't go negative (it is clamped
+  at zero), mod depths outside a \+50% range aren't useful.
+  However, for ribbon, one might wish to use a \+100% range, and only use
+  half the ribbon, since some ribbon algorithms always start at zero when you
+  touch it, or return to zero when you release it.</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>{amplifier-post-mod-graph-bipolar.png width=700}</td>
+    </tr>
+  </table>
+
+<h3>Pitch modulation</h3>
+<p>The pitch varies from \-1 to almost +1 unit across the keyboard, but
+  can go further with octave transposition, and further still via MIDI. The
+  darker regions represent the notes outside the normal keyboard range. As you
+  can see, the most useful settings are lower values, allowing you to introduce
+  a modest variation in volume across the keyboard:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>{amplifier-post-mod-graph-pitch.png width=700}</td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  {Amplifier_post_mod_cluster Amplifier post mod clusters} within the
+  {Amplifier_section}.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>VOLUME</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>{sw-set-split.png height=48}{sw-50.png height=48}</td>
+    </tr>
+  </table>
+<p>They appear in the display as Amp Post Mod Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following {_NRPN NRPNs}:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,75</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,75</td>
+    </tr>
+  </table>
+<p>Since these are {_bipolar} parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">\-100%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td>(default)
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">\b\n\b\n\b</td>
+    <td class="c s">\b\n\b\n\b</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+100%</td>
+    <td>(significant)
+    </tr>
+  </table>

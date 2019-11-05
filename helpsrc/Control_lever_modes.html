@@ -1,0 +1,83 @@
+<h1>CONTROL lever modes</h1>
+<p>This determines the selectivity mode of the two levers. In
+  "selective" mode, when a key is released, the lever value freezes
+  for that note, even if the note is held by the sustain {_footswitch}. It also
+  freezes for notes {_latch latched} by the left footswitch. In
+  "sampled" mode, it is sampled once at the start of the note.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Control_selectivity_cluster selectivity cluster}
+  within the {Control_section}. It is presented as two separate parameters, one
+  for each lever.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>SWEEP</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-8.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Lever Modes.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 0,31.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="25%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>normal / normal</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>selective / normal</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>sampled / normal</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>normal / selective</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>selective / selective</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>sampled / selective</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td>normal / sampled</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td>selective / sampled</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">8</td>
+    <td>sampled / sampled</td>
+    </tr>
+  </table>

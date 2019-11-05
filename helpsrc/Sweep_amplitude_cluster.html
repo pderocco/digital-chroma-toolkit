@@ -1,0 +1,23 @@
+<h1>SWEEP amplitude cluster</h1>
+<p>{sweep-amplitude-cluster.png width=373}</p>
+<p>This contains {_parameter parameters} related to the {_sweep} shape and
+  amplitude. The {Sweep_shape <i>shape</i>} parameter has sixteen choices,
+  including some short repetitive patterns. The box to the right of the
+  {_button buttons} shows a graph of four sweep cycles, which is the length of
+  the longest pattern.<p>
+<p>The {Sweep_amplitude_mod_select <i>mod select</i>} parameter chooses what
+  controls the amplitude of the sweep. Since delayed sweep is so commonly used,
+  it includes a built-in delay ramp generator, so that a full {_envelope}
+  doesn't need to be used. The delay ramp goes from \-1 to +1, but
+  the sweep amplitude can't be negative so the result is to delay for the
+  first half of the time, and then ramp from zero to one over the second
+  half.</p>
+<p>The {Sweep_amplitude_mod_depth <i>mod depth</i>} parameter determines how
+  much the amplitude of the sweep is varied. It scales the modulation around a
+  value of one {_unit}, rather than zero. That is, if the depth is turned off
+  (the default), you always get the full sweep amplitude. If it is set to 100%,
+  the modulation can vary the amplitude from zero to 100%. If it is set to 50%,
+  it can vary the amplitude from 50% to 100%.</p>
+<p>The rectangular box is actually a graph of the response, and varies when the
+  two parameters are adjusted. See the <i>mod depth</i> parameter for details
+  on how to interpret these graphs.</p>

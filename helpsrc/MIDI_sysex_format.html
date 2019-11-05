@@ -1,0 +1,53 @@
+<h1>MIDI Sysex format</h1>
+
+<p>Some MIDI operations need to carry bulk data. For instance, the Program Set
+  operation contains the actual program data, rather than loading it from a
+  file. Such operations are represented by a System Exclusive (Sysex) message
+  containing the data, an optional Bank MSB for those that specify a program
+  number, and an {_NRPN} that indicates what the data means and what channel
+  (if any) it is associated with. Any Digital Chroma NRPN consumes the Sysex
+  data, even if it didn't use it, so an NRPN with no Sysex before it
+  won't reuse an earlier one. Any editor that interprets Sysex messages
+  from the Digital Chroma must do the same thing.</p>
+<p>All Digital Chroma Sysex messages share a common format:</p>
+<ul>
+  <li>The System Exclusive status byte 240.</li>
+  <li>The three-byte manufacturer's ID, 0,0,20, referring to Perfect
+    Fretworks.</li>
+  <li>The ASCII code 68, which is a capital D, for Digital Chroma.</p>
+  <li>Zero or more bytes of bulk data, whose interpretation is determined by
+    the following NRPN. Zero bytes is equivalent to no Sysex at all.</p>
+  <li>The 247 End of System Exclusive status byte.</li>
+  </ul>
+<p>On input, any non-real-time status byte will signal the end of a Sysex
+  message, since the MIDI specification doesn't literally require the use
+  of an End of System Exclusive. On output, End of System Exclusive is always
+  sent, since some programs wrongly assume that it must be there.</p>
+<h2>Rationale</h2>
+<p>Often, messages carrying bulk data need to be addressed to a specific MIDI
+  channel, but Sysex messages don't contain channel numbers. It is
+  possible to put a channel number into a Sysex, but there is no standard
+  location for the channel number, so external software (a sequencer or DAW)
+  that tries to move a track from one MIDI channel number to another will
+  successfully change all the channel messages but not update the Sysex
+  messages. Using a Sysex followed by an NRPN eliminates this problem.</p>
+<p>The only danger is that the Sysex is only bound to its NRPN by proximity. In
+  a multi-track sequence, there is a tiny possibility that a Sysex/NRPN on one
+  channel will get interleaved with a Sysex/NRPN on another channel, resulting
+  in one NRPN using the wrong Sysex and the other getting no Sysex at all. But
+  there is only one Sysex message that can ever appear in a recorded sequence
+  (Program Set), and it only appears if one starts recording with a modified
+  program, or uses Undo or Redo to go back or forward to a modified program. So
+  avoid doing those things, and the possibility of this problem drops from tiny
+  to zero.</p>
+<h2>Sysex data formats</h2>
+<p>On input to the Digital Chroma, any NRPN that expects a preceding Sysex is
+  ignored if the contents of the Sysex are invalid. The Sysex may take a number
+  of different formats, depending upon the NRPN:</p>
+<ul>
+  <li>{MIDI_text_sysex text}</li>
+  <li>{MIDI_time_sysex time}</li>
+  <li>{MIDI_timestamp_sysex timestamp}</li>
+  <li>{MIDI_metadata_sysex metadata}</li>
+  <li>{MIDI_program_sysex program}</li>
+  </ul>

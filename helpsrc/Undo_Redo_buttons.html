@@ -1,0 +1,37 @@
+<h1>Undo/Redo buttons</h1>
+<p>{undo-redo-buttons.png width=192}</p>
+<p>These {_button buttons} in the {_Navigation_bar} invoke the Undo and Redo
+  functions of the Digital Chroma. They also show what changes are next in line
+  for undoing or redoing. This feature makes it really hard to lose any of your
+  program data.</p>
+<p>The Digital Chroma records undo information for all edits to the
+  {_current_program}, as well as all changes to stored programs. This even
+  includes bulk changes to stored programs, as a result of importing programs
+  from an external flash drive. (It doesn't include changes made to the
+  flash drive, though.)</p>
+<p>As edits are made to the current program, the Digital Chroma
+  doesn't record each tiny change as a separate undoable event.
+  Instead, it combines consecutive edits into a single change until a certain
+  period of inactivity elapses. Other operations, like loading and storing, are
+  always recorded as distinct operations. Loading a bank of programs, or all
+  programs, from a flash drive is treated as a single operation.</p>
+<p class="extra">You can adjust this time with the {_global_parameter global}
+  <i>edit timeout</i> parameter in the <em>TOOLS</em> {_screen}, but it is
+  initially set to five seconds</p>
+<p>When you undo something, the change is moved from the undo list to the
+  redo list, so that you can redo it if you change your mind. This means
+  that you can go back in time to see what your program sounded like
+  earlier, and then go back to the "present" and proceed with your
+  editing.</p>
+<p>Note however that if you have undone something, and then you perform any
+  other undoable operation, all your redo information is discarded.</p>
+<p class="extra">This is identical to the way undo and redo work in
+  programs like word processors, or the way the Back and Forward buttons
+  work in web browsers (and in this help browser).</p>
+<p class="extra">Since "doing" anything leaves the redo list empty,
+  you can use Redo to start a new undoable edit operation, rather than waiting
+  for the timeout, if you think you might want to get back to the current
+  state.</p>
+<h2>Hotkeys</h2>
+  <p>You can press <b>R</b> or <b>U</b> on the keyboard to invoke these
+  functions.</p>

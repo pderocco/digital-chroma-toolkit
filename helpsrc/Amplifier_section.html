@@ -1,0 +1,18 @@
+<h1>AMPLIFIER section</h1>
+<p>{amplifier-section.png width=520}</p>
+<p>An {_amplifier} controls the volume of a sound. The volume is controlled by
+  up to two {_envelope} generators which are added together, and then
+  multiplied by a third post modulation such as a {_pedal} or {_sweep} signal.
+  If connected to the output, it also provides a panning control, which can be
+  modulated. In some settings of the {_patch} {_parameter}, the <i>B</i>
+  amplifier controls the mix between the <i>A</i> and <i>B</i> oscillators, and
+  only the <i>A</i> amplifier goes to the output, so the <i>B</i> pan controls
+  are inactive.</p>
+<p>Each amplifier has four {_cluster clusters}:</p>
+<ul>
+  <li>Two envelope {Amplifier_mod_cluster mod} clusters, which are mixed
+    together.</li>
+  <li>One {Amplifier_post_mod_cluster post mod} cluster, which applies after
+    the envelopes.</li>
+  <li>One {Amplifier_pan_cluster pan} cluster</li>
+  </ul>

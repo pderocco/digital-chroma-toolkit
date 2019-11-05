@@ -1,0 +1,39 @@
+<h1>MIDI external controls</h1>
+<p>When the {_global_parameter global} MIDI Main Input or MIDI Link Input
+  parameters are used to enable External input from the serial or
+  {_USB_host_port USB host} MIDI, the following interpretations hold:</p>
+<ul>
+  <li>All performance controls and mode controls are supported. Reverb and
+    link controls are not.</li>
+  <li>Bank MSB and Program Change are supported on the MIDI Main Input, using
+    0-based numbers. Bank MSB must be in 0\.8, and Program Change must
+    be in 0\.49. They are not supported on the MIDI Link Input, because
+    the Link program is always determined by the parameters in the Main
+    program.</li>
+  <li>Pitch MSB/LSB messages are supported.</li>
+  <li>The {MIDI_polyphonic_controls Note Select} control is supported for
+    levers, pedals, volume and pan, except on a channel that is part of an MPE
+    zone.</li>
+  <li>The Note Select (a.k.a.
+    {MIDI_Portamento_Controller Portamento Controller}) control is supported
+    for Note On, and causes internal note numbers to be remapped as needed. It
+    is not supported on a channel that is part of an MPE zone.</li>
+  <li>The Main and Link transpositions transpose the pitch and the note number
+    by the same amount. This ensures that, as long as Pitch MSB messages
+    aren't used on input, they won't be used when the transposed
+    results are sent to the Record output. If the Main and Link transpositions
+    result in out-of-range note numbers or pitches, those notes are
+    discarded.</li>
+  <li>The mapping of input notes to output notes is determined independently
+    for each key based on the transpose parameters in effect at the time the
+    key is pressed. Controls are discarded if they are transposed out of
+    range.</li>
+  <li>The raw Ribbon input is purely monophonic, and is treated as a unipolar
+    value, where 0 means the ribbon isn't touched, and 1 through 16383
+    represent the full mechanical range of the ribbon from left to right. Any
+    external ribbon controller must ensure that when the finger is lifted, the
+    value cleanly switches to zero, with no in-between value that would be
+    misinterpreted as a spurious motion. The {_preprocessor} translates this
+    into a bipolar modulation source according to the
+    {Common_ribbon_algorithm} {_parameter}.</li>
+  </ul>

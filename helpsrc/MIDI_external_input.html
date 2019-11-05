@@ -1,0 +1,32 @@
+<h1>MIDI external input</h1>
+<p>The serial MIDI port and the {_USB_host_port USB host ports} can be used to
+  accept input from external keyboards or controllers. This is done by setting
+  the {_global_parameter global} MIDI Main Input parameter to the desired port
+  and channel number. Any external inputs (notes and controls) are merged in
+  with the local source, although the Digital Chroma makes no effort to merge
+  mono controls intelligently, so one should avoid using the same controls
+  internally and externally. This feature allows an external keyboard or
+  alternative controllers to be used in place of the internal ones. Program
+  Select is supported, but none of the {_NRPN} operations are. The proprietary
+  {MIDI_polyphonic_controls Note Select} and
+  {MIDI_pitch_controls Pitch MSB/LSB} controls are supported.</p>
+<p>The global MIDI Link Input parameter has a similar function, but routes one
+  channel of external input to the link {_player} when the
+  {Common_link_mode} is set to <i>link external</i>, and ensures that
+  the local source data only goes to the main player. Or if it is set to
+  <i>link internal</i>, the MIDI input is sent to the main player while the
+  local source data is sent to the link player. This allows a second keyboard
+  or pedalboard to be used along with the internal one. Program Select is not
+  supported in <i>link external</i> mode, since the Link program is determined
+  by the link parameters in the Main program. If MIDI Main Input and MIDI Link
+  Input are the same, the latter takes precedence when <i>link external</i> or
+  <i>link internal</i> is in effect.</p>
+<p>MPE (MIDI Polyphonic Expression) is supported on these ports as well. When
+  this mode is selected by the external device, all the channels in the lower
+  zone are treated as Mono Mode channels, and combined into channel 1 inside
+  the Digital Chroma, since it has the ability to represent polyphonic
+  controls without resorting to multiple channels. Similarly, all channels in
+  the upper zone are combined into channel 16. The
+  {MIDI_Portamento_Controller Portamento Controller} or
+  {MIDI_polyphonic_controls Note Select} aren't supported on input
+  channels that are part of an MPE zone.</p>
