@@ -1,0 +1,47 @@
+<h1>GLOBAL midi record state</h1>
+<p>This enables the sending of the program and controller state when a MIDI
+  Start byte is received on the MIDI record port. If this is off, then the
+  state must be explicitly sent at the start of the recording using SET SPLIT,
+  LINK UNISON on the control panel.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}. It has a single on/off button in the <i>midi record out</i>
+  section.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-10.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as MIDI Record State.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,10.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">on</td>
+    </tr>
+  </table>

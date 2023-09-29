@@ -193,13 +193,15 @@ Reference
         Global_midi_main_in
         Global_midi_link_in
         Global_midi_record_out
-        Global_tapper_mode
-        Global_slider_mode
+        Global_midi_record_program
+        Global_midi_record_state
         Global_invert
         Global_high_resolution
         Global_bipolar
         Global_display_position
         Global_display_brightness
+        Global_tapper_mode
+        Global_slider_mode
         Global_edit_timeout
     All_switch_functions
     Calibrations
@@ -240,7 +242,8 @@ Reference
             MIDI_pitch_changes Pitch changes
             MIDI_Portamento_Controller Portamento Controller
             MIDI_polyphonic_controls Polyphonic controls
-            MIDI_external_controls External controls
+            MIDI_note_semantics Note semantics
+        MIDI_external_controls External controls
         MIDI_programs_parameters Programs & parameters
             MIDI_program_numbering Program numbering
             MIDI_parameter_pages Parameter pages

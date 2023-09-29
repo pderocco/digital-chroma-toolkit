@@ -12,7 +12,7 @@
   <tr>
     <td class="pl3">Program Change</td>
     <td class="c">&#10003;</td>
-    <td class="c">&#10003;</td>
+    <td class="c">&#10003;*</td>
     <td class="c">&#10003;</td>
     <td class="c">&#10003;</td>
     <td/>
@@ -188,7 +188,7 @@
   <tr>
     <td class="pl3">Program Exchange</td>
     <td/>
-    <td/>
+    <td class="c">&#10003;*</td>
     <td/>
     <td class="c">&#10003;</td>
     <td class="c">&#10003;</td>
@@ -346,4 +346,7 @@
     <td/>
     </tr>
   </table>
-<p>* records Program Change instead</p>
+<p>* Program No Link and Program Exchange are recorded as Program Change. If
+  the {_global_parameter global}
+  {Global_midi_record_program MIDI Record Program} parameter is on, then all
+  three of these messages are recorded as Program Set instead.</p>

@@ -123,8 +123,8 @@ Item {
     property int p1926: defs[6];  property alias p_midi_main_in:       root.p1926; readonly property int n_midi_main_in:       1926
     property int p1927: defs[7];  property alias p_midi_link_in:       root.p1927; readonly property int n_midi_link_in:       1927
     property int p1928: defs[8];  property alias p_midi_rec_out:       root.p1928; readonly property int n_midi_rec_out:       1928
-    property int p1929: defs[9];  property alias p_tapper_mode:        root.p1929; readonly property int n_tapper_mode:        1929
-    property int p1930: defs[10]; property alias p_slider_mode:        root.p1930; readonly property int n_slider_mode:        1930
+    property int p1929: defs[9];  property alias p_midi_rec_prog:      root.p1929; readonly property int n_midi_rec_prog:      1929
+    property int p1930: defs[10]; property alias p_midi_rec_state:     root.p1930; readonly property int n_midi_rec_state:     1930
     property int p1931: defs[11]; property alias p_lever1_polarity:    root.p1931; readonly property int n_lever1_polarity:    1931
     property int p1932: defs[12]; property alias p_lever2_polarity:    root.p1932; readonly property int n_lever2_polarity:    1932
     property int p1933: defs[13]; property alias p_pedal1_polarity:    root.p1933; readonly property int n_pedal1_polarity:    1933
@@ -137,30 +137,32 @@ Item {
     property int p1940: defs[20]; property alias p_bipolar_pedal2:     root.p1940; readonly property int n_bipolar_pedal2:     1940
     property int p1941: defs[21]; property alias p_display_position:   root.p1941; readonly property int n_display_position:   1941
     property int p1942: defs[22]; property alias p_display_brightness: root.p1942; readonly property int n_display_brightness: 1942
-    property int p1943: defs[23]; property alias p_edit_timeout:       root.p1943; readonly property int n_edit_timeout:       1943
-    
+    property int p1943: defs[23]; property alias p_tapper_mode:        root.p1943; readonly property int n_tapper_mode:        1943
+    property int p1944: defs[24]; property alias p_slider_mode:        root.p1944; readonly property int n_slider_mode:        1944
+    property int p1945: defs[25]; property alias p_edit_timeout:       root.p1945; readonly property int n_edit_timeout:       1945
+
     // Minimum values
     readonly property var mins: [
         //  0     1     2     3     4     5     6     7     8     9
             0,    1,    0,    0,    1,    1,    0,    0,    0,    0, // 0
             0,    0,    0,    0,    0,    0,    0,    0,    0,    0, // 10
-            0,  -10,    0,    0                                      // 20
+            0,  -10,    0,    0,    0,    0                          // 20
         ]
 
     // Maximum values
     readonly property var maxs: [
         //  0     1     2     3     4     5     6     7     8     9
-            0,    4,  127,  100,   20,    7,   48,   48,   64,    2, // 0
-            2,    1,    1,    1,    1,    1,    1,    1,    1,    1, // 10
-            1,   10,    2,   10                                      // 20
+            0,    4,  127,  100,   20,    7,   48,   48,   64,    1, // 0
+            1,    1,    1,    1,    1,    1,    1,    1,    1,    1, // 10
+            1,   10,    2,    2,    2,   10                          // 20
         ]
 
     // Default values
     readonly property var defs: [
         //  0     1     2     3     4     5     6     7     8     9
-            0,    2,    0,  100,    5,    4,    0,    0,    0,    2, // 0
-            2,    0,    0,    0,    0,    0,    1,    1,    1,    0, // 10
-            0,    0,    2,    7                                      // 20
+            0,    2,    0,  100,    5,    4,    0,    0,    0,    0, // 0
+            0,    0,    0,    0,    0,    0,    1,    1,    1,    0, // 10
+            0,    0,    2,    2,    2,    7                          // 20
         ]
 
     // Significant values (all invalid)
@@ -168,7 +170,7 @@ Item {
         //  0     1     2     3     4     5     6     7     8     9
           999,  999,  999,  999,  999,  999,  999,  999,  999,  999, // 0
           999,  999,  999,  999,  999,  999,  999,  999,  999,  999, // 10
-          999,  999,  999,  999                                      // 20
+          999,  999,  999,  999,  999,  999                          // 20
         ]
 
     // Value strings
@@ -182,8 +184,8 @@ Item {
         null,               // midi_main_input
         null,               // midi_link_input
         null,               // midi_rec_output
-        str_tapper_mode,    // tapper_mode
-        str_slider_mode,    // slider_mode
+        str_off_on,         // midi_rec_prog
+        str_off_on,         // midi_rec_state
         str_push_pull,      // lever1_polarity
         str_push_pull,      // lever2_polarity
         str_normal_invert,  // pedal1_polarity
@@ -196,11 +198,13 @@ Item {
         str_off_on,         // bipolar_pedal2
         str_disp_pos,       // display_position
         str_disp_brite,     // display_brightness
+        str_tapper_mode,    // tapper_mode
+        str_slider_mode,    // slider_mode
         str_edit_timeout    // edit_timeout
         ]
 
     readonly property var   str_analog_master: [
-        "off", "1%", "2%", "3%", "4%", "5%", "6%", "7%", "8%", "9%", 
+        "off",  "1%",  "2%",  "3%",  "4%",  "5%",  "6%",  "7%",  "8%",  "9%", 
         "10%", "11%", "12%", "13%", "14%", "15%", "16%", "17%", "18%", "19%", 
         "20%", "21%", "22%", "23%", "24%", "25%", "26%", "27%", "28%", "29%", 
         "30%", "31%", "32%", "33%", "34%", "35%", "36%", "37%", "38%", "39%", 

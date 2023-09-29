@@ -49,8 +49,8 @@ Rectangle {
             range / (width - 2 * margin)
 
     // positions relative to left of MouseArea
-    property int            touch                   // touch position
-    property int            touchBacklash           // touch position with backlash
+    property double         touch                   // touch position
+    property double         touchBacklash           // touch position with backlash
 
     // state
     property bool           held:       false       // true while mouse or touch is held

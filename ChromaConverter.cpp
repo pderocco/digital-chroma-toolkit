@@ -484,12 +484,14 @@ int ChromaConverter::convertControls(o_channel const& oc, n_channel& nc,
     // GLIDE ------------------------------------------------------------------
 
     // Translate glide shape, with different tables for two types.
-    if (oc.gld_shape)
+    if (oc.gld_shape) {
+        nc.gld_shape = 3;
         nc.gld_time = int8_p{
                  0,   1,  17,  24,  31,  35,  39,  43,
                 46,  59,  53,  57,  61,  63,  67,  71, 
                 74,  77,  79,  81,  83,  86,  88,  91, 
                 94,  98, 102, 106, 111, 117, 123, 127 }[oc.gld_rate];
+        }
     else
         nc.gld_time = int8_p{
                  0,  16,  20,  24,  27,  31,  34,  38, 

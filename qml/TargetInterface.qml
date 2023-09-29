@@ -373,6 +373,8 @@ Midi {
                         rxProgSet(bankMSB, msg, inSysex)
                     else if (nrpnMSB === 17)
                         rxProgSetMeta(inSysex)
+                    else if (nrpnMSB === 18)
+                        rxProgSetAttr(bankMSB, msg, inSysex)
                     else if (nrpnMSB === 19)
                         rxProgWrite(bankMSB, msg, inSysex)
                     else if (nrpnMSB === 20)

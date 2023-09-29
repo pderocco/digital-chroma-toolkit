@@ -1,0 +1,12 @@
+<h1>MIDI note semantics</h1>
+<p>According to the MIDI spec, Note On and Note Off are supposed to be
+  balanced. The Digital Chroma ignores Note Off messages for notes that are
+  already off, but does play Note On messages for notes that are already on.
+  This is because they communicate the useful idea that the note should be
+  retriggered without giving the envelopes the chance to be reset to zero
+  first. Regardless of how many times a note has been triggered in this way,
+  they are all played using the same voice(s), so it still only takes one Note
+  Off to turn the note off.</p>
+<p>The Digital Chroma never generates duplicate Note On messages from its
+  keyboard, but if it receives them from an external input device while
+  recording, they will be passed on to the MIDI Record Output.</p>

@@ -1,0 +1,47 @@
+<h1>GLOBAL midi record program</h1>
+<p>This enables the recording of actual program data, via {MIDI_Program_Set}
+  {_NRPN NRPNs}, rather than recording MIDI Program Change messages. This makes
+  the recording independent of what programs are loaded into the Chroma when it
+  is played back.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the {Global_parameters} section of the
+  {Tools_screen}. It has a single on/off button in the <i>midi record out</i>
+  section.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in {_program_select_mode PROGRAM SELECT mode} using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      {sw-set-split.png height=48}
+      {sw-9.png height=48}
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as MIDI Record Program.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via {_NRPN} 15,9.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">on</td>
+    </tr>
+  </table>

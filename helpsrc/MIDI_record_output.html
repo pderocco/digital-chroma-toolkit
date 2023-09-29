@@ -11,12 +11,25 @@
   proprietary {MIDI_polyphonic_controls}. These work correctly when played back
   via the Digital Chroma, but other software (e.g., music notation) will not
   understand them.</p>
-<p>If a MIDI Start byte is received on the jack used for recording, the
-  Digital Chroma sends the entire state of the Main and Link instruments. This
-  uses a Program Change if the Main program is unmodified, or a
-  {MIDI_Program_Set} {_NRPN} containing the actual program data in a
-  {MIDI_program_sysex Sysex} if it is modified, followed by all control values
-  except pressure. This is useful when starting recording.</p>
+<p>When you record a sequence and play it back later, it's important that the
+  same programs be available. If you want to hear the correct sounds regardless
+  of what programs are contained within the Digital Chroma when you play the
+  sequence, you can turn on the global
+  {Global_midi_record_program MIDI Record Program} parameter before the
+  recording. This causes all Program Change messages in the record output to be
+  replaced with {MIDI_program_sysex Sysex} and {MIDI_Program_Set} {_NRPN NRPNs}
+  messages containing the actual program data. This increases the amount of
+  data your sequencer has to store, and only works if your sequencer can record
+  Sysex messages.</p>
+<p>When starting a recording, it is important to record the initial state of
+  the Main and Link instruments. This can be done manually from the Digital
+  Chroma's control panel by pressing SET SPLIT, LINK UNISON after starting the
+  recording, and before playing the first note. If you normally record entire
+  tracks as a single take, and your recorder can be set up to emit a
+  {MIDI_Start} byte at the start of the recording, you can configure the
+  Digital Chroma to send this state automatically in response to this byte, by
+  turning on the global {Global_midi_record_state MIDI Record State}
+  parameter.</p>
 <p>During recording, one shouldn't do anything that modifies any stored
   programs, because the NRPNs that represent these operations are not sent to
   the Record output, or recognized on the Playback input.</p>

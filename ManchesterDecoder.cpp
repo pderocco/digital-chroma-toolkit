@@ -100,19 +100,19 @@ void ManchesterDecoder::samples(QByteArray samples) {
     if (m_offset)
         if (m_depth == 16) {
             int16_t const* b = (int16_t const*)samples.data();
-            int n = samples.size() >> 1;
+            int n = samples.size();
             if (m_stereo)
-                while (n--)
+                while ((n -= 4) >= 0)
                     process((t = *b++, t + *b++));
             else
-                while (n--)
+                while ((n -= 2) >= 0)
                     process(*b++);
             }            
         else {
             int8_t const* b = (int8_t const*)samples.data();
             int n = samples.size();
             if (m_stereo)
-                while (n--)
+                while ((n -= 2) >= 0)
                     process((t = *b++, t + *b++));
             else
                 while (n--)
@@ -121,19 +121,19 @@ void ManchesterDecoder::samples(QByteArray samples) {
     else
         if (m_depth == 16) {
             uint16_t const* b = (uint16_t const*)samples.data();
-            int n = samples.size() >> 1;
+            int n = samples.size();
             if (m_stereo)
-                while (n--)
+                while ((n -= 4) >= 0)
                     process((t = *b++, t + *b++ - 0x10000));
             else
-                while (n--)
+                while ((n -= 2) >= 0)
                     process(*b++ - 0x8000);
             }            
         else {
             uint8_t const* b = (uint8_t const*)samples.data();
             int n = samples.size();
             if (m_stereo)
-                while (n--)
+                while ((n -= 2) >= 0)
                     process((t = *b++, t + *b++ - 0x100));
             else
                 while (n--)

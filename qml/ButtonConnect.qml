@@ -5,7 +5,7 @@ ButtonAction {
     id:                     root    
 
     property point loc:     win.height, popup.visible, 
-									mapToItem(win, radius, height + 1)
+                                    mapToItem(win, radius, height + 1)
 
     lineHeight:             1
     text:                   target.interfaceState + "\n" 
@@ -67,7 +67,7 @@ ButtonAction {
 
                             onClicked: {
                                 clearState()
-								target.setPortName(modelData)
+                                target.setPortName(modelData)
                                 popup.visible = false
                                 }
                             }

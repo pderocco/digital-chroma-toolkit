@@ -1,11 +1,15 @@
 <h1>MIDI Start</h1>
-<p>MIDI defines the byte 250 as a Start byte. If the MIDI Record Output
-  parameter is nonzero, and the Digital Chroma receives this on the virtual
-  jack selected by that parameter, it sends the current state of the Main
-  program and controls to the selected channel. If a link is in effect, it does
-  the same for the Link program on the next higher channel. This allows an
-  external sequencer to capture this data at the start of a recording. This
-  data (for each channel) begins with a Bank MSB and a Program Change if the
-  program wasn't modified, or a Bank MSB, a Sysex containing the program
-  data, and a Program Set NRPN if the program was modified. In either case, it
-  transmits the state of all controls except polyphonic pressure.</p>
+<p>MIDI defines the byte 250 as a Start byte. If the {_global_parameter global}
+  {Global_midi_record_state} parameter is on, and the Digital Chroma receives
+  this on the virtual jack selected by the global {Global_midi_record_out}
+  parameter, it sends the current state of the Main program and controls to the
+  selected channel. If a link is in effect, it does the same for the Link
+  program on the next higher channel. This allows an external sequencer to
+  capture this data at the start of a recording.</p>
+<p>This data (for each channel) begins with a Bank MSB and a Program Change if
+  the program wasn't modified, or a {_Sysex} containing the program data, a
+  Bank MSB, and a {MIDI_Program_Set Program Set} {_NRPN} if the program was
+  modified (or if the {Global_midi_record_program MIDI Record Program}
+  parameter is turned on). It then transmits an
+  {MIDI_mode_controls All Controllers Off} message, followed by the value of
+  all controls (except pressure) that differ from their default values.</p>

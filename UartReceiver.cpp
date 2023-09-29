@@ -89,7 +89,7 @@ void UartReceiver::bit(int v) {
     }
 
 /* void UartReceiver::setEnable(bool enable); ---------------------------------
-This sets the enable flag. It turning if on, it initializes the parsing 
+This sets the enable flag. If turning it on, it initializes the parsing 
 state.                                                                       */
 
 void UartReceiver::setEnable(bool enable) {

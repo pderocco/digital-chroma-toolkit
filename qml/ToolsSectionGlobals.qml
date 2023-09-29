@@ -692,6 +692,28 @@ Rectangle {
             text:           "device D"
             }
 
+        ButtonValueParam {
+            col:            8
+            row:            19
+
+            n:              n_midi_rec_prog
+            p:              p_midi_rec_prog
+            selected:       p == 1
+            newval:         1 - p_midi_rec_prog
+            text:           "record\nprogram"
+            }
+
+        ButtonValueParam {
+            col:            9
+            row:            19
+
+            n:              n_midi_rec_state
+            p:              p_midi_rec_state
+            selected:       p == 1
+            newval:         1 - p_midi_rec_state
+            text:           "record\nstate"
+            }
+
         // ----------------------------------------------------------------
 
         ButtonValueParam {

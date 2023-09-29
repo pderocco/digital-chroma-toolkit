@@ -1,9 +1,14 @@
 <h1>MIDI pitch changes</h1>
-<p>In normal MIDI, Note On and Note Off are supposed to be balanced. The
-  Digital Chroma uses duplicate Note On messages preceded by Pitch LSB/MSB to
-  change the pitch of a note without retriggering its envelopes.</p>
-<p>Pitch LSB/MSB can also be used before a Note Off message, to change the
-  pitch of the note as it is turned off, or before duplicate Note Off messages
-  to change the pitch while it is dying out or held by the sustain footswitch.
-  In these cases, the default pitch is its current pitch, not the pitch based
-  on the note number.</p>
+<p>To change the pitch of a note while it is sounding, use Pitch MSB/LSB
+  prefixes followed by this Digital Chroma-specific control:</p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="10%">CC111</td>
+    <td>Note Change</td>
+    </tr>
+  </table>
+<p>The value of this control is a note number, and it modifies the pitch of the
+  specified note. The default pitch MSB and LSB in this case are their current
+  values, unrelated to the note number. This naturally works on notes that are
+  released, if they are still sounding.</p>
