@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Undo_Redo')">Undo/Redo</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_quick-start')">Digital Chroma quick-start</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Powering off</h1>
+<p>Since the Digital Chroma is a computer, it&rsquo;s not generally a good idea
+  to turn it off by yanking the power. This can, in rare cases, lead to
+  corruption of the files that store your <span class="popup" onclick="popup('_program')">programs</span>. Instead, press
+  the power switch firmly for a second. The display will say &ldquo;Shutting
+  down&hellip;&rdquo;, and the instrument will turn off after a second or so. Then,
+  it is safe to unplug the unit if you need to pack it up and move it.</p>
+<p>If the unit ever crashes (not that that is likely to happen), you can force
+  the power to shut off by holding the power switch for five seconds. Then,
+  after waiting a few seconds, you can press the power switch again to restart
+  the instrument.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

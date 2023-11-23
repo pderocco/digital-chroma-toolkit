@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Instrument_architecture')">Instrument architecture</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Parameter_organization')">Parameter organization</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Control architecture</h1>
+<p>The vast majority of programming <span class="popup" onclick="popup('_parameter')">parameters</span> are tonal
+  parameters. But there are a some that affect the behavior of the instrument
+  without changing the sound of individual <span class="popup" onclick="popup('_voice')">voices</span>:</p>
+<ul>
+  <li>A <span class="page" onclick="page('Control_voice_count')">voice count</span> parameter that can assign up to four
+    voices to each note played. The voices play the same sound, but the
+    <span class="page" onclick="page('Control_tune_spread')">tune spread</span> and <span class="page" onclick="page('Control_pan_spread')">pan spread</span>
+    parameters introduce differences into them that makes the overall sound
+    spacious and animated, rather like having a flanger or phaser per key.</li>
+  <li>A <span class="page" onclick="page('Common_keyboard_algorithm')">keyboard algorithm</span> parameter determines how
+    keys are assigned to voices. The full complement of keyboard algorithms
+    from the original Chroma are still present, except for two that don&rsquo;t
+    make sense in the context of such a large number of available voices. There
+    are also a pair of new &ldquo;strum&rdquo; algorithms, in which the bottom
+    or top two keys are intercepted and used not to play notes but to generate
+    triggers that replay whatever notes are held elsewhere on the keyboard. If
+    the other keys are released, then playing the trigger notes will replay the
+    last chord but with a very short duration, to roughly simulate the sound of
+    strumming on muted strings.</li>
+  <li>A <span class="page" onclick="page('Common_footswitch_mode')">footswitch mode</span> parameter determines whether
+    the right Sustain <span class="popup" onclick="popup('_footswitch')">footswitch</span> is enabled or not, and what function the
+    left footswitch should be assigned to. Its usual function is Sostenuto, but
+    can also be used as a note gate (only playing notes if the footswitch is
+    depressed), or an inverted note gate (only playing notes if it is not
+    depressed). And unlike the original Chroma, it can also function as a
+    <span class="popup" onclick="popup('_glide')">glide</span> enable.</li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

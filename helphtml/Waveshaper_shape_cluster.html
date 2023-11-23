@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Waveshaper_section')">Waveshaper section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Waveshaper_mod_cluster')">Waveshaper mod cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>WAVESHAPER shape cluster</h1>
+<p><img src="waveshaper-shape-cluster.png" width=373></p>
+<p>This contains the <span class="page" onclick="page('Waveshaper_shape')"><i>shape</i></span> <span class="popup" onclick="popup('_parameter')">parameter</span>, which
+  selects the kind of wave shape, and the <span class="page" onclick="page('Waveshaper_width')"><i>width</i></span>
+  <span class="popup" onclick="popup('_slider')">slider</span> which alters the harmonic structure. For the pulse shape, this
+  represents the width of the pulse in percent. For the saws shape, this
+  represents the phase difference between two sawtooth waves, also in percent.
+  For the various FM shapes, it represents the phase modulation depth in
+  cycles. For the noise and impulse shapes, the width has no effect, nor do
+  either of the <span class="page" onclick="page('Waveshaper_mod_cluster')">modulation clusters</span>.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_mode_controls')">Mode controls</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_NRPNs')">NRPNs</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI RPNs</h1>
+<p>An RPN is a MIDI Registered Parameter Number, which is encoded as a series
+  of Control Changes, and refers to some parameter officially defined in the
+  MIDI specification. The sequence is as follows:</p>
+<ul>
+  <li>CC101 with the MSB of the RPN, CC100 with the LSB of the RPN, in either
+    order.</li>
+  <li>CC6 with the Data value MSB.</li>
+  <li>Optional CC38 with the Data value LSB.</li>
+  </ul>
+<p>There are only two RPNs supported by the Digital Chroma for input, and only
+  on the USB host and serial MIDI input ports. Neither use the Data LSB:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="10%">RPN 0,0</td>
+    <td>Pitch Bend Range in semitones. The total range is plus or minus this
+      amount. This has nothing to do with lever 2, which is normally used
+      internally for pitch bend.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>RPN 0,6</td>
+    <td>MIDI Polyphonic Expression (MPE). This is only recognized on channel 1
+      or 16. The Data MSB specifies the number of channels above 1, or below
+      16, that are to be used as member channels in the same zone as the master
+      channel 1 or 16. 0 turns off MPE for the zone. The channel count can be
+      as high as 15 if only one zone is used; otherwise, the sum of the two
+      counts is limited to 14.</td>
+    </tr>
+  </table>
+<p>When MIDI Polyphonic Expression is used, the data are coalesced into
+channels 1 or 16, using the Digital Chroma&rsquo;s internal encoding for
+polyphonic controls. See <span class="page" onclick="page('MIDI_polyphonic_controls')">Polyphonic controls</span> and <span class="page" onclick="page('MIDI_pitch_controls')">Pitch controls</span>
+for how things are re-encoded as MIDI if they are output to an external
+sequencer for recording and playback.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

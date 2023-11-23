@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Control_Change_table')">Control change table</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_control_tables')">Control tables</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_dialect_table')">Dialect table</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI NRPN table</h1>
+<table cellspacing=-1 class="b p0">
+  <tr>
+    <td width="15%" class="c i">Sysex</td>
+    <td width="8%" class="c i">Bank MSB</td>
+    <td width="8%" class="c i">Bank LSB</td>
+    <td width="8%" class="c i">NRPN MSB</td>
+    <td width="8%" class="c i">NRPN LSB</td>
+    <td width="8%" class="c i">Data MSB</td>
+    <td width="8%" class="c i">Data LSB</td>
+    <td class="c i">Function</td>
+    </tr>
+  <tr>
+    <td class="c i">timestamp<sup>1</sup></td>
+    <td/>
+    <td/>
+    <td class="c">0</td>
+    <td class="c i">param</td>
+    <td class="c i">value</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Set')">Parameter Set 0</span></td>
+    </tr>
+  <tr>
+    <td class="c i">timestamp<sup>1</sup></td>
+    <td/>
+    <td/>
+    <td class="c">1</td>
+    <td class="c i">param</td>
+    <td class="c i">value</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Set')">Parameter Set 1</span></td>
+    </tr>
+  <tr>
+    <td class="c i">timestamp<sup>1</sup></td>
+    <td/>
+    <td/>
+    <td class="c">2</td>
+    <td class="c i">param</td>
+    <td class="c i">value</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Set')">Parameter Set 2</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">15</td>
+    <td class="c i">param</td>
+    <td class="c i">value</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Set')">Parameter Set Global</span></td>
+    </tr>
+  <tr>
+    <td class="c i">program</td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">16</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Set')">Program Set</span></td>
+    </tr>
+  <tr>
+    <td class="c i">metadata</td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">17</td>
+    <td class="c">0</td>
+    <td class="c i">prog<sup>1</sup></td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Set_Metadata')">Program Set Metadata</span></td>
+    </tr>
+  <tr>
+    <td class="c i">timestamp<sup>1</sup></td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">18</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td class="c i">flags<sup>1</sup></td>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Set_Attributes')">Program Set Attributes</span></td>
+    </tr>
+  <tr>
+    <td class="c i">program</td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">19</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Write')">Program Write</span></td>
+    </tr>
+  <tr>
+    <td class="c i">metadata</td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">20</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Write_Metadata')">Program Write Metadata</span></td>
+    </tr>
+  <tr>
+    <td class="c i">timestamp</td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">21</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td class="c i">flags</td>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Write_Attributes')">Program Write Attributes</span><sup>2</sup></td>
+    </tr>
+  <tr>
+    <td class="c i">timestamp<sup>1</sup></td>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">22</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Load_No_Link')">Program Load No Link</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">23</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Store')">Program Store</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">24</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Exchange')">Program Exchange</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td class="c i">bank</td>
+    <td class="c">25</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td class="c i">prog</td>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Copy')">Program Copy</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td class="c i">bank</td>
+    <td class="c">26</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td class="c i">prog</td>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Move')">Program Move</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td class="c i">bank</td>
+    <td class="c">27</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td class="c i">prog</td>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Swap')">Program Swap</span></td>
+    </tr>
+  <tr>
+    <td class="c i">time</td>
+    <td/>
+    <td/>
+    <td class="c">48</td>
+    <td class="c">0</td>
+    <td class="c i">sync<sup>1</sup></td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Clock_Set')">Clock Set</span></td>
+    </tr>
+  <tr>
+    <td class="c i">id</td>
+    <td/>
+    <td/>
+    <td class="c">49</td>
+    <td class="c">0</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Edit_Response')">Edit Response</span><sup>2</sup></td>
+    </tr>
+  <tr>
+    <td class="c i">descrs</td>
+    <td/>
+    <td/>
+    <td class="c">50</td>
+    <td class="c">0</td>
+    <td class="c i">length</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Undo_Redo_Status')">Undo/Redo Status</span><sup>2</sup></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">64</td>
+    <td class="c i">param</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Get')">Parameter Get 0</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">65</td>
+    <td class="c i">param</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Get')">Parameter Get 1</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">66</td>
+    <td class="c i">param</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Get')">Parameter Get 2</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">79</td>
+    <td class="c i">param</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Parameter_Get')">Parameter Get Global</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">80</td>
+    <td class="c">0</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Get')">Program Get</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">81</td>
+    <td class="c">0</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Get_Metadata')">Program Get Metadata</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">82</td>
+    <td class="c">0</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Get_Attributes')">Program Get Attributes</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">83</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Read')">Program Read</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">84</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Read_Metadata')">Program Read Metadata</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c i">bank</td>
+    <td/>
+    <td class="c">85</td>
+    <td class="c">0</td>
+    <td class="c i">prog</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Program_Read_Attributes')">Program Read Attributes</span> </td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">112</td>
+    <td class="c">0</td>
+    <td class="c i">trigger</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Clock_Get')">Clock Get</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">113</td>
+    <td class="c">0</td>
+    <td class="c i">enable</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Edit_Request')">Edit Request</span></td>
+    </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">114</td>
+    <td class="c">0</td>
+    <td class="c i">request</td>
+    <td/>
+    <td class="pl3"><span class="page" onclick="page('MIDI_Undo_Redo_Request')">Undo/Redo Request</span></td>
+    </tr>
+  </table>
+<br>
+<table class="p0">
+  <tr>
+    <td width="12%" class="i">bank</td>
+    <td width="38%">bank number &ndash; 1 (LSB is source)</td>
+    <td width="12%" class="i">prog</td>
+    <td width="38%">program number &ndash; 1 (LSB is source)</td>
+    </tr>
+  <tr>
+    <td class="i">descrs</td>
+    <td>two contcatenated descriptions</td>
+    <td class="i">program</td>
+    <td>complete program data</td>
+    </tr>
+  <tr>
+    <td class="i">enable</td>
+    <td>nonzero to open edit channel</td>
+    <td class="i">request</td>
+    <td>0, 1, or 2 request code</td>
+    </tr>
+  <tr>
+    <td class="i">flags</td>
+    <td>program flags attribute</td>
+    <td class="i">sync</td>
+    <td>1 if synced to NTP server</td>
+    </tr>
+  <tr>
+    <td class="i">id</td>
+    <td>identification string</td>
+    <td class="i">time</td>
+    <td>time and date</td>
+    </tr>
+  <tr>
+    <td class="i">length</td>
+    <td>length of first description</td>
+    <td class="i">timestamp</td>
+    <td>timestamp</td>
+    </tr>
+  <tr>
+    <td class="i">param</td>
+    <td>parameter number within page</td>
+    <td class="i">trigger</td>
+    <td>ignored value that triggers operation</td>
+    </tr>
+  <tr>
+    <td class="i">metadata</td>
+    <td>timestamp, link parameters, metadata</td>
+    <td class="i">value</td>
+    <td>parameter value, +64 if bipolar</td>
+    </tr>
+  </table>
+<p><sup>1</sup> These values are ignored on input, but the Data MSB is still
+  used as a <i>trigger</i>.</p>
+<p><sup>2</sup> These are only used as responses to the corresponding Read or
+  Request functions.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

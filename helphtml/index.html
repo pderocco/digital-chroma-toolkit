@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>DIGITAL CHROMA TOOLKIT</h1>
+<p>The Toolkit runs on a laptop or desktop computer, and controls an attached
+  Digital Chroma. It provides access to the <span class="popup" onclick="popup('_current_program')">current program</span> controlling the
+  sound, all the stored programs, and the
+  <span class="popup" onclick="popup('_global_parameter')">Global Parameters</span>.</p>
+<p>The Toolkit window contains a <span class="page" onclick="page('Navigation_bar')">Navigation bar</span> on the left, which is always
+  visible, and a content screen on the right. The four middle buttons in the
+  Navigation bar choose what screen is visible:</p>
+<ul>
+  <li><b><i>PROGRAMS</i></b> displays a bank of <span class="popup" onclick="popup('_program')">programs</span>, and allows
+    you to select them for playing.</li>
+  <li><b><i>EDITOR</i></b> displays the parameters in the current program, and
+    allows them to be edited.</li>
+  <li><b><i>TOOLS</i></b> provides conversion and backup, and access to the
+    global parameters in the Digital Chroma.</li>
+  <li><b><i>HELP</i></b> is what you&rsquo;re looking at now.</li>
+  </ul>
+<p>This Help screen provides documentation on the entire Digital Chroma
+  Toolkit, and on the Digital Chroma itself. The Help browser&rsquo;s most important
+  features are:</p>
+<ul>
+  <li>To scroll the page, drag it vertically with the left mouse button, or
+    your finger on a touchscreen.</li>
+  <li><span class="popup" onclick="popup('_tap')">Tap</span> a blue link to follow it to another page. Tap a green link to
+    pop up a definition, then tap the definition to dismiss it.</li>
+  <li>Tap the <img src="back.png" height=16> and
+    <img src="forward.png" height=16> buttons at the top of the screen
+    to go back or forward through your browsing history.</li>
+  <li>Tap a <img src="question.png" height=16> button anywhere to get
+    context-sensitive help.</li>
+  <li><span class="popup" onclick="popup('_long-press')">Long-press</span> the <em>HELP</em> button to get back to this
+    screen at any time.</li>
+  </ul>
+<p>To learn the basics of the Toolkit, you should start with this
+  <span class="page" onclick="page('Quick-Start')">Quick-Start</span>.</p>
+<p>Information about the Digital Chroma itself is <span class="page" onclick="page('Digital_Chroma')">here</span>.</p>
+<p>The <span class="page" onclick="page('Reference')">Reference</span> section includes a few things you may find useful right
+  away:</p>
+<ul>
+  <li>The mouse or touch <span class="page" onclick="page('Toolkit_gestures')">Toolkit gestures</span> and types of <span class="page" onclick="page('Toolkit_controls')">Toolkit controls</span>
+    that are used throughout the Toolkit.</li>
+  <li>An outline of the entire <span class="page" onclick="page('Help_contents')">Help contents</span>.</li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sequence_Program')">Sequence Program</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Summary</h1>
+<p>So, to review, the sound of the Chroma is controlled by a set of
+  <span class="popup" onclick="popup('_parameter')">parameters</span>, which are divided into the following categories:</p>
+<ul>
+  <li>A <span class="popup" onclick="popup('_channel')">channel</span> and B channel parameters, each off which affect one half of
+    the <span class="popup" onclick="popup('_voice')">voice</span>, and which can be adjusted independently or in parallel.</li>
+  <li>Control parameters, which affect the entire sound.</li>
+  <li>Panel parameters, which have their own switches or sliders.</lli>
+  </ul>
+<p>Parameters are combined into <span class="popup" onclick="popup('_program')">programs</span>, which are stored in files.
+  Selecting a sound loads a program into the Main <span class="popup" onclick="popup('_instrument')">instrument</span>, and if its
+  <span class="popup" onclick="popup('_link_program')">link</span> parameters are set, loads a second sound into the Link
+  instrument. Edits are always done to the program in the Main instrument, and
+  have no effect on stored programs unless explicitly stored with the STORE
+  switch.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

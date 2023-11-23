@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Selecting_programs')">Selecting programs</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Programs_screen')">Programs screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Rearranging_programs')">Rearranging programs</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Storing programs</h1>
+<p>If you&rsquo;ve edited a <span class="popup" onclick="popup('_program')">program</span>, and you want to store it under the same
+  program number, you can do that from any screen by
+  <span class="popup" onclick="popup('_long-press')">long-pressing</span> the <span class="page" onclick="page('Program_Info_button')">Program Info button</span> (the second button in
+  the <span class="page" onclick="page('Navigation_bar')">Navigation bar</span>), and then <span class="popup" onclick="popup('_tap')">tapping</span> the &ldquo;store&rdquo; button.
+  Even easier, just hit <b>S</b> on the keyboard.</p>
+<p>But if you wish to store a program under a new number, you have to do that
+  from the <em>Programs</em> screen. You long-press the button of the desired
+  program location to display the <span class="page" onclick="page('Program_popup')">Program popup</span>, and then tap the
+  &ldquo;store&rdquo; button.</p>
+<p>Occasionally, it&rsquo;s useful to exchange the current program with a
+  stored program. This is done from the same popup by tapping the
+  &ldquo;exchange&rdquo; button. When you do this, the current program number
+  doesn&rsquo;t change. Repeating the function exchanges them again, getting
+  back to where you started, although <span class="page" onclick="page('Undo_Redo_buttons')">Undo</span> (or pressing
+  <b>U</b> on the keyboard) is easier.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

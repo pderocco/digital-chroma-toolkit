@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Filter_section')">Filter section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_mod1_cluster')">Filter mod1 cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>FILTER tune cluster</h1>
+<p><img src="filter-tune-cluster.png" width=373></p>
+<p>This contains the <span class="page" onclick="page('Filter_mode')"><i>mode</i></span> parameter which determines
+  whether the <span class="popup" onclick="popup('_filter')">filter</span> passes frequencies up to the tuning frequency
+  (lowpass), frequencies around the tuning frequency (bandpass), or frequencies
+  from the tuning frequency up (highpass). It also determines whether it is a
+  two-pole (2p) filter or four-pole (4p); the latter attenuates out-of-band
+  frequencies twice as much.</p>
+<p>This also contains the <span class="page" onclick="page('Filter_tune')"><i>tune</i></span> <span class="popup" onclick="popup('_slider')">slider</span>, which shows
+  the basic filter tuning before modulation as a MIDI pitch (although it
+  exceeds the MIDI range at the high end). This is the pitch that will be heard
+  if the <span class="popup" onclick="popup('_resonance')">resonance</span> is turned all the way up so that the filter
+  oscillates.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

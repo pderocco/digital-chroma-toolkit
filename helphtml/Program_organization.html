@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Parameter_organization')">Parameter organization</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Program_linking')">Program linking</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Program organization</h1>
+<p>The <span class="popup" onclick="popup('_parameter')">parameters</span> that define a sound are collected together into
+  <span class="popup" onclick="popup('_program')">programs</span>, which are stored in files in the Digital Chroma&rsquo;s
+  memory. (The original Chroma stored them in a battery-backed-up CMOS RAM; the
+  Digital Chroma uses an internal flash memory file system.)</p>
+<p>The original Chroma stored fifty programs in its memory. With the panel in
+  Program Select mode, pressing a numbered switch selects the corresponding
+  program, copying it into the Main <span class="popup" onclick="popup('_instrument')">instrument</span>, which controls the sound
+  played from the keyboard. Any edits made to the sound are made to this copy,
+  and don&rsquo;t get saved unless the user presses STORE followed by a
+  numbered switch (or presses STORE twice to save under the current program
+  number). The display shows a MODIFIED indicator if a change is made to the
+  program; this is turned off if the changed program is stored.</p>
+<p>The Digital Chroma expands the memory to nine banks of fifty programs, so
+  the program number display shows three-digit numbers instead of two-digit
+  numbers. Pressing a numbered switch (in Program Select mode) selects a
+  program in the current bank. To change banks, you hold PROG SELECT like a
+  shift key, and press one of the first nine numbered switches. The display
+  changes to 100, 200, 300, etc., to indicate that it is waiting for a program
+  number to be selected; the next number switch (after releasing PROG SELECT)
+  selects a program within the new bank.</p>
+<p>Similarly, pressing STORE followed by a number stores into the current bank.
+  To store into a different bank, you hold STORE like a shift key, press the
+  bank number, release STORE, and press the program number. (You can also
+  select the bank first with PROG SELECT, as described above, and then press
+  STORE and finally the program number, but that&rsquo;s less efficient.)</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

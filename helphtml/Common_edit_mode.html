@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Common_link_spread')">link spread</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Common_edit_number')">edit number</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>COMMON edit mode</h1>
+<p>This controls whether the <span class="popup" onclick="popup('_parameter_control')">parameter control</span> is connected to an A
+  <span class="popup" onclick="popup('_parameter')">parameter</span>, a B parameter, or both in parallel. It has no effect if the
+  parameter currently selected on the Chroma&rsquo;s control panel isn&rsquo;t
+  one of the channelized parameters.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Common_edit_cluster')"><i>edit</i> cluster</span> within
+  the <span class="page" onclick="page('Common_section')">Common section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>This is set with the following switches:<p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="15%"><img src="sw-edit-a.png" height=48></td>
+    <td valign=middle>A</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="15%"><img src="sw-edit-b.png" height=48></td>
+    <td valign=middle>B</td>
+    </tr>
+  <tr>
+    <td width="5%"/>
+    <td width="15%"><img src="sw-edit-a.png" height=48>
+      + <img src="sw-edit-a.png" height=48></td>
+    <td valign=middle>A&amp;B</td>
+    </tr>
+  </table>
+<p>The two switches must be pressed concurrently for A&amp;B.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via <span class="popup" onclick="popup('_NRPN')">NRPN</span> 0,9.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="20%" class="i u">mode</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>Edit A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>Edit B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>Edit A&amp;B</td>
+    <td>(default)</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Glide_shape')">Glide shape</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Glide_mod_select')">Glide mod select</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>GLIDE time</h1>
+<p>These control how long it takes for a voice&rsquo;s pitch to change from one
+  note to another, when <span class="popup" onclick="popup('_glide')">glide</span> is being used.</p>
+<p>Glide normally only functions in monophonic
+  <span class="page" onclick="page('Common_keyboard_algorithm')">keyboard algorithm</span> and the poly ordered and poly
+  buffered algorithms. However, it can also be enabled on the normal poly mode
+  via the left <span class="page" onclick="page('Common_footswitch_mode')">footswitch mode</span>. When the footswitch is
+  pressed, voice assignment temporarily becomes monophonic, and glides from
+  note to note.</p>
+<p>Glide A always controls <span class="popup" onclick="popup('_oscillator')">oscillator</span> A, and glide B always controls
+  oscillator B, so to use glide one normally <span class="popup" onclick="popup('_gang')">gangs</span> the
+  <span class="page" onclick="page('Glide_cluster')">glide clusters</span> together.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the <span class="page" onclick="page('Glide_cluster')">Glide clusters</span> within the
+  <span class="page" onclick="page('Glide_section')">Glide section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>GLIDE</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td><img src="sw-6.png" height=48></td>
+    </tr>
+  </table>
+<p>These appear in the display as Glide Time.</p>
+<p>The switch graphics call this a &ldquo;rate&rdquo;, but since larger values
+  produce longer times, this is really a &ldquo;time&rdquo;, and this
+  terminology is corrected in the Toolkit and the display.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,0</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,0</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<p>The values are displayed as times, in milliseconds (ms) or seconds (s). The
+  constant time and exponential shapes use the values in the second column,
+  while the constant slope and glissando shapes use the values in the third
+  column:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">time</td>
+    <td width="10%" class="c i u">per semi</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">instant</td>
+    <td class="c">instant</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">10ms</td>
+    <td class="c">40ms</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">15s</td>
+    <td class="c">980ms</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

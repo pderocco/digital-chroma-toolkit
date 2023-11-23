@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_control_representation')">Control representation</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_performance_controls')">Performance controls</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI running status</h1>
+<p>Serial MIDI allows the status byte of a channel message to be dropped if it
+  is the same as the preceding non-real-time status byte, to reduce the data
+  rate. Reusing the preceding status is called &ldquo;running status&rdquo;,
+  and isn&rsquo;t allowed for system messages. The Digital Chroma MIDI output
+  uses this feature for Control Change, Pitch Bend, Mono Pressure, and Poly
+  Pressure messages, because they are the only messages that are likely to be
+  transmitted at a high rate. The input properly handles running status for
+  all channel messages, though. (None of this is meaningful for USB MIDI.)</p>
+<p>Note that the even though the MIDI specification calls the Reset byte (255)
+  a system real-time message, it also requires that it clear running status.
+  This makes it effectively a system common message, which is how the Digital
+  Chroma treats it.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

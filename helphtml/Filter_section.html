@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Waveshaper_section')">Waveshaper section</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Editor_screen')">Editor screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Amplifier_section')">Amplifier section</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>FILTER section</h1>
+<p><img src="filter-section.png" width=520></p>
+<p>A <span class="popup" onclick="popup('_filter')">filter</span> modifies the harmonic structure of the sound of a waveshaper by
+  filtering out harmonics above/below a certain frequency, and possibly
+  emphasizing the harmonics near that frequency. It has the following
+  <span class="popup" onclick="popup('_parameter')">parameter</span> <span class="popup" onclick="popup('_cluster')">clusters</span>:</p>
+<ul>
+  <li>One <span class="page" onclick="page('Filter_tune_cluster')">tune</span> cluster. The <span class="popup" onclick="popup('_button')">button</span> shows the current
+    filter <i>mode</i> parameter, and the <span class="popup" onclick="popup('_slider')">slider</span> controls the basic
+    <i>tune</i>, before modulation.</li>
+  <li>Five <span class="page" onclick="page('Filter_mod_cluster')">mod</span> clusters. Each cluster button shows the
+    current <i>mod select</i> parameter, and the slider controls the <i>mod
+    depth</i>. The first modulation cluster also has a
+    <span class="page" onclick="page('Filter_mod1_cluster')">steps</span> parameter, for sampling or quantizing.</li>
+  <li>One <span class="page" onclick="page('Filter_resonance_cluster')">resonance</span> cluster. The slider controls the
+    basic <span class="popup" onclick="popup('_resonance')">resonance</span>, but it can also be modulated.</li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

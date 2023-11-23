@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_editor_output')">Editor output</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_dialects')">MIDI dialects</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI editor input</h1>
+<p>An editor like the Toolkit can also control the Digital Chroma by sending
+  messages to it. All program and parameter <span class="popup" onclick="popup('_NRPN')">NRPNs</span> are supported,
+  including queries, as are the few miscellaneous messages for accessing the
+  Digital Chroma&rsquo;s clock, or invoking Undo/Redo. The editor input
+  channel doesn&rsquo;t recognize notes or controls, though. If the editor
+  channel conflicts with external or playback input, the editor takes
+  precedence.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

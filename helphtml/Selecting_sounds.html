@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Initial_calibrations')">Initial calibrations</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_quick-start')">Digital Chroma quick-start</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Volume_and_tone')">Volume and tone</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Selecting sounds</h1>
+<p>The instrument starts up with the PROG SELECT switch lit up in the PANEL
+  MODE section. This means that the numbered switches in the right section of
+  the panel select different sound <span class="popup" onclick="popup('_program')">programs</span>. You can press any of
+  the fifty switches to select different sounds in bank 1 (programs 101 through
+  150). To try programs in other banks, you can hold PROG SELECT like a shift
+  key and press 1 through 9 to select the bank, and then press one of the fifty
+  switches to select a program within that bank. The new bank will remain
+  selected until you explicitly switch to a different bank.</p>
+<p>As shipped, bank 1 contains a family of sounds designed expressly for the
+  Digital Chroma, and banks 5 through 9 contain translations of the original
+  Chroma&rsquo;s five sets of factory sounds. Banks 2 through 4 are empty, so
+  selecting any sound in those banks will result in a raw sawtooth
+  &ldquo;scratch&rdquo; sound.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

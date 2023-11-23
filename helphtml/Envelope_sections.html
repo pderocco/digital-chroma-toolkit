@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_section')">Sweep section</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Editor_screen')">Editor screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Oscillator_section')">Oscillator section</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1><i>ENVELOPE</i> sections</h1>
+<p><img src="envelope1-section.png" width=520></p>
+<p>An &ldquo;<span class="popup" onclick="popup('_envelope')">envelope</span>&rdquo; generator creates a time-varying
+  signal that is usually triggered at the start of a note, and that returns to
+  zero when the note is released. Volume is always controlled by at least one
+  envelope, but they are useful for modulating other things as well.</p>
+<p>The basic shape of an envelope in the Digital Chroma is called
+  &ldquo;ADR&rdquo;, for Attack Decay Release. That is, each envelope goes
+  through an attack phase, rising to a variable peak level that may depend upon
+  key <span class="popup" onclick="popup('_velocity')">velocity</span>, and then a decay phase in which it falls toward zero, and
+  finally a release phase in which it falls toward zero at a faster rate when
+  the key is released.</p>
+<p>More complex shapes are created by using more than one envelope, which is
+  why the Digital Chroma has four of them. For instance, if the decay for one
+  is set short, and the other is set to infinity, they can be combined into the
+  common &ldquo;ADSR&rdquo; (Attack Decay Sustain Release) shape. Or if the
+  decay for one is set short, and the attack of another is set long, they can
+  be combined into a &ldquo;sforzando&rdquo; shape which consists of an initial
+  short burst which then gradually fades back in. Also, each envelope has an
+  adjustable response to key velocity (or to <span class="popup" onclick="popup('_pedal')">pedal</span> or <span class="popup" onclick="popup('_lever')">lever</span> position), so
+  the user can decide how velocity should affect the two parts of a composite
+  envelope independently.</p>
+<p>Finally, <i>ENVELOPE 2A</i> and <i>2B</i> also have Trigger
+  <span class="popup" onclick="popup('_parameter')">parameters</span>, which allows the onset to be delayed by any amount,
+  or triggered by various things including either <span class="popup" onclick="popup('_sweep')">sweep</span> generator, the
+  release of the note, or when <i>ENVELOPE 1A</i> or <i>1B</i> enters its Decay
+  phase.</p>
+<p>The <i>ENVELOPE 1</i> section has:</p>
+<ul>
+  <li>One <span class="page" onclick="page('Envelope_peak_cluster')">peak</span> <span class="popup" onclick="popup('_cluster')">cluster</span>. The <span class="popup" onclick="popup('_button')">button</span> shows the
+    <i>mod select</i> parameter, which translates key velocity (or other
+    controls) into peak level, and the slider shows the <i>mod depth</i>, which
+    is how much the peak amplitude varies.</li>
+  <li>One <span class="page" onclick="page('Envelope_attack_cluster')">attack</span> cluster. The slider controls the
+    basic attack time, but secondary parameters allow this to be
+    modulated.</li>
+  <li>One <span class="page" onclick="page('Envelope_decay_cluster')">decay</span> cluster. The slider controls the basic
+    decay time, but secondary parameters allow this to be modulated.</li>
+  <li>One <span class="page" onclick="page('Envelope_release_cluster')">release</span> cluster. The slider controls the
+    basic release time, but a secondary parameter allows this to be
+    modulated.</li>
+  </ul>
+<p>The <i>ENVELOPE 2</i> section also has:</p>
+<ul>
+  <li>One <span class="page" onclick="page('Envelope_trigger_cluster')">trigger</span> cluster at the beginning. As
+    mentioned, it allows the start of the envelope to be delayed, or triggered
+    by a sweep or other things.</li>
+  </ul>
+<p><img src="envelope2-section.png" width=520></p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

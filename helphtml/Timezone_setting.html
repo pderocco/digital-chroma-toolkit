@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Pressure_calibration')">Pressure calibration</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Calibrations')">Calibrations</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Clock_setting')">Clock setting</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Timezone setting</h1>
+<p>The Digital Chroma&rsquo;s clock keeps Universal Time, but displays local
+  time, which means that the timezone must be set. This is a two step process.
+  Calibration 36 first displays the current weekday, hour, and minute, and the
+  <span class="popup" onclick="popup('_parameter_control')">parameter control</span> allows you to set the time to match the current local
+  time. Western hemisphere times are in the lower part of the range, eastern
+  hemisphere in the upper part.</p>
+<p>But it is common for multiple timezones to have the same time but different
+  daylight saving rules, so pressing 36 again connects the parameter control to
+  a list of the zones that have the same current time, each expressed as the
+  name of a region or major city in the zone. Choose the one that provides the
+  daylight saving rule appropriate to your location. As shipped, the timezone
+  is set to &ldquo;America: Los Angeles&rdquo;. If you press 36 again, it will
+  go back to the time.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

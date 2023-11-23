@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_dialect_table')">Dialect table</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_control_tables')">Control tables</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_parameter_pages_1_2')">Parameter pages 1&amp;2</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI parameter page 0</h1>
+<p>This lists the non-channelized parameters that appear in page 0. <i>PN</i>
+  is the parameter number (the NRPN LSB in a
+  <span class="page" onclick="page('MIDI_Parameter_Set')">Parameter Set</span>). <i>Min</i>, <i>Def</i> and <i>Max</i>
+  are the minimum, default, and maximum values. For <span class="popup" onclick="popup('_bipolar')">bipolar</span> parameters, the
+  actual values sent over MIDI are higher by 64, so that they remain within the
+  0 to 127 range.</p>
+<table style="width: 50%" cellspacing=-1 class="b p0">
+  <tr>
+    <td width="5%" class="c i">PN</td>
+    <td width="30%" class="i pl3">Parameter</td>
+    <td width="5%" class="c i">Min</td>
+    <td width="5%" class="c i">Def</td>
+    <td width="5%" class="c i">Max</td>
+    </td>
+    </tr>
+  <tr>
+    <td class="c">0</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_program')">Link Bank</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">9</td>
+    </tr>
+  <tr>
+    <td class="c">1</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_program')">Link Number</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">50</td>
+    </tr>
+  <tr>
+    <td class="c">2</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_mode')">Link Mode</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">6</td>
+    </tr>
+  <tr>
+    <td class="c">3</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_balance')">Link Balance</span></td>
+    <td class="r">&ndash;15</td>
+    <td class="r">0</td>
+    <td class="r">15</td>
+    </tr>
+  <tr>
+    <td class="c">4</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_spread')">Link Spread</span></td>
+    <td class="r">&ndash;64</td>
+    <td class="r">0</td>
+    <td class="r">63</td>
+    </tr>
+  <tr>
+    <td class="c">5</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_detune')">Link Detune</span></td>
+    <td class="r">&ndash;50</td>
+    <td class="r">0</td>
+    <td class="r">50</td>
+    </tr>
+  <tr>
+    <td class="c">6</td>
+    <td class="pl3"><span class="page" onclick="page('Common_keyboard_split')">Keyboard Split</span></td>
+    <td class="r">0</td>
+    <td class="r">60</td>
+    <td class="r">127</td>
+    </tr>
+  <tr>
+    <td class="c">7</td>
+    <td class="pl3"><span class="page" onclick="page('Common_main_transpose')">Main Transpose</span></td>
+    <td class="r">&ndash;1</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">8</td>
+    <td class="pl3"><span class="page" onclick="page('Common_link_transpose')">Link Transpose</span></td>
+    <td class="r">&ndash;1</td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">9</td>
+    <td class="pl3"><span class="page" onclick="page('Common_edit_mode')">Edit Mode</span></td>
+    <td class="r">1</td>
+    <td class="r">3</td>
+    <td class="r">3</td>
+    </tr>
+  <tr>
+    <td class="c">10</td>
+    <td class="pl3"><span class="page" onclick="page('Common_edit_number')">Edit Number</span></td>
+    <td class="r">&ndash;50</td>
+    <td class="r">1</td>
+    <td class="r">50</td>
+    </tr>
+  <tr>
+    <td class="c">11</td>
+    <td class="pl3"><span class="page" onclick="page('Common_sequence_program')">Sequence Bank</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">9</td>
+    </tr>
+  <tr>
+    <td class="c">12</td>
+    <td class="pl3"><span class="page" onclick="page('Common_sequence_program')">Sequence Number</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">50</td>
+    </tr>
+  <tr>
+    <td class="c">13</td>
+    <td class="pl3"><span class="page" onclick="page('Common_footswitch_mode')">Footswitch Modes</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">11</td>
+    </tr>
+  <tr>
+    <td class="c">14</td>
+    <td class="pl3"><span class="page" onclick="page('Common_ribbon_algorithm')">Ribbon Algorithm</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">10</td>
+    </tr>
+  <tr>
+    <td class="c">15</td>
+    <td class="pl3"><span class="page" onclick="page('Common_keyboard_algorithm')">Keyboard Algorithm</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">15</td>
+    </tr>
+  <tr>
+    <td class="c">16</td>
+    <td class="pl3"><span class="page" onclick="page('Control_bass_gain')">Bass Gain</span></td>
+    <td class="r">&ndash;15</td>
+    <td class="r">0</td>
+    <td class="r">15</td>
+    </tr>
+  <tr>
+    <td class="c">17</td>
+    <td class="pl3"><span class="page" onclick="page('Control_bass_frequency')">Bass Frequency</span></td>
+    <td class="r">&ndash;5</td>
+    <td class="r">0</td>
+    <td class="r">5</td>
+    </tr>
+  <tr>
+    <td class="c">18</td>
+    <td class="pl3"><span class="page" onclick="page('Control_middle_gain')">Middle Gain</span></td>
+    <td class="r">&ndash;20</td>
+    <td class="r">0</td>
+    <td class="r">20</td>
+    </tr>
+  <tr>
+    <td class="c">19</td>
+    <td class="pl3"><span class="page" onclick="page('Control_middle_frequency')">Middle Frequency</span></td>
+    <td class="r">&ndash;5</td>
+    <td class="r">0</td>
+    <td class="r">5</td>
+    </tr>
+  <tr>
+    <td class="c">20</td>
+    <td class="pl3"><span class="page" onclick="page('Control_middle_resonance')">Middle Resonance</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">5</td>
+    </tr>
+  <tr>
+    <td class="c">21</td>
+    <td class="pl3"><span class="page" onclick="page('Control_treble_gain')">Treble Gain</span></td>
+    <td class="r">&ndash;20</td>
+    <td class="r">0</td>
+    <td class="r">20</td>
+    </tr>
+  <tr>
+    <td class="c">22</td>
+    <td class="pl3"><span class="page" onclick="page('Control_treble_frequency')">Treble Frequency</span></td>
+    <td class="r">&ndash;5</td>
+    <td class="r">0</td>
+    <td class="r">5</td>
+    </tr>
+  <tr>
+    <td class="c">23</td>
+    <td class="pl3"><span class="page" onclick="page('Control_distortion')">Distortion</span></td>
+    <td class="r">&ndash;64</td>
+    <td class="r">0</td>
+    <td class="r">63</td>
+    </tr>
+  <tr>
+    <td class="c">24</td>
+    <td class="pl3"><span class="page" onclick="page('Control_patch')">Patch</span></td>
+    <td class="r">1</td>
+    <td class="r">1</td>
+    <td class="r">19</td>
+    </tr>
+  <tr>
+    <td class="c">25</td>
+    <td class="pl3"><span class="page" onclick="page('Control_voice_count')">Voice Count</span></td>
+    <td class="r">1</td>
+    <td class="r">1</td>
+    <td class="r">4</td>
+    </tr>
+  <tr>
+    <td class="c">26</td>
+    <td class="pl3"><span class="page" onclick="page('Control_detune')">Detune</span></td>
+    <td class="r">&ndash;50</td>
+    <td class="r">0</td>
+    <td class="r">50</td>
+    </tr>
+  <tr>
+    <td class="c">27</td>
+    <td class="pl3"><span class="page" onclick="page('Control_detune_scale')">Detune Scale</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">28</td>
+    <td class="pl3"><span class="page" onclick="page('Control_tune_shift')">Tune Shift</span></td>
+    <td class="r">&ndash;50</td>
+    <td class="r">0</td>
+    <td class="r">50</td>
+    </tr>
+  <tr>
+    <td class="c">29</td>
+    <td class="pl3"><span class="page" onclick="page('Control_tune_spread')">Tune Spread</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    <td class="r">52</td>
+    </tr>
+  <tr>
+    <td class="c">30</td>
+    <td class="pl3"><span class="page" onclick="page('Control_pan_spread')">Pan Spread</span></td>
+    <td class="r">0</td>
+    <td class="r">64</td>
+    <td class="r">127</td>
+    </tr>
+  <tr>
+    <td class="c">31</td>
+    <td class="pl3"><span class="page" onclick="page('Control_lever_modes')">Lever Modes</span></td>
+    <td class="r">0</td>
+    <td class="r">4</td>
+    <td class="r">8</td>
+    </tr>
+  <tr>
+    <td class="c">32</td>
+    <td class="pl3"><span class="page" onclick="page('Control_pedal_modes')">Pedal Modes</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">8</td>
+    </tr>
+  <tr>
+    <td class="c">33</td>
+    <td class="pl3"><span class="page" onclick="page('Control_ribbon_mode')">Ribbon Mode</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">34</td>
+    <td class="pl3"><span class="page" onclick="page('Control_reverb_room')">Reverb Room</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">4</td>
+    </tr>
+  <tr>
+    <td class="c">35</td>
+    <td class="pl3"><span class="page" onclick="page('Control_reverb_send')">Reverb Send</span></td>
+    <td class="r">0</td>
+    <td class="r">0</td>
+    <td class="r">127</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_NRPN_table')">NRPN table</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_control_tables')">Control tables</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_parameter_page_0')">Parameter page 0</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI dialect table</h1>
+<table style="width: 80%" cellspacing=-1 class="b p0">
+  <tr>
+    <td width="30%" class="c i">Function</td>
+    <td width="10%" class="c i">External input</td>
+    <td width="10%" class="c i">Record output</td>
+    <td width="10%" class="c i">Playback input</td>
+    <td width="10%" class="c i">Editor input</td>
+    <td width="10%" class="c i">Editor output</td>
+    </td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Change</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;*</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Note Off</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Note On</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Control Change 0&hellip;74, 84</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Control Change 80&hellip;83</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Control Change 87&hellip;91</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Pitch Bend</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Pressure (mono &amp; poly)</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">RPN 0,0 Pitch Bend Range</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">RPN 0,6 MPE on/off</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td/>
+    <td/>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Set 0</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Set 1</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Set 2</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Set Global</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Set</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Set Metadata</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Set Attributes</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Write</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Write Metadata</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Write Attributes</td>
+    <td/>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Load No Link</td>
+    <td/>
+    <td class="c">&#10003;*</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Store</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Exchange</td>
+    <td/>
+    <td class="c">&#10003;*</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Copy</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Move</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Program Swap</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Clock Set</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Edit Response</td>
+    <td/>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Undo/Redo Status</td>
+    <td/>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Get 0</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Get 1</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Get 2</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Parameter Get Global</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Get</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Get Metadata</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Get Attributes</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Read</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Read Metadata</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Program Read Attributes</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Clock Get</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Edit Request</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  <tr>
+    <td class="pl3">Undo/Redo Request</td>
+    <td/>
+    <td/>
+    <td/>
+    <td class="c">&#10003;</td>
+    <td/>
+    </tr>
+  </table>
+<p>* Program No Link and Program Exchange are recorded as Program Change. If
+  the <span class="popup" onclick="popup('_global_parameter')">global</span>
+  <span class="page" onclick="page('Global_midi_record_program')">MIDI Record Program</span> parameter is on, then all
+  three of these messages are recorded as Program Set instead.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Active_Sense')">Active Sense</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_other_messages')">Other messages</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI Reset</h1>
+<p>MIDI defines the byte 255 as a Reset byte. If the Digital Chroma receives
+  this on any port or virtual jack, it treats it as though an All Sounds Off
+  control and an All Controls Off control were received on all sixteen
+  channels. This turns off all notes, and resets all performance controls to
+  their default values. It also turns off MPE mode on the USB host and serial
+  MIDI input ports.</p>
+<p>If Reset is received on the serial or USB host ports, and an input is
+  intercepted by the <span class="popup" onclick="popup('_global_parameter')">global</span> MIDI Main Input or MIDI Link
+  Input parameter, then the Reset is passed on through to the Main and Link
+  <span class="popup" onclick="popup('_player')">players</span>, but followed with additional messages that set the various
+  controls according to the actual positions of the physical controls. This
+  includes the two Reverb Room and Reverb Send controls, which come from the
+  global Reverb Room and Reverb Send parameters.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

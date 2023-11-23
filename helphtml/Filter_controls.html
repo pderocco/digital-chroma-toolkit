@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Waveshaper_controls')">Waveshaper controls</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Programming_sounds')">Programming sounds</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Amplifier_controls')">Amplifier controls</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Filter controls</h1>
+<p>The <span class="popup" onclick="popup('_filter')">filter</span> in the original Chroma was a two-pole lowpass or highpass
+  filter; four-pole effects could only be attained by cascading the two
+  channels&rsquo; filters. The Digital Chroma allows each filter to be switched
+  between two-pole and four-pole, meaning that you can get an eight-pole
+  response if both are cascaded in series. (The number of poles basically
+  determines how much the out-of-band harmonics are attenuated.) The Digital
+  Chroma&rsquo;s filters also have a bandpass setting.</p>
+<p>The big limitation of the original Chroma&rsquo;s filters was that they only had
+  eight resonance settings, one of which was self-oscillation. The filters
+  were also pretty badly tuned, if used as an oscillator, and wouldn&rsquo;t
+  self-oscillate above a few kilohertz.</p>
+<p>The Digital Chroma solves all that. First of all, the resonance is
+  continuously variable, and has <span class="popup" onclick="popup('_extended_parameter')">extended parameters</span> that
+  allow it to be modulated by the usual mod sources. The highest three
+  resonance settings produce self-oscillation with three different degrees of
+  overdrive, yielding different sounds when an oscillator signal is fed through
+  the self-oscillating filter.</p>
+<p>Also, when set to the highest setting that doesn&rsquo;t self oscillate, the
+  resonance of the filter is much higher than the original Chroma. This means
+  that the impulse wave shape can be used to generate distinct pitched
+  percussive sounds.</p>
+<p>Resonance can be usefully modulated by an envelope. One nice effect is to
+  produce a short burst of resonance at the start of a note. Another is to do
+  the opposite, and produce a sound in which the resonance fades in over
+  time. <span class="popup" onclick="popup('_sweep')">Sweep</span> modulation can add resonance on part of each vibrato
+  cycle.</p>
+<p>To make the filter track the keyboard exactly, you must select one of the
+  <span class="popup" onclick="popup('_glide')">glide</span> generators as a modulation source, and set the corresponding depth
+  to 32. To make sounds that get somewhat brighter as the pitch goes up, but
+  not unnaturally so, the depth should be set to something less, perhaps around
+  16.</p>
+<p>While the original Chroma had three filter tune modulation inputs, the
+  extended parameters behind Mod 2 and Mod 3 Select and Depth are used for two
+  more inputs, Mod 4 and Mod 5. Also, the Mod 1 Depth parameter has an extended
+  <span class="page" onclick="page('Filter_mod_steps')">Mod 1 Steps</span> parameter behind it, which works just like the
+  analogous parameter in the Oscillator section. Since the filter can be used
+  as an oscillator, the filter&rsquo;s modulation depth controls have high
+  resolution around zero like the oscillator&rsquo;s, to allow for very slight
+  vibrato.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

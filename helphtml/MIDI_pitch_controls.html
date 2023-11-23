@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_NRPNs')">NRPNs</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_pitch_changes')">Pitch changes</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI pitch controls</h1>
+<p>The Digital Chroma allows the pitch of a note to be specified independently
+  of its note number, using the following two Digital Chroma-specific
+  controls:</p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="10%">CC86</td>
+    <td>Pitch LSB</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>CC87</td>
+    <td>Pitch MSB</td>
+    </tr>
+  </table>
+<p>Either of these, or both in either order, must be sent immediately before
+  the Note On in order to alter its pitch. If the MSB is sent, it specifies
+  the semitone, and the note number becomes a mere label used in the Note Off,
+  or in polyphonic controls. If the LSB is sent, it is treated as a bipolar
+  offset, where 0 is 50 cents flat, 64 is neutral, and 127 is almost 50 cents
+  sharp. These values are consumed by the Note On, so that subsequent notes
+  are unaffected. This means that the full range of pitches actually goes from
+  &ndash;0.5 to almost 127.5.</p>
+<p>The Digital Chroma uses this feature when a MIDI input port is in MPE mode,
+  so that it can combine all the channels in the zone into the master channel.
+  To do this, it translates Note On into Pitch MSB with the actual note
+  number, followed by Note On with the note number equal to the zero-based
+  channel number. This allows more than one MPE channel to play the same note
+  at the same time. If the result is sent out to a DAW for external recording,
+  this is how the notes will appear.</p>
+<p>It also uses this feature for the poly ordered keyboard algorithms, to
+  control which old notes glide to which new notes, by assigning them to note
+  numbers 0, 1, 2, etc. from the top note down. It also uses it in all the
+  mono and arpeg keyboard algorithms, by using note number 0 for
+  everything.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

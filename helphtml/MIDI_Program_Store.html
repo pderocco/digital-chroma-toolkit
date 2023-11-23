@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Program_Load_No_Link')">Program Load No Link</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_NRPN_functions')">MIDI NRPN functions</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Program_Exchange')">Program Exchange</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI Program Store</h1>
+<p>NRPN 23,0 stores the <span class="popup" onclick="popup('_program')">program</span> from the Main <span class="popup" onclick="popup('_instrument')">instrument</span> to a file, or
+  reports such storing. The Bank MSB and the Data MSB specify the bank and
+  program number. If the program is a scratch program, the file is deleted
+  instead.</p>
+<p><i>Editor input:</i> This stores the program from the Main instrument, and
+  changes the program number and bank attributes accordingly, which clears the
+  <span class="popup" onclick="popup('_modified_flag')">modified flag</span>. It also echoes the operation back to the editor.</p>
+<p><i>Editor output:</i> This is sent whenever it is performed on the Main
+  instrument, either as an echo of a received Program Store, or because the
+  STORE switch was pressed.</p>
+<p><i>Record output, Playback input, External input:</i> Not supported.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

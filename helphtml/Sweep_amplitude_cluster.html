@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_rate_cluster')">Sweep rate cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Sweep_section')">Sweep section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>SWEEP amplitude cluster</h1>
+<p><img src="sweep-amplitude-cluster.png" width=373></p>
+<p>This contains <span class="popup" onclick="popup('_parameter')">parameters</span> related to the <span class="popup" onclick="popup('_sweep')">sweep</span> shape and
+  amplitude. The <span class="page" onclick="page('Sweep_shape')"><i>shape</i></span> parameter has sixteen choices,
+  including some short repetitive patterns. The box to the right of the
+  <span class="popup" onclick="popup('_button')">buttons</span> shows a graph of four sweep cycles, which is the length of
+  the longest pattern.<p>
+<p>The <span class="page" onclick="page('Sweep_amplitude_mod_select')"><i>mod select</i></span> parameter chooses what
+  controls the amplitude of the sweep. Since delayed sweep is so commonly used,
+  it includes a built-in delay ramp generator, so that a full <span class="popup" onclick="popup('_envelope')">envelope</span>
+  doesn&rsquo;t need to be used. The delay ramp goes from &ndash;1 to +1, but
+  the sweep amplitude can&rsquo;t be negative so the result is to delay for the
+  first half of the time, and then ramp from zero to one over the second
+  half.</p>
+<p>The <span class="page" onclick="page('Sweep_amplitude_mod_depth')"><i>mod depth</i></span> parameter determines how
+  much the amplitude of the sweep is varied. It scales the modulation around a
+  value of one <span class="popup" onclick="popup('_unit')">unit</span>, rather than zero. That is, if the depth is turned off
+  (the default), you always get the full sweep amplitude. If it is set to 100%,
+  the modulation can vary the amplitude from zero to 100%. If it is set to 50%,
+  it can vary the amplitude from 50% to 100%.</p>
+<p>The rectangular box is actually a graph of the response, and varies when the
+  two parameters are adjusted. See the <i>mod depth</i> parameter for details
+  on how to interpret these graphs.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

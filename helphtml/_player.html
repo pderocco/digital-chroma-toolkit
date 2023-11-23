@@ -1,0 +1,12 @@
+<p><em>player:</em> A software module in the Digital Chroma that plays notes on
+a virtual <span class="popup" onclick="popup('_instrument')">instrument</span>. The keyboard is connected to two players, one for the
+main sound and the other for a <span class="popup" onclick="popup('_link_program')">link</span> sound. There are also 64
+players, one for each MIDI channel on the <span class="popup" onclick="popup('_USB_device_port')">USB device port</span>, that are intended
+for sequence playback, when connected to a DAW.</p>
+<p>When a <span class="popup" onclick="popup('_program')">program</span> is selected, the player creates a new &ldquo;active&rdquo;
+instrument, and sends all subsequent notes to it, but the previous instrument,
+now &ldquo;inactive&rdquo;, continues to exist as long as any if its notes are
+held. <span class="popup" onclick="popup('_parameter')">Parameter</span> changes are sent to the active instrument, so have
+no effect on inactive instruments. However, the player is where the
+<span class="popup" onclick="popup('_performance_control')">performance control</span> values are recorded, so they apply to both active and
+inactive instruments.</p>

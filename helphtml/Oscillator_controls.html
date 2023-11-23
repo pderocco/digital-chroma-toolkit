@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_generators')">Envelope generators</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Programming_sounds')">Programming sounds</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Waveshaper_controls')">Waveshaper controls</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Oscillator controls</h1>
+<p>The basic parameter controlling the <span class="popup" onclick="popup('_oscillator')">oscillator</span> is Tune, which is scaled
+  in semitones. Its value is shown as the note number played by the middle C
+  key, by default &ldquo;C5&rdquo; (since the MIDI note range is represented as &ldquo;C0&rdquo; to
+  &ldquo;G10&rdquo;). The Digital Chroma adds the extended <span class="page" onclick="page('Control_tune_shift')">tune shift</span>
+  <span class="popup" onclick="popup('_parameter')">parameter</span>, which has two functions depending upon its polarity: for
+  positive values, it introduces a varying amount of stretch to the tuning; for
+  negative values, it introduces a varying amount of randomness to the tuning.
+  The latter is useful for simulating the out-of-tune-ness of the original
+  Chroma, but one or the other should generally be used in modest quantities to
+  avoid a dry sound.</p>
+<p>Although Tune Shift is an extended parameter behind the Tune parameter, it
+  is actually a control parameter, meaning that it has a single value that
+  applies to both <span class="popup" onclick="popup('_channel')">channels</span>. There is also a single
+  <span class="page" onclick="page('Control_detune')">detune</span> control parameter, inherited from the original
+  Chroma, which detunes only the B channel relative to the A channel. Unlike
+  the original Chroma, which had a fixed pitch detune, the Digital Chroma has
+  an extended Detune Scale parameter which allows for a fixed Hertz detune for
+  a constant beat frequency, and a half-scale detune in which the beat
+  frequency doubles with each two-octave increase in pitch.</p>
+<p>When a <span class="popup" onclick="popup('_link_program')">link</span> is in effect, there is also a
+  <span class="page" onclick="page('Common_link_detune')">Link Detune</span> parameter, which detunes the Main and Link
+  sounds in opposite directions. When the <span class="page" onclick="page('Control_voice_count')">voice count</span>
+  parameter is used to allocate multiple voices to each note, there is also a
+  <span class="page" onclick="page('Control_tune_spread')">tune spread</span> control parameter, which causes the tuning
+  of the voices to be spread out by an adjustable amount. These both use
+  half-scale detuning.</p>
+<p class="extra">Note that all these detunings (and the master tuning) are
+  applied both to the oscillators and the filters, in case the latter are used
+  as ocillators.</p>
+<p>The modulation sources in the original Chroma included the glide,
+  <span class="popup" onclick="popup('_sweep')">sweep</span> and <span class="popup" onclick="popup('_envelope')">envelope</span> generators of both channels, as well as the
+  <span class="popup" onclick="popup('_lever')">levers</span>, <span class="popup" onclick="popup('_pedal')">pedals</span>, velocity and pressure. The Digital Chroma
+  is more versatile in that it allows you to use either the full bipolar range
+  of either lever, or to choose one side or the other of the lever range. There
+  is even a noise modulation input, which is useful with the Steps parameter
+  described below.</p>
+<p>While the original Chroma had three pitch modulation inputs, the extended
+  parameters behind Mod 2 and 3 Select and Depth are used for two more inputs,
+  Mod 4 and 5. Also, the Mod 1 Depth parameter has an extended Mod 1 Steps
+  parameter behind it, which does one of two things: it can quantize the
+  modulation (after scaling by the depth) to semitones, or any interval up to
+  fifths, or it can sample it either by one of the sweep generators. If
+  something like a decaying envelope is used as a modulation source, quantizing
+  will yield apparent steps that slow down as the envelope approaches zero,
+  while sampling will yield steps that get smaller in amplitude as the envelope
+  approaches zero. When noise is sampled by a sweep generator, the well-known
+  noise-into-sample-and-hold effect is attained.</p>
+<p>The old Chroma scaled the three modulations differently, so that one could
+  get very slight vibratos, and also get extreme modulation which is useful
+  when the <span class="popup" onclick="popup('_patch')">patch</span> parameter enables phase sync. The Digital Chroma scales
+  them all the same, but the mod depth scales are nonlinear, providing high
+  resolution around zero, and larger steps at larger values.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

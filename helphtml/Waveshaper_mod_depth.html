@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Waveshaper_mod_select')">Waveshaper mod select</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_mode')">Filter mode</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>WAVESHAPER mod depth</h1>
+<p>These control the amount of waveshaper width modulation. The displayed
+  values are the percentage width variation per <span class="popup" onclick="popup('_unit')">unit</span> of modulation, if the
+  &ldquo;saws&rdquo; or &ldquo;pulse&rdquo; shape is selected, or the number of
+  cycles of FM per unit of modulation if one of the &ldquo;FM&rdquo; shapes are
+  selected. This has no effect for a &ldquo;noise&rdquo; or
+  &ldquo;impulse&rdquo; shape is selected.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the <span class="page" onclick="page('Waveshaper_mod_cluster')">Waveshaper mod clusters</span>
+  within the <span class="page" onclick="page('Waveshaper_section')">Waveshaper section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>WIDTH</i> section of the right panel, under
+  the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><img src="sw-36.png" height=48></td>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-36.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Wave Mod1-2 Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td class="i u">mod 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,51</td>
+    <td>1,53</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,51</td>
+    <td>2,43</td>
+    </tr>
+  </table>
+<p>Since these are <span class="popup" onclick="popup('_bipolar')">bipolar</span> parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<p>The values are displayed as percentages or cycles:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">percent</td>
+    <td width="10%" class="c i u">cycles</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">&ndash;100%</td>
+    <td class="c">&ndash;16cyc</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td class="c">off</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+100%</td>
+    <td class="c">+16cyc</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

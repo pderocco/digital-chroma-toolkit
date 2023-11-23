@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_amplitude_mod_select')">Sweep amplitude mod select</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_trigger')">Envelope trigger</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>SWEEP amplitude mod depth</h1>
+<p>These control the amount that the amplitude of each <span class="popup" onclick="popup('_sweep')">sweep</span> generator is
+  modulated.</p>
+<p>The sweep amplitude is normally 100%, and its effective amplitude is
+  controlled by the modulation depth where the sweep is used, e.g., the
+  <span class="popup" onclick="popup('_oscillator')">oscillator</span> mod input. This modulation parameter simply controls how much
+  the <span class="page" onclick="page('Sweep_amplitude_mod_select')">selected parameter</span> dynamically affects the
+  amplitude. When this is set to &ldquo;off&rdquo; the sweep is at a fixed
+  nominal value. When this is raised to 100%, the mod source can vary it from
+  zero to 100%, or &ndash;100% to 100% for bipolar controls.</p>
+<p>If the <span class="page" onclick="page('Sweep_amplitude_mod_select')">mod select</span> is one of the delay choices,
+  the delay envelope goes from &ndash;1 to +1 unit over the delay period, but
+  the negative portion is chopped off so there is no sweep signal for the first
+  half of the delay. If this depth parameter is reduced to 50%, the delay
+  envelope effectively goes from zero to +1 unit, so the sweep starts 
+  immediately but rises more slowly.</p>
+
+<h3>Unipolar modulation</h3>
+<p>Most mod sources have a 0 to 1 <span class="popup" onclick="popup('_unit')">unit</span> range. The following graphs show the
+  response at various positive and negative depths:<p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>
+      <img src="sweep-ampl-mod-graph-unipolar.png" width=700>
+      </td>
+    </tr>
+  </table>
+<p>The blue lines represent 0 units of input and output, and the green lines
+  represent 1 unit of input and output. The red dots show where the curve
+  pivots around, which is different for positive and negative depths. (These
+  dots aren&rsquo;t shown in the graph in the cluster popup.)</p>
+
+<h3>Bipolar modulation</h3>
+<p>Some mod sources, like the levers, have a &ndash;1 to +1 unit range. The
+  following graphs show the response at various positive and negative
+  depths:<p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>
+      <img src="sweep-ampl-mod-graph-bipolar.png" width=700>
+      </td>
+    </tr>
+  </table>
+
+<h3>Pitch modulation</h3>
+<p>The pitch varies from &ndash;1 to almost +1 unit across the keyboard, but
+  can go further with octave transposition, and further still via MIDI. The
+  darker regions represent the notes outside the normal keyboard range. As you
+  can see, the most useful settings are lower values, allowing you to introduce
+  a modest variation in sweep amplitude across the keyboard:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>
+      <img src="sweep-ampl-mod-graph-pitch.png" width=700>
+      </td>
+    </tr>
+  </table>
+
+<h3>Envelope modulation</h3>
+<p>Any of the envelope generators can control the sweep amplitude, if you need
+  something fancier than the sweeps&rsquo; own delay envelopes. The following
+  graphs show the resulting waveshape (with time on the X-axis), for a typical
+  envelope; obviously the actual shape depends on how you program the envelope.
+  It is shown for a non-touch-sensitive envelope, with a 0 to 1 unit range, but
+  can be used with touch-sensitive ones as well, producing up to twice the
+  sweep amplitude. Such envelopes aren&rsquo;t very appropriate with large
+  negative depths, though:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>
+      <img src="sweep-ampl-mod-graph-envelope.png" width=700>
+      </td>
+    </tr>
+  </table>
+
+<h3>Delay modulation</h3>
+<p>When the sweep&rsquo;s own internal delay generator is used, you get the
+  following responses (with time on the X-axis). Note that lowering the
+  positive depth makes it start earlier. Higher negative depths aren&rsquo;t
+  particularly useful:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td>
+      <img src="sweep-ampl-mod-graph-delay.png" width=700>
+      </td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  <span class="page" onclick="page('Sweep_amplitude_cluster')">Sweep amplitude clusters</span> within the
+  <span class="page" onclick="page('Sweep_section')">Sweep section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>SWEEP</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-12.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Swp Ampl Mod Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,10</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,10</td>
+    </tr>
+  </table>
+<p>Since these are <span class="popup" onclick="popup('_bipolar')">bipolar</span> parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">&ndash;100%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+100%</td>
+    <td>(significant)</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

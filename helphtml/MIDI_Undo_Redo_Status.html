@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Undo_Redo_Request')">Undo/Redo Request</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_NRPN_functions')">MIDI NRPN functions</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI Undo/Redo Status</h1>
+<p>NRPN 50,0 is sent by the Digital Chroma on the Editor output channel in
+  response to <span class="page" onclick="page('MIDI_Undo_Redo_Request')">Undo/Redo Request</span> NRPN 114,0, or to report changes in the
+  descriptions of what events are next in line for Undo and Redo. It is
+  preceded by a Sysex containing two concatenated strings, the first describing
+  the next Undo operation in line, the second describing the next Redo
+  operation in line. The Data MSB contains the length of the first string. If
+  there is nothing to Undo or Redo, the corresponding part of the string is
+  empty.</p>
+<p>When Undo or Redo is invoked from the control panel, or when the editor
+  sends in any undoable message, or when the control panel does something
+  undoable, or when an external drive or network operation modifies program
+  files, this is normally sent after any messages reflecting the changes.
+  However, certain consecutive events, like edits to the current program, are
+  combined into a single undoable event. Since only the first event changes the
+  description of what&rsquo;s next in line for Undo and Redo, only the first
+  event sends this message.</p>
+<p>Each description matches what will be shown in the Digital Chroma&rsquo;s
+  display for a second after Undo or Redo is invoked. Typical messages are:</p>
+<ul>
+  <p>Load 104</p>
+  <p>Edit 217</p>
+  <p>Store 113</p>
+  <p>External modification</p>
+  </ul>
+<p>The last one indicates an external drive or network operation that altered
+  one or more program files.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

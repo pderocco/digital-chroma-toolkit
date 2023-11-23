@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Global_midi_main_in')">Global midi main in</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_global_parameters')">All global parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Global_midi_record_out')">Global midi record out</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>GLOBAL midi link in</h1>
+<p>This selects the port and channel to accept Link input on. This is the
+  input that is used when the <span class="popup" onclick="popup('_link_program')">link</span> mode is set to &ldquo;link
+  external&rdquo; or &ldquo;link internal&rdquo;. The former uses the external
+  input to play the Link sound, while the internal keyboard plays the Main
+  sound. The latter does the reverse.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Global_parameters')">Global parameters</span> section of the
+  <span class="page" onclick="page('Tools_screen')">Tools screen</span>. It has separate buttons for the port and for the
+  channels.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in <span class="popup" onclick="popup('_program_select_mode')">PROGRAM SELECT mode</span> using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-7.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as MIDI Link Input.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via <span class="popup" onclick="popup('_NRPN')">NRPN</span> 15,7.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">none</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">serial 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">16</td>
+    <td class="c">serial 16</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">17</td>
+    <td class="c">hostA 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">32</td>
+    <td class="c">hostA 16</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">33</td>
+    <td class="c">hostB 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">48</td>
+    <td class="c">hostB 16</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_running_status')">Running status</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_reverb_controls')">Reverb controls</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI performance controls</h1>
+<p>Each lever generates two non-overlapping <span class="popup" onclick="popup('_unipolar')">unipolar</span> controls, such that
+  when one is nonzero the other is zero. However, from MIDI the two sides of
+  each lever are two completely independent controls. When a program uses lever
+  1 as a modulation source, it is really subtracting the &ndash;lever value
+  from the +lever value. When it uses +lever or &ndash;lever, it only listens
+  to that one control. Note that <span class="popup" onclick="popup('_global_parameter')">global parameters</span>
+  determines the physical polarity of each lever, and should be set based on
+  the performer&rsquo;s preference.</p>
+<p>The pedals normally generate unipolar controls, and the ribbon generates a
+  <span class="popup" onclick="popup('_bipolar')">bipolar</span> control. They too have global parameters to invert them, to allow
+  the Digital Chroma to be used with as many different devices as possible.
+  There are also global parameters to support custom bipolar pedals using two
+  controls for each, but if this isn&rsquo;t done, the &ndash;pedal 1 and
+  &ndash;pedal 2 controls could be used by other completely independent
+  external controllers.</p>
+<p>The Volume control comes from the VOLUME slider, and has an x<sup>2</sup>
+  curve in the player. The nominal value is 90, which is 6db below maximum. The
+  LSB isn&rsquo;t supported.</p>
+<p>On input, the Pan control, when set to a nonzero value, reduces the
+  available pan range for the player&rsquo;s stereo output, nudging or forcing
+  it to the left or right. Nothing in the Digital Chroma generates this. The
+  LSB isn&rsquo;t supported.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

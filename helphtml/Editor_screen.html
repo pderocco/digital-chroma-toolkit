@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Programs_screen')">Programs screen</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Screen_buttons')">Screen buttons</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Tools_screen')">Tools screen</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Editor screen</h1>
+<p>The <em>Editor</em> <span class="popup" onclick="popup('_screen')">screen</span> is fairly complicated, because the Digital
+  Chroma sound architecture has many more <span class="popup" onclick="popup('_parameter')">parameters</span> than can
+  reasonably be displayed all at once on a single screen. Instead, parameters
+  are grouped into &ldquo;<span class="popup" onclick="popup('_cluster')">clusters</span>&rdquo;.</p>
+<h2>Clusters</h2>
+<p>Most of the <span class="popup" onclick="popup('_button')">buttons</span> on the main <em>Editor</em> screen are
+  &ldquo;cluster buttons&rdquo;, and <span class="popup" onclick="popup('_tap')">tapping</span> any of these buttons
+  displays a <span class="popup" onclick="popup('_popup')">popup</span> showing all the parameters in the cluster. The cluster
+  button may contain a simple italicized label, like <i>tone</i>, or may show
+  the (non-italicized) value of the most important <span class="popup" onclick="popup('_selector_parameter')">selector parameter</span> in the
+  cluster. If the cluster button has a <span class="popup" onclick="popup('_slider')">slider</span> next to it, the slider
+  controls the most important <span class="popup" onclick="popup('_variable_parameter')">variable parameter</span> in the cluster. These
+  sliders are the parameters that you will most commonly be adjusting back and
+  forth when programming the Digital Chroma, which is why they are on the main
+  screen.</p>
+<h2>Popups</h2>
+<p>When a popup is displayed, the main screen is dimmed, indicating its
+  controls are temporarily inaccessible. The popup can be dismissed by tapping
+  the dimmed area, or the popup&rsquo;s title. It is also possible to <span class="popup" onclick="popup('_drag')">drag</span>
+  a popup away from the center of the screen by its title, which removes the
+  dimming from the main screen. In this state, you can manipulate the popup
+  controls <i>and</i> the main screen controls; you can even open more popups
+  and move them to different places on the screen. This can be useful if you
+  need to tweak secondary parameters back and forth. The popups can still be
+  dismissed by tapping their titles.</p>
+<p class="extra">You can also dismiss all popups with the &ldquo;Escape&rdquo; key.</p>
+<p>Within cluster popups, selector parameters are shown as arrays of buttons
+  for each possible value, with the current choice highlighted. This means it
+  only takes three taps to change a selector value: one to display the popup,
+  one to change the value, and one to dismiss the popup.</p>
+<h2>Highlighting</h2>
+<p>You&rsquo;ll notice that some controls are white and others are gray.
+  Controls are gray if they are not currently affecting the sound. For
+  instance, if a modulation depth is zero, its slider and cluster button are
+  both gray. As soon as the depth is set to a nonzero value, they turn white,
+  unless what they are modulating isn&rsquo;t actually participating in the
+  sound generation. For instance, if an <span class="popup" onclick="popup('_envelope')">envelope</span> isn&rsquo;t used anywhere
+  in the program, it doesn&rsquo;t matter what you set its parameters to; the
+  controls will always be gray.</p>
+<h2>Default values</h2>
+<p>Every parameter has a <span class="popup" onclick="popup('_default_value')">default value</span>, which is the value it has in a
+  &ldquo;<span class="popup" onclick="popup('_scratch_program')">scratch</span>&rdquo; sound (the sound of a non-existent
+  program). You can reset a slider to its default value by
+  <span class="popup" onclick="popup('_long-press')">long-pressing</span> it. You can reset a selector parameter to its
+  default value by long-pressing any of its value buttons. And you can reset an
+  entire cluster to its default values by long-pressing the cluster button.</p>
+<p>A few sliders also have a &ldquo;significant&rdquo; value, which is a
+  commonly used non-default value. This can be set quickly by tapping the
+  slider. For instance, you can set a pulse width to 50% this way, or to 0% by
+  long-pressing it. Sliders that don&rsquo;t have significant values ignore a
+  tap.</p>
+<h2>Copying clusters</h2>
+<p>You can copy all the values from one cluster into another of the same type
+  by dragging its cluster button and dropping it on the other cluster button.
+  You can also swap two clusters of the same type by <span class="popup" onclick="popup('_long-drag')">long-dragging</span>
+  one onto the other. When you do this, the first cluster is initially reset to
+  its default values, but the previous values are what get dragged to and
+  swapped with the second cluster.</p>
+<h2>Ganging clusters</h2>
+  If a cluster is dragged onto its A/B twin, the parameters are not only copied
+  but the two clusters are <span class="popup" onclick="popup('_gang')">ganged</span> together in parallel. The B
+  <span class="popup" onclick="popup('_channel')">channel</span> controls are replaced with a wide button with an equals sign in
+  it, and the A channel controls operate both in parallel. Tapping the equals
+  sign ungangs the controls, allowing them to be individually adjusted
+  again.</p>
+<h2>Sections</h2>
+<p>The screen is divided into sections. The <i>COMMON</i> section contains
+  parameters that don&rsquo;t pertain directly to the actual sound generation,
+  like the <span class="popup" onclick="popup('_link_program')">link</span> parameters. The <i>CONTROL</i> section contains
+  overall sound parameters. The remaining sections on the left are
+  <span class="popup" onclick="popup('_control_signal')">control signal</span> generators, two in each section, and they can be freely
+  assigned to any modulation inputs. The sections on the right side of the
+  screen are pairs of sound generation and processing modules, which can be
+  interconnected in various ways according to the <span class="popup" onclick="popup('_patch')">patch</span> parameter. The
+  sections are:</p>
+<ul>
+  <li><span class="page" onclick="page('Common_section')"><i>COMMON</i></span></li>
+  <li><span class="page" onclick="page('Control_section')"><i>CONTROL</i></span></li>
+  <li><span class="page" onclick="page('Glide_section')"><i>GLIDE A &amp; B</i></span></li>
+  <li><span class="page" onclick="page('Sweep_section')"><i>SWEEP A &amp; B</i></span></li>
+  <li><span class="page" onclick="page('Envelope_sections')"><i>ENVELOPE 1A, 1B, 2A, 2B</i></span></li>
+  <li><span class="page" onclick="page('Oscillator_section')"><i>OSCILLATOR A &amp; B</i></span></li>
+  <li><span class="page" onclick="page('Waveshaper_section')"><i>WAVESHAPER A &amp; B</i></span></li>
+  <li><span class="page" onclick="page('Filter_section')"><i>FILTER A &amp; B</i></span></li>
+  <li><span class="page" onclick="page('Amplifier_section')"><i>AMPLIFIER A &amp; B</i></span></li>
+  </ul>
+<p>You can also see the above help pages by tapping the
+  <img src="question.png" height=16> button in the corners of the
+  sections.</p>
+<h2>Where used?</h2>
+<p>In an architecture as versatile as the Digital Chroma&rsquo;s, one often
+  wonders where some control signal generator is actually used. The
+  <em>Editor</em> screen makes it easy to find out. If you tap the title of any
+  of the control signal generators on the left side of the screen (i.e.,
+  <i>GLIDE A</i>, <i>GLIDE B</i>, <i>SWEEP A</i>, etc.), other cluster buttons
+  will turn bright red if those control signals have any effect on those
+  clusters.</p>
+<p>The small buttons just below the <em>Editor</em> title let you do the same
+  thing for the <span class="popup" onclick="popup('_performance_control')">performance control</span> inputs.</p>
+<h2>Hotkeys</h2>
+<p>You can dismiss all popups with the &ldquo;Escape&rdquo; key.</p>
+<p>You can increment and decrement a parameter (or a ganged pair) using the
+  Left and Right cursor keys. These are always connected to whatever parameter
+  was last modified via a button or slider in the Toolkit.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

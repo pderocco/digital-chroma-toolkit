@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Local_source')">Local source</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Internal_message_flow')">Internal message flow</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Players')">Players</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Preprocessing</h1>
+<p>Certain aspects of the Digital Chroma note and control processing are
+  performed before the <span class="popup" onclick="popup('_player')">players</span>, so that the <span class="page" onclick="page('MIDI_record_output')">Record output</span> can
+  reflect the results of this processing. This includes the following:</p>
+<ul>
+  <li>The Main and <span class="popup" onclick="popup('_link_program')">Link</span> layering or keyboard splitting,
+    including the keyboard split point.</li>
+  <li>The Main and Link octave transpositions.</li>
+  <li>The Link Balance, Spread and Detune <span class="popup" onclick="popup('_parameter')">parameters</span>.</li>
+  <li>The Keyboard Algorithms in both the Main and Link programs, including
+    <span class="popup" onclick="popup('_arpeggiation')">arpeggiation</span>.</p>
+  <li>Those aspects of the Footswitch Mode parameter, in both the Main and Link
+    programs, that affect the sounding of the notes, or the enabling or
+    reinterpretation of the <span class="popup" onclick="popup('_footswitch')">footswitches</span>.</li>
+  <li>The translation of raw <span class="popup" onclick="popup('_ribbon')">ribbon</span> controller values according to the
+    Ribbon Algorithm parameters, in both the Main and Link programs.</li>
+  </ul>
+<p>The preprocessing is controlled by the relevant parameters in the Main and
+  Link players. The reason certain parts of the performance processing is
+  performed prior to the where the Main and Link channels are output to the
+  <span class="popup" onclick="popup('_USB_device_port')">USB device port</span> for recording is so that sequences will contain the actual
+  notes heard, and not the keys pressed. Note that this means that the players
+  connected to the 64 USB device port channels don&rsquo;t do any of this
+  processing (e.g., arpeggiation), because they assume that what is being
+  played into them is already the result of this processing.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

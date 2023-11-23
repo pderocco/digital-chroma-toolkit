@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Program_linking')">Program linking</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sequence_Program')">Sequence Program</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Additional link parameters</h1>
+<p>LINK LOWER and LINK UPPER use a <span class="page" onclick="page('Common_keyboard_split')">keyboard split</span>
+  <span class="popup" onclick="popup('_parameter')">parameter</span> to determine which notes go to which <span class="popup" onclick="popup('_instrument')">instrument</span>. This is set
+  by pressing <span class="popup" onclick="popup('_SET_SPLIT')">SET SPLIT</span> and then pressing the key that should become the
+  bottom note of the upper part of the keyboard. Pressing SET SPLIT twice sets
+  the split point to the same place it was set to the last time it was set in
+  this manner.</p>
+<p>Above the <span class="popup" onclick="popup('_link_program')">link</span> switches are transposition switches, which allow
+  the Main and Link sounds to be transposed up or down one octave. Pressing a
+  switch that is off turns it on and the other one off; pressing a switch that
+  is on turns it off, setting the transposition to zero. The main transposition
+  is in effect at all times, even if there is no link in effect. When a unison
+  link is in effect, it allows the same key to play two different notes, one or
+  two octaves apart. You can press a main transpose switch and a link transpose
+  switch at the same time to change them both quickly.</p>
+<p>When a link is set up (or reselected by pressing a link switch twice), the
+  parameter slider is connected to a special panel parameter called
+  <span class="page" onclick="page('Common_link_balance')">link balance</span>. This adjusts the relative volumes of the
+  Main and Link sounds, with a &plusmn;15db range. There are also two extended
+  parameters in the Main program, called <span class="page" onclick="page('Common_link_spread')">link spread</span> and
+  <span class="page" onclick="page('Common_link_detune')">link detune</span>. The former causes the Main and Link sounds to be pushed
+  to opposite sides of the stereo panning range. The latter causes the Main and
+  Link sounds to be detuned in opposite directions (using half-scale detuning).
+  The point of all three of these parameters is to allow differences to be
+  introduced between the Main and Link, without having to load, edit and store
+  the Link sound. It also works on a unison &ldquo;link to self&rdquo; even though the Main
+  and Link instruments are playing the same program.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

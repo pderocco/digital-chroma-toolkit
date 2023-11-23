@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Amplifier_post_mod_select')">Amplifier post mod select</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Amplifier_pan')">Amplifier pan</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>AMPLIFIER post mod depth</h1>
+<p>These adjust the amount of post modulation that applies to each
+  <span class="popup" onclick="popup('_amplifier')">amplifier's</span> volume. They apply a reduction <i>after</i>
+  the two primary sources (normally <span class="popup" onclick="popup('_envelope')">envelopes</span>) are added
+  together.</p>
+<p>When set to &ldquo;off&rdquo;, the post modulation has no effect, and the
+  volume is normal. When set to 50%, most sources can vary the volume from 50%
+  to 100%. When set to 100%, most sources can vary the volume from zero to
+  100%. When set to a negative value, the modulation reduces the volume across
+  its range, rather than increasing it.</p>
+
+<h3>Unipolar modulation</h3>
+<p>Most mod sources have a 0 to 1 <span class="popup" onclick="popup('_unit')">unit</span> range. The following graphs show the
+  response at various positive and negative depths:<p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td><img src="amplifier-post-mod-graph-unipolar.png" width=700></td>
+    </tr>
+  </table>
+<p>The blue lines represent 0 units of input and output, and the green lines
+  represent 1 unit of input and output. The red dots show where the curve
+  pivots around, which is different for positive and negative depths. (These
+  dots aren&rsquo;t shown in the graph in the cluster popup.)</p>
+
+<h3>Bipolar modulation</h3>
+<p>Most sweep wave shapes have a &plusmn;1 unit range, as does the optional
+  <span class="popup" onclick="popup('_ribbon')">ribbon</span> controller. Since the volume can&rsquo;t go negative (it is clamped
+  at zero), mod depths outside a &plusmn;50% range aren&rsquo;t useful.
+  However, for ribbon, one might wish to use a &plusmn;100% range, and only use
+  half the ribbon, since some ribbon algorithms always start at zero when you
+  touch it, or return to zero when you release it.</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td><img src="amplifier-post-mod-graph-bipolar.png" width=700></td>
+    </tr>
+  </table>
+
+<h3>Pitch modulation</h3>
+<p>The pitch varies from &ndash;1 to almost +1 unit across the keyboard, but
+  can go further with octave transposition, and further still via MIDI. The
+  darker regions represent the notes outside the normal keyboard range. As you
+  can see, the most useful settings are lower values, allowing you to introduce
+  a modest variation in volume across the keyboard:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td><img src="amplifier-post-mod-graph-pitch.png" width=700></td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  <span class="page" onclick="page('Amplifier_post_mod_cluster')">Amplifier post mod clusters</span> within the
+  <span class="page" onclick="page('Amplifier_section')">Amplifier section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>VOLUME</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td><img src="sw-set-split.png" height=48><img src="sw-50.png" height=48></td>
+    </tr>
+  </table>
+<p>They appear in the display as Amp Post Mod Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,75</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,75</td>
+    </tr>
+  </table>
+<p>Since these are <span class="popup" onclick="popup('_bipolar')">bipolar</span> parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">&ndash;100%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td>(default)
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+100%</td>
+    <td>(significant)
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

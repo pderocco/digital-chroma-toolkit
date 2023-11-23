@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_tune_shift')">tune shift</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_pan_spread')">pan spread</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>CONTROL tune spread</h1>
+<p>This controls how much stacked voices are detuned among each other. The
+  detuning is a half-scale detuning where the beat frequency doubles for every
+  two-octave pitch rise. This has no effect unless the
+  <span class="page" onclick="page('Control_voice_count')">voice count</span> parameter is greater than 1.</p>
+<p>The value is the maximum number of cents deviation at middle C. For
+  instance, if set to 6, the detunings for each voice count setting would
+  be:</p>
+<table style="width: 45%">
+  <tr>
+    <td width="5%"/>
+    <td width="5%">1:</td>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%" class="c">0&cent;</td>
+    <td width="5%"/>
+    <td width="5%"/>
+    <td width="5%"/>
+    </tr>
+  <tr>
+    <td/>
+    <td>2:</td>
+    <td class="c">&ndash;3&cent;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c">+3&cent;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>3:</td>
+    <td class="c">&ndash;3&cent;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c">0&cent;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c">+3&cent;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>4:</td>
+    <td class="c">&ndash;3&cent;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c">&ndash;1&cent;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c">+1&cent;</td>
+    <td class="c s">&mdash;</td>
+    <td class="c">+3&cent;</td>
+    </tr>
+  </table>
+<p>The top two settings connect one of the <span class="popup" onclick="popup('_pedal')">pedals</span> to the spread.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Control_voice_stack_cluster')">voice stack cluster</span>
+  within the <span class="page" onclick="page('Control_section')">Control section</span>. Buttons beneath the slider select the pedal
+  settings.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>PITCH</i> section of the right panel, under the
+  following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-27.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Tune Spread.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via <span class="popup" onclick="popup('_NRPN')">NRPN</span> 0,17.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">off</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">1&cent;</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">50</td>
+    <td class="c">50&cent;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">51</td>
+    <td class="c">pedal 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">52</td>
+    <td class="c">pedal 2</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

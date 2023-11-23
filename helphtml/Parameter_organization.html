@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_architecture')">Control architecture</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Program_organization')">Program organization</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Parameter organization</h1>
+<p>Obviously, it takes a lot of <span class="popup" onclick="popup('_parameter')">parameters</span> to describe a complete
+  sound. The Chroma has fifty dual-purpose switches on its control panel which
+  are used for selecting sound <span class="popup" onclick="popup('_program')">programs</span> during performance, but in a
+  different panel mode are used for selecting the individual parameters of the
+  sound, showing them in the display, and connecting the single
+  <span class="popup" onclick="popup('_parameter_control')">parameter control</span> slider to them. The PROG SELECT and PARAM SELECT
+  switches choose between these two basic modes.</p>
+<p>Even the original Chroma had more than 50 parameters, though. However, most
+  of them were mirrored between the two <span class="popup" onclick="popup('_channel')">channels</span> that make up the
+  <span class="popup" onclick="popup('_voice')">voice</span>, so they shared the same set of switches. The EDIT A and EDIT B
+  switches set the Edit Mode, which determines which channel is being edited at
+  any time. They can be turned on concurrently by pressing both at the same
+  time, in which case the display shows both parameter values, and the
+  parameter slider modifies both channels&rsquo; parameters in parallel.
+  Parameters 6 through 50 are &ldquo;channel parameters&rdquo; which are
+  steered by the Edit Mode; parameters 1 through 5 are &ldquo;control
+  parameters&rdquo; which affect the entire voice.</p>
+<p>The Digital Chroma has considerably more parameters. To get at these
+  &ldquo;extended parameters&rdquo;, you use the SET SPLIT switch. The main
+  function of this switch is to establish a keyboard split point, but it is
+  also used as a prefix switch for accessing secondary functions. When the
+  panel is in Parameter Select mode, pressing SET SPLIT followed by a number
+  selects an <span class="popup" onclick="popup('_extended_parameter')">extended parameter</span>, instead of a regular parameter. Most
+  extended parameters are related in some way to the corresponding regular
+  parameter, providing additional adjustability that wasn&rsquo;t available in
+  the original Chroma.</p>
+<p>There are also a handful of &ldquo;panel parameters&rdquo;. These are
+  parameters that have their own special controls. For instance, the Edit Mode
+  is a panel parameter, as is the number of the regular or extended parameter
+  currently connected to the slider. This means that when you create a new
+  sound and store it, you should choose some parameter that you might wish to
+  vary in performance, and make sure that&rsquo;s selected before storing the
+  sound, because that parameter will automatically be selected whenever you
+  recall that sound.</p>
+<p>The tone controls are also panel parameters, rather than global tone
+  controls on the output. (If you want to equalize for your speakers, use your
+  mixer&rsquo;s or amplifier&rsquo;s controls.) They can be varied during
+  performance, but their settings are stored when a sound is stored, thus
+  making them useful for &ldquo;voicing&rdquo; a sound.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

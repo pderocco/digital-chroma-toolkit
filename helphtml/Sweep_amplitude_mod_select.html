@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_shape')">Sweep shape</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_amplitude_mod_depth')">Sweep amplitude mod depth</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>SWEEP amplitude mod select</h1>
+<p>These select one of 26 modulation sources for the amplitude of the <span class="popup" onclick="popup('_sweep')">sweep</span>
+  generators. The &ldquo;+&rdquo; and &ldquo;&ndash;&rdquo; lever options use
+  only one side of the lever.</p>
+<p>The &ldquo;delay&rdquo; choices use a dedicated delay envelope generator, so
+  that one doesn&rsquo;t have to waste a full-featured <span class="popup" onclick="popup('_envelope')">envelope</span> on this
+  simple function. The delay envelope goes from &ndash;1 <span class="popup" onclick="popup('_unit')">unit</span> when the key
+  is pressed to +1 unit after the delay time, and then stays there until the
+  next key press. However, the negative side is chopped off, so there is no
+  sweep for the first half of the delay time.</p>
+<p>The &ldquo;pitch&rdquo; choice is primarily useful with a low mod depth, so
+  that the amplitude doesn&rsquo;t start at &ndash;1 and go through zero, but
+  instead starts at some low positive value and rises to 1, for a more subtle
+  variation across the keyboard. A negative mod depth causes it to vary in the
+  opposite direction.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  <span class="page" onclick="page('Sweep_amplitude_cluster')">Sweep amplitude clusters</span> within the
+  <span class="page" onclick="page('Sweep_section')">Sweep section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>SWEEP</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td><img src="sw-12.png" height=48></td>
+    </tr>
+  </table>
+<p>These appear in the display as Swp Ampl Mod Select.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,9</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,9</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>+lever 1</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>+lever 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>lever 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>lever 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>&ndash;lever 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>&ndash;lever 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td>pedal 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td>pedal 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">8</td>
+    <td>&plusmn;pedal 1</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td>&plusmn;pedal 2</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">10</td>
+    <td>&ndash;pedal 1</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">11</td>
+    <td>&ndash;pedal 2</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">12</td>
+    <td>ribbon</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">13</td>
+    <td>pitch</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">14</td>
+    <td>velocity</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">15</td>
+    <td>pressure</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">16</td>
+    <td>envelope 1A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">17</td>
+    <td>envelope 2A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">18</td>
+    <td>envelope 1B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">19</td>
+    <td>envelope 2B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">20</td>
+    <td>850ms delay</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">21</td>
+    <td>1.3s delay</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">22</td>
+    <td>2.6s delay</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">23</td>
+    <td>3.8s delay</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">24</td>
+    <td>5.1s delay</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">25</td>
+    <td>6.4s delay</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

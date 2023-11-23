@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_parameter_pages_1_2')">Parameter pages 1&amp;2</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_control_tables')">Control tables</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI global parameters</h1>
+<p>This lists the global parameters that appear in page 15. <i>PN</i> is the
+  parameter number (the NRPN LSB in a <span class="page" onclick="page('MIDI_Parameter_Set')">Parameter Set</span>).
+  <i>Min</i> and <i>Max</i> are the minimum and maximum values. For <span class="popup" onclick="popup('_bipolar')">bipolar</span>
+  parameters, the actual values sent over MIDI are higher by 64, so that they
+  remain within the 0 to 127 range.</p>
+<table style="width: 45%" cellspacing=-1 class="b p0">
+  <tr>
+    <td width="5%" class="c i">PN</td>
+    <td width="30%" class="i pl3">Parameter</td>
+    <td width="5%" class="c i">Min</td>
+    <td width="5%" class="c i">Max</td>
+    </td>
+    </tr>
+  <tr>
+    <td class="c">1</td>
+    <td class="pl3"><span class="page" onclick="page('Global_reverb_room')">Reverb Room</span></td>
+    <td class="r">1</td>
+    <td class="r">4</td>
+    </tr>
+  <tr>
+    <td class="c">2</td>
+    <td class="pl3"><span class="page" onclick="page('Global_reverb_send')">Reverb Send</span></td>
+    <td class="r">0</td>
+    <td class="r">127</td>
+    </tr>
+  <tr>
+    <td class="c">3</td>
+    <td class="pl3"><span class="page" onclick="page('Global_analog_master')">Analog Master Volume</span></td>
+    <td class="r">0</td>
+    <td class="r">100</td>
+    </tr>
+  <tr>
+    <td class="c">4</td>
+    <td class="pl3"><span class="page" onclick="page('Global_rollover_time')">Rollover Time</span></td>
+    <td class="r">1</td>
+    <td class="r">20</td>
+    </tr>
+  <tr>
+    <td class="c">5</td>
+    <td class="pl3"><span class="page" onclick="page('Global_release_threshold')">Release Threshold</span></td>
+    <td class="r">1</td>
+    <td class="r">7</td>
+    </tr>
+  <tr>
+    <td class="c">6</td>
+    <td class="pl3"><span class="page" onclick="page('Global_midi_main_in')">MIDI Main Input</span></td>
+    <td class="r">0</td>
+    <td class="r">48</td>
+    </tr>
+  <tr>
+    <td class="c">7</td>
+    <td class="pl3"><span class="page" onclick="page('Global_midi_link_in')">MIDI Link Input</span></td>
+    <td class="r">0</td>
+    <td class="r">48</td>
+    </tr>
+  <tr>
+    <td class="c">8</td>
+    <td class="pl3"><span class="page" onclick="page('Global_midi_record_out')">MIDI Record Output</span></td>
+    <td class="r">0</td>
+    <td class="r">64</td>
+    </tr>
+  <tr>
+    <td class="c">9</td>
+    <td class="pl3"><span class="page" onclick="page('Global_midi_record_program')">MIDI Record Program</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">10</td>
+    <td class="pl3"><span class="page" onclick="page('Global_midi_record_state')">MIDI Record State</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">11</td>
+    <td class="pl3"><span class="page" onclick="page('Global_invert')">Lever 1 Polarity</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">12</td>
+    <td class="pl3"><span class="page" onclick="page('Global_invert')">Lever 2 Polarity</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">13</td>
+    <td class="pl3"><span class="page" onclick="page('Global_invert')">Pedal 1 Polarity</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">14</td>
+    <td class="pl3"><span class="page" onclick="page('Global_invert')">Pedal 2 Polarity</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">15</td>
+    <td class="pl3"><span class="page" onclick="page('Global_invert')">Ribbon Polarity</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">16</td>
+    <td class="pl3"><span class="page" onclick="page('Global_high_resolution')">Lever Resolution</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">17</td>
+    <td class="pl3"><span class="page" onclick="page('Global_high_resolution')">Pedal Resolution</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">18</td>
+    <td class="pl3"><span class="page" onclick="page('Global_high_resolution')">Ribbon Resolution</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">19</td>
+    <td class="pl3"><span class="page" onclick="page('Global_bipolar')">Bipolar Pedal 1</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">20</td>
+    <td class="pl3"><span class="page" onclick="page('Global_bipolar')">Bipolar Pedal 2</span></td>
+    <td class="r">0</td>
+    <td class="r">1</td>
+    </tr>
+  <tr>
+    <td class="c">21</td>
+    <td class="pl3"><span class="page" onclick="page('Global_display_position')">Display Position</span></td>
+    <td class="r">&ndash;10</td>
+    <td class="r">10</td>
+    </tr>
+  <tr>
+    <td class="c">22</td>
+    <td class="pl3"><span class="page" onclick="page('Global_display_brightness')">Display Brightness</span></td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">23</td>
+    <td class="pl3"><span class="page" onclick="page('Global_tapper_mode')">Tapper Mode</span></td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">24</td>
+    <td class="pl3"><span class="page" onclick="page('Global_slider_mode')">Slider Mode</span></td>
+    <td class="r">0</td>
+    <td class="r">2</td>
+    </tr>
+  <tr>
+    <td class="c">25</td>
+    <td class="pl3"><span class="page" onclick="page('Global_edit_timeout')">Edit Timeout</span></td>
+    <td class="r">0</td>
+    <td class="r">10</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

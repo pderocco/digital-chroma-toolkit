@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Levers')">Levers</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_quick-start')">Digital Chroma quick-start</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Powering_off')">Powering off</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Undo/Redo</h1>
+<p>In any programmable instrument, it is easy to lose important information if
+  you press the wrong button. You&rsquo;ve created a new sound, and you store
+  it under the wrong number, losing another <span class="popup" onclick="popup('_program')">program</span>. In the Digital Chroma
+  (as in the original Chroma), it is also easy to lose a bunch of edits
+  you&rsquo;ve made to a program but haven&rsquo;t saved yet by selecting a new
+  program, because you tried to select a <span class="popup" onclick="popup('_parameter')">parameter</span> but didn&rsquo;t notice
+  that you had put the panel back into PROG SELECT mode.</p>
+<p>The solution to this is Undo. Since the Digital Chroma never goes out of
+  tune, the AUTO TUNE switch has been appropriated for this purpose. Any time
+  you do the wrong thing from the control panel, just press AUTO TUNE and it
+  undoes the last thing you did, and briefly shows what it undid in the
+  display. Press it repeatedly and step backward through time as far as you
+  want. The undo buffer is usually large enough to hold everything you changed
+  since you turned the instrument on.</p>
+<p>Here are the things that you can undo:</p>
+<ul>
+  <li>Selecting a program from the panel, or via the Sequence Program
+    footswitch. This includes special functions like selecting a program
+    except for its <span class="popup" onclick="popup('_link_program')">link</span> parameters. When you undo a program
+    selection, you get back exactly what the current program was before,
+    including any edits you hadn&rsquo;t saved.</li>
+  <li>Editing the current program. Edits that occur within a few seconds of
+    each other are combined into single undoable events.</li>
+  <li>Storing a program from the panel. When you undo this, it restores the
+    previous program that was stored under that number, and restores the
+    current program&rsquo;s previous number. If you had made any edits to the
+    current program, you will now have to store them somewhere else if you want
+    to keep them.</li>
+  <li>Exchanging the current program with a stored program, via the SET SPLIT,
+    STORE function. Undo exchanges them again.</li>
+  <li>Loading all programs, or individual banks of programs, from an external
+    flash drive, using LOAD ALL or LOAD ONE. All changes are undone in a
+    single Undo. Note that saving programs to an external flash drive is not
+    undoable.</li>
+  <li>Modifying stored programs via the network. All changes detected within a
+    second or so of each other are combined into a single undoable event.</li>
+  <li>Restoring all programs, or individual banks of programs, via the
+    Toolkit&rsquo;s <span class="page" onclick="page('Backup_restore')">Backup &amp; restore</span> tool, or converting a bank of programs using the
+    <span class="page" onclick="page('Old_Chroma_convert')">Old Chroma convert</span> tool. All changes are undone in a single Undo. Note
+    that backing up programs is not undoable, because the backups are external
+    to the Digital Chroma.</li>
+  </ul>
+<p>If you go back in time by many steps, it&rsquo;s also easy to go too far. If
+  you do that, the solution is Redo, which is invoked with SET SPLIT, AUTO
+  TUNE. This redoes the last thing you undid, and briefly shows what it redid
+  in the display. You can repeat this operation until you&rsquo;ve gone all the
+  way back to the &ldquo;present&rdquo;, and there is nothing more to redo. But
+  be aware that as soon as you perform any of the functions listed above, the
+  redo buffer is discarded, and you can only undo.</p>
+<p>The Undo/Redo mechanism records all changes regardless of whether they come
+  from the Digital Chroma panel or the Toolkit. Undo and Redo can also be
+  invoked by the Toolkit.</li>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

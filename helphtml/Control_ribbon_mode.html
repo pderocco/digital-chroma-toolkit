@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_pedal_modes')">pedal modes</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_treble_gain')">treble gain</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>CONTROL ribbon mode</h1>
+<p>This determines the selectivity mode of the optional ribbon controller. In
+  &ldquo;selective&rdquo; mode, when a key is released, the ribbon value
+  freezes for that note, even if the note is held by the sustain <span class="popup" onclick="popup('_footswitch')">footswitch</span>.
+  It also freezes for notes <span class="popup" onclick="popup('_latch')">latched</span> by the left footswitch. In
+  &ldquo;sampled&rdquo; mode, it is sampled once at the start of the note.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Control_selectivity_cluster')">selectivity cluster</span>
+  within the <span class="page" onclick="page('Control_section')">Control section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>CONTROL</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-5.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Ribbon Mode.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via <span class="popup" onclick="popup('_NRPN')">NRPN</span> 0,33.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="25%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>normal</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>selective</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>sampled</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

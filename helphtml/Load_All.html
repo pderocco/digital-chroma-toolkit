@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Save_One')">Save One</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('External_drive_functions')">External drive functions</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Save_All')">Save All</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Load All</h1>
+<p>Pressing LOAD ALL loads all nine banks of <span class="popup" onclick="popup('_program')">programs</span> from the
+  external drive. It begins with a prompt that shows the total number of new,
+  changed and deleted files in all nine banks. Press STORE to load them, or SET
+  SPLIT to abort the operation.</p>
+<p>Pressing SET SPLIT, LOAD ALL loads one bank at a time, showing the number of
+  new, changed and deleted files in each bank. The user must press STORE up to
+  nine times to load all the files, or may use SET SPLIT to skip banks. (PARAM
+  SELECT or PROG SELECT can also completely abort the operation.) The final
+  result display shows the totals for all copied banks.</p>
+<p>One can also load from a different Chroma number folder, by holding LOAD ALL
+  and pressing 1 to 9.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

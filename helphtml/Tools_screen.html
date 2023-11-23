@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Editor_screen')">Editor screen</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Screen_buttons')">Screen buttons</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Help_screen')">Help screen</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Tools screen</h1>
+<p>These are miscellaneous tools for various purposes:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="25%"><i><span class="page" onclick="page('Old_Chroma_import')">Old Chroma import</span></i></td>
+    <td>Importing old Chroma programs from the audio cassette format into
+      Syntech <span class="popup" onclick="popup('_Sysex')">Sysex</span> files.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i><span class="page" onclick="page('Old_Chroma_convert')">Old Chroma convert</span></i></td>
+    <td>Converting Syntech Sysex files into banks of Digital Chroma
+      programs in the computer.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i><span class="page" onclick="page('Backup_restore')">Backup &amp; restore</span></i></td>
+    <td>Backing up individual banks, or all banks, from the Digital Chroma to a
+      folder, or restoring from a folder.</td>
+    </td>
+  <tr>
+    <td/>
+    <td><i><span class="page" onclick="page('Global_parameters')">Global parameters</span></i></td>
+    <td>Adjusting the <span class="popup" onclick="popup('_global_parameter')">global parameters</span> in the Digital
+      Chroma.</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

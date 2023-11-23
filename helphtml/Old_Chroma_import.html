@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Tools_screen')">Tools screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Old_Chroma_convert')">Old Chroma convert</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Old Chroma import</h1>
+<p>The old Chroma provided a crude way to save programs on an audio cassette.
+  Somewhat later, the Syntech Chroma to MIDI Converter provided a cleaner way
+  to convert programs into a MIDI <span class="popup" onclick="popup('_Sysex')">Sysex</span> packet, which could be stored in a
+  computer file. This has become a de facto standard for Chroma program 
+  storage. This import tool converts the cassette format into the Syntech Sysex 
+  format, after which the <span class="page" onclick="page('Old_Chroma_convert')">Old Chroma convert</span> tool can convert the programs 
+  into the Digital Chroma&rsquo;s format. It can accept input from two 
+  sources, depending upon whether the &ldquo;from device&rdquo; or &ldquo;from file&rdquo; button is
+  selected.</p>
+
+<h2>Importing from audio device</h2>
+<p><img src="old-chroma-import-device.png" width=346></p>
+<p>Before upgrading your Chroma to a Digital Chroma, you can import the
+  programs it contains by connecting the cassette interface output to the audio
+  input on the computer running the Toolkit. To speed up the process, you
+  should turn on the LOCK switch on the back of the Chroma, so that the
+  programs will be transmitted without two-second gaps between them.</p>
+<p>If you have sets of programs already stored on cassettes, you can connect
+  the output of your cassette player to the computer&rsquo;s audio input
+  instead.</p>
+<p>If you need to choose something other than the default audio input on the
+  computer, tap the <i>input device</i> button, and tap the appropriate choice
+  from the popup list.</p>
+<p>Next, tap the <i>output file</i> button, use the dialog box to navigate to
+  the folder where you wish to store the Sysex file, enter a file name, and OK
+  the dialog. A .syx extension will be added if you don&rsquo;t specify one.</p>
+<p>Finally, tap the &ldquo;import&rdquo; button. A progress bar containing &ldquo;0 / 0&rdquo; will
+  appear. This means it has decoded zero out of zero programs received. Press
+  SAVE ALL on the Chroma, or PLAY on the cassette, and you should soon see the
+  progress bar counting the 50 programs. The progress bar also fills in with a
+  pale green color, although any failed program causes a sliver of the bar to
+  turn pink instead.</p>
+<p>If you don&rsquo;t see this activity, you may need to adjust the volume of your
+  cassette, or the input level on your computer. Computers generally provide a
+  way to listen to what&rsquo;s coming into the line input, to hear if everything&rsquo;s
+  hooked up correctly. You can abort the operation by tapping the button,
+  which now says &ldquo;cancel&rdquo;, and then tap it again to start the import over.</p>
+<p>If it doesn&rsquo;t receive 50 programs, it will stop with the progress bar part
+  way across. If it says &ldquo;49 / 49&rdquo; it means it received 49 programs
+  successfully, and the bar will be mostly green. If it says &ldquo;40 / 44&rdquo; it means
+  it received 44 programs, but only 40 of them were properly decoded, and there
+  will be some pink slivers showing the bad ones. In any case, you can tap
+  &ldquo;cancel&rdquo; to abort the operation, and try again with different settings.</p>
+<p>If 50 programs are successfully converted, the operation stops
+  automatically, the progress bar disappears, and the button reverts to
+  &ldquo;import&rdquo;. If 50 programs are received but some of them have errors, the
+  progress bar shows a list of the failed programs, and the buttons changes to
+  &ldquo;dismiss&rdquo;. You can click the button to dismiss the progress bar, which
+  changes the button back to &ldquo;import&rdquo;, after which you can try again. It also
+  copies the list of failed programs (or any other error message) to the
+  clipboard.</p>
+
+<h2>Importing from a file</h2>
+<p><img src="old-chroma-import-file.png" width=346></p>
+<p>If you have previously used your computer to capture the SAVE ALL output of
+  your Chroma in uncompressed .wav files, or if you&rsquo;ve received such files from
+  someone else, you can import directly from those files. The tool supports any
+  sample rate from 8KHz to 64KHz, mono or stereo, 8-bit or 16-bit samples. To
+  import from a file, you tap the <i>input file</i> button to select the input
+  file, then tap the <i>output file</i> button to select the output file, and
+  finally tap the &ldquo;import&rdquo; button. The progress bar should zip across in a
+  fraction of a second. Errors are handled the same is in the audio input
+  mode.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

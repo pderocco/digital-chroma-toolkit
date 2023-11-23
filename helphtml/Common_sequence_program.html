@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Common_ribbon_algorithm')">ribbon algorithm</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_patch')">patch</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>COMMON sequence program</h1>
+<p>This controls what <span class="popup" onclick="popup('_program')">program</span> will be selected when the
+  <span class="popup" onclick="popup('_sequence_program')">Sequence Program</span> footswitch is pressed. It can be either
+  a 1- or 2-digit number to step to a program in the same bank as the current
+  program, or a 3-digit number to step to a program in a specific bank. The
+  difference is meaningful when the current program is stored in a different
+  bank.</p>
+<p>This can also be set to &ldquo;previous&rdquo;, which means that the
+  footswitch will re-select whatever was selected before the current program.
+  This can be useful if you have a program that you want to be able to step to,
+  and then step back to wherever it came from. For instance, programs 1, 2, and
+  3 might be set to step to program 50, and program 50 set to revert to
+  previous, in which case pressing the footswitch twice could step 1-50-1,
+  2-50-2, or 3-50-3. When it steps to &ldquo;previous&rdquo;, it restores any
+  unsaved edits that may have been in effect in that earlier program.</p>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Common_sequence_cluster')"><i>sequence</i> cluster</span>
+  within the <span class="page" onclick="page('Common_section')">Common section</span>, but this only allows it to be viewed, and
+  possibly reset to its default value of &ldquo;previous&rdquo; by
+  <span class="popup" onclick="popup('_long-press')">long-pressing</span> the <i>program</i> button. In general, it is set
+  from the <span class="page" onclick="page('Programs_screen')">Programs screen</span> by <span class="popup" onclick="popup('_long-press')">long-pressing</span> the program you
+  want to sequence to, to view the <span class="page" onclick="page('Program_popup')">Program popup</span>, and then pressing the
+  &ldquo;sequence program&rdquo; button.</p>
+<p>Note that if this is changed in an otherwise unmodified program, the
+  modification is also automatically stored, so the program continues to appear
+  &ldquo;unmodified&rdquo;. This reduces the number of steps needed to set up a chain of
+  sequenced programs. If the program was already modified, it is up to you to
+  store it, if you want all the changes stored.</p>
+
+<h2>Chroma panel</h2>
+<p>A 1- or 2-digit sequence program is set up by holding the Sequence Program
+  footswitch and pressing a numbered switch on the right panel. A 3-digit
+  sequence program is set up by holding PROGRAM SELECT and pressing the bank
+  number, then holding the footswitch and pressing the program number. Neither
+  operation actually switches to the new program; you have to press and release
+  the footswitch to do that.</p>
+<p>This can also be set to &ldquo;previous&rdquo; by holding the footswitch and
+  pressing PROGRAM SELECT.</p>
+<p>Note that if this is changed in an otherwise unmodified program, the
+  modification is also automatically stored, so the program continues to appear
+  &ldquo;unmodified&rdquo;. If the program was already modified, it is up to
+  you to store it, if you want all the changes stored.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed as two separate parameters. The bank is set via <span class="popup" onclick="popup('_NRPN')">NRPN</span>
+  0,11, and the program by NRPN 0,12.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">bank</td>
+    <td width="15%" class="c i u">program</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">current bank</td>
+    <td class="c">previous</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">1</td>
+    <td class="c">1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td class="c">9</td>
+    <td class="c">9</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">50</td>
+    <td/>
+    <td class="c">50</td>
+    </tr>
+  </table>
+<p>The bank is ignored if the program is set to &ldquo;previous&rdquo;.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

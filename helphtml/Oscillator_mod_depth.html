@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Oscillator_mod_select')">Oscillator mod select</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Oscillator_mod_steps')">Oscillator mod steps</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>OSCILLATOR mod depth</h1>
+<p>These control the amount of pitch modulation. The displayed values are the
+  number of semitones per <span class="popup" onclick="popup('_unit')">unit</span> of modulation. There are five of these
+  <span class="popup" onclick="popup('_parameter')">parameters</span> for each <span class="popup" onclick="popup('_oscillator')">oscillator</span>.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the <span class="page" onclick="page('Oscillator_mod_cluster')">Oscillator mod clusters</span>
+  within the <span class="page" onclick="page('Oscillator_section')">Oscillator section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>PITCH</i> section of the right panel, under
+  the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td width="15%" class="i u">mod 2</td>
+    <td width="15%" class="i u">mod 3</td>
+    <td width="15%" class="i u">mod 4</td>
+    <td class="i u">mod 5</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><img src="sw-28.png" height=48></td>
+    <td><img src="sw-30.png" height=48></td>
+    <td><img src="sw-32.png" height=48></td>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-30.png" height=48>
+      </td>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-32.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Osc Mod1-5 Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td width="15%" class="i u">mod 2</td>
+    <td width="15%" class="i u">mod 3</td>
+    <td width="15%" class="i u">mod 4</td>
+    <td class="i u">mod 5</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,38</td>
+    <td>1,41</td>
+    <td>1,43</td>
+    <td>1,45</td>
+    <td>1,47</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,38</td>
+    <td>2,41</td>
+    <td>2,43</td>
+    <td>2,45</td>
+    <td>2,47</td>
+    </tr>
+  </table>
+<p>Since these are <span class="popup" onclick="popup('_bipolar')">bipolar</span> parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<p>The values have fine resolution near zero and coarse resolution at the
+  extremes:</p>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">&ndash;64</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 2)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">14</td>
+    <td class="c">&ndash;36</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 1)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">46</td>
+    <td class="c">&ndash;4</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.5)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">50</td>
+    <td class="c">&ndash;2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.3)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">52</td>
+    <td class="c">&ndash;1.4</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.2)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">56</td>
+    <td class="c">&ndash;0.6</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.1)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">60</td>
+    <td class="c">&ndash;0.2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.05)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.05)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">68</td>
+    <td class="c">+0.2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.1)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">72</td>
+    <td class="c">+0.6</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.2)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">76</td>
+    <td class="c">+1.4</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.3)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">78</td>
+    <td class="c">+2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 0.5)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">82</td>
+    <td class="c">+4</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 1)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">112</td>
+    <td class="c">+34</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="i s">(steps of 2)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+64</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

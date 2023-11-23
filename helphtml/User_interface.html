@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Programming_sounds')">Programming sounds</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma')">Digital Chroma</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>User interface</h1>
+<p>You already know that the panel is put into Program Select mode by pressing
+  PROG SELECT, and into Parameter Select mode by pressing PARAM SELECT. In
+  these modes, the number switches select two different things. And you know
+  that pressing a bank number while holding PROG SELECT (or STORE, or one of
+  the LINK switches) selects a bank, before selecting the <span class="popup" onclick="popup('_program')">program</span> within the
+  bank. And you know that SET SPLIT followed by a number is used to select
+  <span class="popup" onclick="popup('_extended_parameter')">extended parameters</span>,
+  <span class="popup" onclick="popup('_global_parameter')">global parameters</span>, or calibrations.</p>
+<p>The following sections cover the user interface in a bit more detail.</p>
+<ul>
+  <li><span class="page" onclick="page('Scratch_programs')">Scratch programs</span></li>
+  <li><span class="page" onclick="page('Panel_modes')">Panel modes</span></li>
+  <li><span class="page" onclick="page('Set_Split_functions')">Set Split functions</span></li>
+  <li><span class="page" onclick="page('External_drive_functions')">External drive functions</span></li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

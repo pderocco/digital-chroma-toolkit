@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Timing')">Timing</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_other_messages')">Other messages</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Active_Sense')">Active Sense</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI Start</h1>
+<p>MIDI defines the byte 250 as a Start byte. If the <span class="popup" onclick="popup('_global_parameter')">global</span>
+  <span class="page" onclick="page('Global_midi_record_state')">Global midi record state</span> parameter is on, and the Digital Chroma receives
+  this on the virtual jack selected by the global <span class="page" onclick="page('Global_midi_record_out')">Global midi record out</span>
+  parameter, it sends the current state of the Main program and controls to the
+  selected channel. If a link is in effect, it does the same for the Link
+  program on the next higher channel. This allows an external sequencer to
+  capture this data at the start of a recording.</p>
+<p>This data (for each channel) begins with a Bank MSB and a Program Change if
+  the program wasn&rsquo;t modified, or a <span class="popup" onclick="popup('_Sysex')">Sysex</span> containing the program data, a
+  Bank MSB, and a <span class="page" onclick="page('MIDI_Program_Set')">Program Set</span> <span class="popup" onclick="popup('_NRPN')">NRPN</span> if the program was
+  modified (or if the <span class="page" onclick="page('Global_midi_record_program')">MIDI Record Program</span>
+  parameter is turned on). It then transmits an
+  <span class="page" onclick="page('MIDI_mode_controls')">All Controllers Off</span> message, followed by the value of
+  all controls (except pressure) that differ from their default values.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

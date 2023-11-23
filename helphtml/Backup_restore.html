@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Old_Chroma_convert')">Old Chroma convert</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Tools_screen')">Tools screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Global_parameters')">Global parameters</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Backup &amp; Restore</h1>
+<p><img src="backup-restore.png" width=346></p>
+<p>This tool lets you back up a single bank, or all banks, from the Digital
+  Chroma to a folder on the computer running the Toolkit, and to restore single
+  banks or all banks back to the Digital Chroma.</p>
+<h2>Backup</h2>
+<p>Tap the bank button corresponding to the bank you wish to back up, or tap
+  &ldquo;all&rdquo; for all of them. Then tap the <i>folder</i> button,
+  navigate to the folder you wish to store the programs in, creating it if it
+  doesn&rsquo;t already exist. Finally, tap the &ldquo;backup&rdquo; button. A
+  progress bar will momentarily appear, and any problem will cause a message to
+  appear in place of the progress bar. You can dismiss this message by tapping
+  it.</p>
+<p>A single bank is backed up as up to fifty files named &ldquo;01.chr&rdquo;
+  to &ldquo;50.chr&rdquo;. A non-existent program is represented by the absence
+  of the corresponding file. All banks are backed up as nine sub-folders named
+  &ldquo;1&rdquo; through &ldquo;9&rdquo;, each containing up to fifty program
+  files.</p>
+<p>If you back up to an existing folder that already has Digital Chroma
+  programs in it, those programs will be overwritten, or deleted in the case of
+  non-existent programs. Since these old programs are contained in the computer
+  and not the Digital Chroma, they are not protected by the Undo mechanism, so
+  make sure you don&rsquo;t back up to the wrong place.</p>
+<h2>Restore</h2>
+<p>Tap the bank button corresponding to the bank you wish to restore, or tap
+  &ldquo;all&rdquo; for all of them. Then tap the <i>folder</i> button,
+  navigate to the folder that contains the programs. Finally, tap the
+  &ldquo;restore&rdquo; button. A progress bar will momentarily appear, and any
+  problem will cause a message to appear in place of the progress bar. You can
+  dismiss this message by tapping it.</p>
+<p>If you&rsquo;re restoring a single bank, you must choose the folder
+  containing the up to fifty &ldquo;.chr&rdquo; files. If you&rsquo;re
+  restoring all banks, you must choose the folder containing the nine numbered
+  sub-folders. When you restore a single bank, you are free to restore it into
+  any bank, not necessarily the one you originally backed up.</p>
+<p>When you restore, all programs in the affected bank or banks within the
+  Digital Chroma are overwritten, or deleted in the case of missing programs.
+  If you select an erroneous folder that has no programs in it, the Toolkit
+  will delete all programs in the affected bank or banks. However, the old
+  programs are protected by the Undo mechanism, so you can undo the restore
+  operation if you accidentally restore from the wrong folder, or if you
+  restore into the wrong bank.</p>
+<h2>Flash drive backup</h2>
+<p>The Digital Chroma has panel functions (the old cassette interface) that
+  allow banks to be backed up and restored to an external flash drive. These
+  are always stored in the same form as a Toolkit backup of all banks, with
+  subfolders &ldquo;1&rdquo; to &ldquo;9&rdquo;. Those subfolders are contained
+  within a root folder usually called &ldquo;CHROMA1&rdquo;, although the final
+  digit matches the name used by the instrument over USB and Ethernet, as set
+  by the <span class="page" onclick="page('Chroma_number')">Chroma number</span> calibration function. Since the format is the same, it
+  is possible to back up via the control panel and then restore via the
+  Toolkit, or vice versa.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

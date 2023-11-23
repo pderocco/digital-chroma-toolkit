@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_peak_cluster')">Envelope peak cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Envelope_sections')">Envelope sections</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_decay_cluster')">Envelope decay cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>ENVELOPE attack cluster</h1>
+<p><img src="envelope-attack-cluster.png" width=373></p>
+<p>This contains a <span class="page" onclick="page('Envelope_attack_time')"><i>time</i></span> <span class="popup" onclick="popup('_slider')">slider</span> to set the time
+  it takes for the envelope to rise to its peak. The
+  <span class="page" onclick="page('Envelope_attack_mod_select')"><i>mod select</i></span> <span class="popup" onclick="popup('_button')">buttons</span> and
+  <span class="page" onclick="page('Envelope_attack_mod_depth')"><i>mod depth</i></span> <span class="popup" onclick="popup('_slider')">slider</span> allow the attack time
+  to be modulated by either <span class="popup" onclick="popup('_lever')">lever</span> or <span class="popup" onclick="popup('_pedal')">pedal</span>, the note pitch, the
+  <span class="popup" onclick="popup('_velocity')">velocity</span>, or the optional pressure sensor. It can also be modulated by its
+  own value, which changes the shape of the attack curve. Positive modulation
+  increases the attack time, negative modulation decreases it.</p>
+<p>This also includes the <span class="page" onclick="page('Envelope_attack_conservation')"><i>conservation</i></span>
+  parameter, which determines how much of the previous note&rsquo;s leftover
+  envelope is added to the amplitude of the new envelope when a note is
+  retriggered. It has six choices, from none to 50%, where the higher settings
+  cause the envelope amplitude to grow with each restrike (but still limited to
+  two <span class="popup" onclick="popup('_unit')">units</span>). The &ldquo;truncate&rdquo; setting does the opposite,
+  forcing the envelope to zero at the start of each note.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

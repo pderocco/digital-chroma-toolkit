@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Programming_sounds')">Programming sounds</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Glide_generator')">Glide generator</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Modulation units</h1>
+<p>To have a sense of how the numeric values of <span class="popup" onclick="popup('_parameter')">parameters</span> relate
+  to their effects on the sound, you must understand the concept of a
+  &ldquo;unit&rdquo;. All control signals are measured in units, and the
+  scaling of control inputs is documented in terms of these units. Control
+  inputs are scaled as follows:</p>
+<ul>
+  <li>When related to pitch, one unit equals 32 semitones. Since the keyboard
+    has 64 keys, middle C is considered to have a value of zero, and the
+    keyboard ranges from &ndash;1 unit to almost +1 unit. Transposition shifts
+    this by <sup>12</sup>/<sub>32</sub>, or <sup>3</sup>/<sub>8</sub> of a unit
+    either way.</li>
+  <li>The key velocity has a 0-to-1 unit range, with <sup>1</sup>/<sub>2</sub>
+    unit being a moderate strike.</li>
+  <li>The <span class="popup" onclick="popup('_lever')">levers</span> have a bipolar &plusmn;1 unit range. A
+    <span class="popup" onclick="popup('_global_parameter')">global parameter</span> determines whether pushing or pulling produces a
+    positive value.</li>
+  <li>When the two sides of a lever&rsquo;s range are used separately, each
+    side has a 0-to-1 unit range, regardless of whether it is being pulled or
+    pushed.</li>
+  <li>The variable <span class="popup" onclick="popup('_pedal')">pedals</span> have a 0-to-1 unit range, heel to toe.</li>
+  </ul>
+<p>Control signal generators use units as follows:</p>
+<ul>
+  <li>The <span class="popup" onclick="popup('_glide')">glide</span> output is scaled just like the keyboard.</li>
+  <li>The <span class="popup" onclick="popup('_sweep')">sweep</span> generator output always has a maximum value of one unit, but
+    bipolar shapes have a &plusmn;1 unit range, while unipolar waves are 0-to-1
+    unit. Patterns may various minimum values. For the complete list, go
+    <span class="page" onclick="page('Sweep_shape')">here</span>.</li>
+  <li>The <span class="popup" onclick="popup('_envelope')">envelope</span> peak value is one unit if not touch sensitive, 0 to 2
+    units if touch sensitive, and 0 to 1 unit if controlled by something other
+    than velocity. The default mapping of velocity to envelope peak is linear
+    (doubling the velocity), but the value for moderate strikes can be
+    increased or decreased by warping the shape, and the entire range can be
+    squeezed symmetrically around one unit (e.g., going from 0.5 to 1.5
+    units).</li>
+  </ul>
+<p>Control inputs on the sound modules are scaled as follows:</p>
+<ul>
+  <li>Most modulatable inputs have a four-unit total range. For <span class="popup" onclick="popup('_oscillator')">oscillator</span>
+    pitch and <span class="popup" onclick="popup('_filter')">filter</span> tuning, this represents 128 semitones. For pulse width
+    (or saws phase), this represents 0% to 100%. For FM modulation index, this
+    represents 0 to &plusmn;16 cycles of phase modulation. For panning, this
+    represents full left to full right.</li>
+  <li>Volume, on the other hand, has a two-unit total range, from off to 6db
+    above nominal.</li>
+  <li>The basic scaling of a pitch input is such that the modulation depth
+    indicates the number of semitones per unit. For instance, if you crank the
+    filter resonance up to maximum so that it self-oscillates, it would track
+    the keyboard if one modulation select input were set to Glide A or Glide B
+    and the corresponding depth were set to 32.</li>
+  </ul>
+<p>The scaling of secondary modulations, like the envelope decay time
+  modulation depth, is expressed in the percentage of the controlled
+  parameter&rsquo;s range covered by one unit of modulation. For instance, if
+  a pedal, which has a 0-to-1 unit range, is used to modulate sweep rate, and
+  the depth is set to 20%, the pedal will cover 20% of the sweep rate&rsquo;s
+  range.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

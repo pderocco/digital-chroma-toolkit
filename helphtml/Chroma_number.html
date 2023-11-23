@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Display_alignment')">Display alignment</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Calibrations')">Calibrations</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Chroma_password')">Chroma password</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Chroma number</h1>
+<p>When you connect the Digital Chroma to a computer via either USB or a
+  network, it normally presents itself as a device named &ldquo;Chroma1&rdquo;
+  (possibly displayed in upper case). If you ever need to connect multiple
+  Digital Chromas to the same computer, or use them on the same network, you
+  can use calibration 41 and the parameter slider to change the final digit to
+  anything from 1 to 9. When STORE is pressed to exit calibration mode, the
+  Chroma will disconnect (from both USB and the network) and then reconnect a
+  second or so later under the new name.</p>
+<p>This setting also controls the name of the external drive folder that is
+  accessed by the LOAD ONE through SAVE ALL switches.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

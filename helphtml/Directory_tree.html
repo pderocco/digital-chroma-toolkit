@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Network_access')">Network access</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Network_interface')">Network interface</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Directory tree</h1>
+<p>When the Digital Chroma&rsquo;s file system is accessed over the network, it
+  presents the following directory tree:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">1/</td>
+    <td>Bank 1</td>
+    </tr>
+  </table>
+<table class="vt">
+  <tr>
+    <td width="10%"/>
+    <td width="15%">01.chr</td>
+    <td>Program 101</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>&hellip;</td>
+    <td>&hellip;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>50.chr</td>
+    <td>Program 150</td>
+    </tr>
+  </table>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">&hellip;</td>
+    <td>&hellip;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>9/</td>
+    <td>Bank 9</td>
+    </tr>
+  </table>
+<table class="vt">
+  <tr>
+    <td width="10%"/>
+    <td width="15%">01.chr</td>
+    <td>Program 901</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>&hellip;</td>
+    <td>&hellip;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>50.chr</td>
+    <td>Program 950</td>
+    </tr>
+  </table>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">chroma</td>
+    <td>The main sound generation firmware can be upgraded by replacing this
+      with a new file. It is used when the system is restarted, which can be
+      done by pressing SET SPLIT, 50.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>panel.bak, panel.bin</td>
+    <td>Usually only the .bak file exists. New panel firmware is installed by
+      providing a new .bin file, which is renamed over the .bak file as soon as
+      the system is restarted, and the firmware has been installed.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>errlog.bak, errlog.txt</td>
+    <td>These are the previous and current error log files. The .bak file could
+      be useful if something caused the system to crash or otherwise freeze
+      up.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>exec</td>
+    <td>This normally doesn&rsquo;t exist, but it provides a means to get the
+      Linux operating system to do something internally, when diagnosing a
+      failure. It is otherwise undocumented.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>cal.ini</td>
+    <td>This is updated whenever one of the <span class="page" onclick="page('Calibrations')">calibration</span>
+      functions is performed.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>config.ini</td>
+    <td>This normally doesn&rsquo;t exist, but it provides a means to tweak
+      certain internal parameters. It isn&rsquo;t documented because it should
+      never be necessary.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>globals.ini</td>
+    <td>This contains global parameters, and is updated a second after any of
+      them are changed.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>rev0.ini to rev3.ini</td>
+    <td>These four files contain reverb parameters. Their meanings are
+      undocumented.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>devchg</td>
+    <td>This dummy file is created or modified whenever a MIDI device is
+      connected to one of the USB host ports. This event is monitored by the
+      main sound generation firmware.</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

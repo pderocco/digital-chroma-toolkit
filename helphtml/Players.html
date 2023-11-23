@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Preprocessing')">Preprocessing</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Internal_message_flow')">Internal message flow</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Players</h1>
+<p>The <span class="popup" onclick="popup('_player')">players</span> are the interface to the sound generation system. At
+  any moment, each player is playing on an active <span class="popup" onclick="popup('_instrument')">instrument</span> whose sound is
+  defined by its own private copy of a <span class="popup" onclick="popup('_program')">program</span>. When a new program is
+  selected for a player, either from the control panel or by a received MIDI
+  Program Change message, it isn&rsquo;t the same as changing all the parameters,
+  because a new instrument is created for the player, containing a copy of the
+  new program, and all subsequent notes are played on the new instrument.
+  However, if the old instrument is still generating sound, it continues to
+  exist as an inactive instrument until all its notes have died out. Notes are
+  never artificially truncated or changed in sound by the selection of a new
+  program.</p>
+<p>When a parameter is changed, it affects the current program in the active
+  instrument, but has no effect on any voices that may still be sounding from
+  an old instrument. It also has no effect on the original program stored in
+  the Digital Chroma&rsquo;s file system. It takes an explicit command, from
+  the STORE switch on the panel or from a MIDI message received from the
+  Toolkit, to cause a program to be stored from the Main player&rsquo;s active
+  instrument back to a file. (Players used for sequence playback aren&rsquo;t
+  allowed to modify stored programs.)</p>
+<p>If a performance control is changed, on the other hand, it affects all
+  notes in a player, regardless of what instrument they are playing on. When a
+  program is changed, all performance controls retain their current values,
+  because performance controls are attributes of the player, not the
+  instrument.</p>
+<p>The active instrument of the Main player is special in that its state is
+  made visible on the control panel, and accessible to the Toolkit. The program
+  number and bank attributes of its program are shown in the program number
+  display, the Edit Number and Edit Mode <span class="popup" onclick="popup('_parameter')">parameters</span> in that
+  program determine which other parameter (or A/B pair of parameters) is shown
+  in the parameter display, and various <span class="popup" onclick="popup('_link_program')">link</span>-related
+  parameters determine how the preprocessor performs link operations and
+  control the states of the link-related LEDs. These panel-related parameters
+  have no effect in other players.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_implementation')">MIDI implementation</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_programs_parameters')">Programs &amp; parameters</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI external controls</h1>
+<p>When the <span class="popup" onclick="popup('_global_parameter')">global</span> MIDI Main Input or MIDI Link Input
+  parameters are used to enable External input from the serial or
+  <span class="popup" onclick="popup('_USB_host_port')">USB host</span> MIDI, the following interpretations hold:</p>
+<ul>
+  <li>All performance controls and mode controls are supported. Reverb and
+    link controls are not.</li>
+  <li>Bank MSB and Program Change are supported on the MIDI Main Input, using
+    0-based numbers. Bank MSB must be in 0&hellip;8, and Program Change must
+    be in 0&hellip;49. They are not supported on the MIDI Link Input, because
+    the Link program is always determined by the parameters in the Main
+    program.</li>
+  <li>Pitch MSB/LSB messages are supported.</li>
+  <li>The <span class="page" onclick="page('MIDI_polyphonic_controls')">Note Select</span> control is supported for
+    levers, pedals, volume and pan, except on a channel that is part of an MPE
+    zone.</li>
+  <li>The Note Select (a.k.a.
+    <span class="page" onclick="page('MIDI_Portamento_Controller')">Portamento Controller</span>) control is supported
+    for Note On, and causes internal note numbers to be remapped as needed. It
+    is not supported on a channel that is part of an MPE zone.</li>
+  <li>The Main and Link transpositions transpose the pitch and the note number
+    by the same amount. This ensures that, as long as Pitch MSB messages
+    aren&rsquo;t used on input, they won&rsquo;t be used when the transposed
+    results are sent to the Record output. If the Main and Link transpositions
+    result in out-of-range note numbers or pitches, those notes are
+    discarded.</li>
+  <li>The mapping of input notes to output notes is determined independently
+    for each key based on the transpose parameters in effect at the time the
+    key is pressed. Controls are discarded if they are transposed out of
+    range.</li>
+  <li>The raw Ribbon input is purely monophonic, and is treated as a unipolar
+    value, where 0 means the ribbon isn&rsquo;t touched, and 1 through 16383
+    represent the full mechanical range of the ribbon from left to right. Any
+    external ribbon controller must ensure that when the finger is lifted, the
+    value cleanly switches to zero, with no in-between value that would be
+    misinterpreted as a spurious motion. The <span class="popup" onclick="popup('_preprocessor')">preprocessor</span> translates this
+    into a bipolar modulation source according to the
+    <span class="page" onclick="page('Common_ribbon_algorithm')">ribbon algorithm</span> <span class="popup" onclick="popup('_parameter')">parameter</span>.</li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_text_sysex')">Text sysex</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_sysex_format')">MIDI sysex format</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_timestamp_sysex')">Timestamp sysex</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI time sysex</h1>
+<p>This contains six bytes which encode a UTC time and date, representing the
+  current time. It is used by the <span class="page" onclick="page('MIDI_Clock_Set')">Clock Set</span> <span class="popup" onclick="popup('_NRPN')">NRPN</span>. The bytes
+  are:</p>
+<ul>
+  <li>Year minus 2000 (0 to 99)</li>
+  <li>Month (1 to 12)</li>
+  <li>Day (1 to 31)</li>
+  <li>Hour (0 to 23)</li>
+  <li>Minute (0 to 59)</li>
+  <li>Second (0 to 59)</li>
+  </ul>
+<p>Illegal combinations, like February 29, 2019, are invalid.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

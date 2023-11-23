@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Program_organization')">Program organization</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Additional_link_parameters')">Additional link parameters</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Program linking</h1>
+<p>The Chroma has the ability to select two sounds at a time, either for the
+  purpose of layering them (to get four oscillators per note), or for
+  splitting the keyboard. This is done by creating a <span class="popup" onclick="popup('_link_program')">link (program)</span> from one
+  <span class="popup" onclick="popup('_program')">program</span> to another stored program, embodied in three panel
+  <span class="popup" onclick="popup('_parameter')">parameters</span> in the Main program, called the Link Mode, Link
+  Number and Link Bank. When a program containing a link is selected, a second
+  <span class="popup" onclick="popup('_instrument')">instrument</span> is enabled, whose sound is controlled by the program linked to.
+  This program can&rsquo;t be edited from the panel; all editing controls only
+  affect the Main program.</p>
+<p>The link modes inherited from the original Chroma are Link Unison, which
+  causes all notes to be played on both the main and link sound, Link Lower,
+  which steers the notes below the keyboard split to the link sound, and Link
+  Upper, which steers the notes above or equal to the keyboard split to the
+  link sound.</p>
+<p>A link to a program in the current bank is set up by pressing LINK LOWER,
+  LINK UNISON or LINK UPPER and then pressing a number. The link mode is
+  changed, without changing what program is linked to, by pressing one of
+  those three link switches twice. A link is removed by pressing NO LINK
+  twice.</p>
+<p>In the Digital Chroma, setting up a link in this manner always links to a
+  sound in the same bank as the main sound. Internally, it records the program
+  number, but records the link bank parameter as zero, meaning &ldquo;current
+  bank&rdquo;. If the main program is later stored into a different bank, it
+  will automatically link to the corresponding program in that bank, which is
+  useful if an entire bank full of programs is moved to another bank.</p>
+<p>To link to any specific bank, not surprisingly, you hold LINK LOWER, LINK
+  UNISON or LINK UPPER, press the bank number, release the link switch, and
+  press the program number. This sort of link always links to the specified
+  bank, even of the main program that contains the link is moved to a different
+  bank. (Again, you can select the bank first with PROG SELECT, but
+  that&rsquo;s less efficient.)</p>
+<p>The Digital Chroma has another feature which the original Chroma
+  didn&rsquo;t have, which is Link to Self. If one of the three LINK switches
+  is held like a shift key, and PROG SELECT is pressed, then a link is set up
+  to the same program as the main program. But this is somewhat different from
+  linking to the stored version of the program, because all parameter changes
+  are sent to both instruments, affecting both sounds. This is primarily useful
+  with a LINK UNISON, to double the number of oscillators while allowing
+  separate octave transposition. But it also means that the link will always be
+  to &ldquo;self&rdquo;, even if the main program is stored under a different
+  number, or into a different bank.</p>
+<p>Another new feature: you can combine a Link Unison with either Link Lower
+  or Link Upper, in which case the link sound plays on part of the keyboard
+  while the main plays over the entire keyboard. This is done by pressing LINK
+  LOWER or LINK UPPER concurrently with LINK UNISON, and then pressing the
+  program number. All the other variations work: for instance, you can hold
+  LINK LOWER and LINK UNISON and press 1&hellip;9, then separately press 1&hellip;50 to
+  set up a Link Lower Unison to a specific bank; or you can press LINK UPPER
+  and LINK UNISON together twice to change the link mode to Link Upper
+  Unison.</p>
+<p>Finally, you can create a split between the entire keyboard going to the
+  main instrument, and an external keyboard going to the link instrument, or
+  vice versa. The former is done by pressing LINK LOWER and LINK UPPER
+  concurrently, and then pressing the program number, or using any of the
+  other analogous variations to specify a different bank or just change the
+  link mode. The latter is done by pressing all three LINK switches
+  concurrently. The external keyboard may be connected to the serial MIDI port
+  or to either <span class="popup" onclick="popup('_USB_host_port')">USB host port</span>, and the <span class="popup" onclick="popup('_global_parameter')">global</span>
+  <span class="page" onclick="page('Global_midi_link_in')">MIDI Link Input</span> parameter must set to the appropriate
+  port and channel.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

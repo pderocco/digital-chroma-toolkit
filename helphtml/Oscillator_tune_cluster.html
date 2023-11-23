@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Oscillator_section')">Oscillator section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Oscillator_mod1_cluster')">Oscillator mod1 cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>OSCILLATOR tune cluster</h1>
+<p><img src="oscillator-tune-cluster.png" width=373></p>
+<p>This just contains the single <span class="page" onclick="page('Oscillator_tune')"><i>tune</i></span>
+  <span class="popup" onclick="popup('_parameter')">parameter</span>, but with a longer <span class="popup" onclick="popup('_slider')">slider</span>. The tuning is shown as the MIDI
+  note number when middle C is played; the default value is C5, which is middle
+  C, five octaves above MIDI note 0.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

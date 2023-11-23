@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('User_interface')">User interface</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Panel_modes')">Panel modes</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Scratch programs</h1>
+<p>The original Chroma introduced the concept of the &ldquo;scratch&rdquo;
+  program, which was a <span class="popup" onclick="popup('_program')">program</span> in which all <span class="popup" onclick="popup('_parameter')">parameters</span> had
+  default values, and those values were chosen to yield a raw sawtooth wave
+  sound, as a useful place to start programming. A scratch program has most
+  parameter set to zero, or to 1 if that is the minimum parameter value, but
+  there are some exceptions:</p>
+<ul>
+  <li>The two envelope Decay Time parameters are set to
+    &ldquo;infinite&rdquo;.</li>
+  <li>The filter Tune parameter is set to maximum, for a wide-open filter.</li>
+  <li>The volume Mod 1 Depth parameter is set to 0db, for a nominal modulation
+    by envelope 1A.</li>
+  <li>Although the various mod depths are set to zero, their corresponding mod
+    selects are preset to different useful choices.</li>
+  </ul>
+<p>In the original Chroma, the only way to obtain a scratch sound was to turn
+  on both EDIT A and EDIT B, hold PARAM SELECT down, and press each number
+  switch; doing so would reset the corresponding parameter to its default
+  value. The Digital Chroma still supports this, and allows extended parameters
+  to be reset by holding SET SPLIT in Parameter Select mode and pressing
+  number switches. But you can also press SET SPLIT in Program Select mode and
+  then press 25 to clear all parameters. Note that this doesn&rsquo;t actually change
+  the program number in the display.</p>
+<p>In the original Chroma, all fifty stored programs always existed, because
+  they were stored in fixed areas of the non-volatile CMOS RAM. The Digital
+  Chroma, on the other hand, stores programs in files on a flash file system
+  (very much like an ordinary thumb drive), and it represents a scratch
+  program by the absence of the corresponding file. If you select a
+  non-existent program, you get a scratch program; if you store a scratch
+  program over an existing program, it deletes that file.</p>
+<p>Since &ldquo;scratch&rdquo; is therefore an easily recognizable condition,
+  not just some magic set of a couple hundred different parameter values, the
+  program number display has two annunciators in it, one saying SCRATCH and
+  the other saying MODIFIED. (The original Chroma just turned on a decimal
+  point in the seven-segment readout to indicate MODIFIED.)</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

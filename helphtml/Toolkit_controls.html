@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Reference')">Reference</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Toolkit_gestures')">Toolkit gestures</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Toolkit controls</h1>
+<p>The Toolkit uses a few simple types of <span class="popup" onclick="popup('_control')">controls</span>, which can be
+  activated by touch or with a mouse.</p>
+<table class="vt">
+  <tr>
+    <td width="2%"/>
+    <td width="15%"><i>button</i></td>
+    <td>This is a small rectangular area with rounded corners, which contains
+      either a fixed label or a variable value, and that does something when
+      tapped. It may respond to other <span class="page" onclick="page('Toolkit_gestures')">gestures</span> as well.
+      <p class="extra">Note that fixed labels are always shown in italics, and
+        variable values are shown in upright type.</p></td></tr>
+  <tr>
+    <td/>
+    <td><i>slider</i></td>
+    <td>This is a wider rectangular area, with a value in the center and a
+      colored bar whose length reflects the value, and which smoothly changes
+      when dragged horizontally. It may respond to other gestures as well.<br>
+      Sliders have two &ldquo;speeds&rdquo;. When you start to drag, or change
+      direction, they change slowly, so that you can adjust them accurately.
+      After a short distance, they change more rapidly, so that you can cover
+      the entire range without running off the edge of the screen. It
+      doesn&rsquo;t matter where you initially touch the slider.
+      <p class="extra">If a value is unipolar (has no negative values), the bar
+        always starts at the left. If it is bipolar, it starts in the middle
+        and grows left or right depending on the polarity.</p></td></tr>
+  <tr>
+    <td/>
+    <td><i>popup title</i></td>
+    <td>Secondary information and functions are often contained in popups,
+      which are displayed when a button on the main screen is tapped or
+      long-pressed. The title at the top of a popup acts as a
+      &ldquo;control&rdquo; because tapping it dismisses the popup. (Tapping
+      the dimmed area around the popup also dismisses it.)</br>
+      In the <em>Editor</em>, <span class="popup" onclick="popup('_parameter')">parameter</span> <span class="popup" onclick="popup('_cluster')">cluster</span> popups can be dragged
+      around by their titles. When you do this, the main screen is no longer
+      dimmed, and you can manipulate its controls, or even display additional
+      cluster popups. You can still dismiss the popups by tapping their titles.
+      </td></tr>
+  <tr>
+    <td/>
+    <td><i>section title</i></td>
+    <td>Certain sections of the screen have titles that actually do something
+      when you tap them. In the <em>Editor</em>, tapping on one of the
+      <i>Glide</i>, <i>Sweep</i>, or <i>Envelope</i> section titles highlights
+      the buttons of the clusters that are modulated by these control
+      sources.</td></tr>
+  <tr>
+    <td/>
+    <td><i>text entry</i></td>
+    <td>Certain popups display text and allow it to be edited. Clicking or
+      tapping in the text display changes its background color from pale yellow
+      to pale blue, and selects all the text in darker blue. Typing replaces
+      the current contents, but tapping deselects the text and positions the
+      cursor for inserting or appending text. Standard line editing keys are
+      supported. Escape abandons the changes, and returns the display to its
+      original state. If it is a single-line field, Enter accepts the changes;
+      if it is a multi-line field, you have to press Enter twice at the end in
+      order to accept the changes. (If you press it twice in the middle of the
+      text, you insert a blank line.) Note that due to limitations in the
+      Digital Chroma, only ASCII characters are allowed.</td></tr>
+  <tr>
+    <td/>
+    <td><i>link</i></td>
+    <td>The Help system obviously uses links, the way a web browser does.
+      Long-pressing a blue link opens it in a new tab. Green links, however,
+      pop up a definition of a term, which can be dismissed by tapping the
+      popup or the page behind it.</td></tr>
+  <tr>
+    <td/>
+    <td><i>tab</i></td>
+    <td>These are buttons just above the help screen text. The Help system uses
+      tabs the way a web browser does. Long-pressing a tab closes it. If there
+      are too many tabs to fit in the screen width, you can see the rest by
+      dragging left or right.</td></tr>
+  <tr>
+    <td/>
+    <td><i>page</i></td>
+    <td>The Help system displays pages of text, but they can also be dragged
+      vertically if they are longer than the screen height. You can also use a
+      mouse wheel, the Page Up, Page Down, Home, and End keys, or long-press in
+      the bottom or top half to jump to the end or back to the
+      beginning.</td></tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

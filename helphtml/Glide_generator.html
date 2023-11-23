@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Modulation_units')">Modulation units</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Programming_sounds')">Programming sounds</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_generator')">Sweep generator</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Glide generator</h1>
+<p>The <span class="popup" onclick="popup('_glide')">Glide</span> generator is responsible for transforming the note
+  numbers coming from the keyboard (subject to the transpose switches) into a
+  control signal that goes to the <span class="popup" onclick="popup('_oscillator')">oscillator</span>, and may be used in other
+  places. What&rsquo;s called the Rate on the switch is really a time, with
+  zero meaning all changes are instant. The original Chroma had two choices of
+  Shape:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%"><i>portamento</i></td>
+    <td>the glide smoothly ramps from one pitch to another, taking a certain
+      amount of time that is independent of how big the change is.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>glissando</i></td>
+    <td>the glide steps by semitones from one pitch to another, at a certain
+      fixed rate so that it takes a longer time to cover a wider pitch
+      range.</td>
+    </tr>
+  </table>
+<p>The Digital Chroma calls the first <i>constant time</i>, and adds two more
+  choices:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%"><i>exponential</i></td>
+    <td>the glide ramps from one pitch toward another, with a certain
+      &ldquo;time constant&rdquo;, slowing down and never quite reaching
+      it.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>constant slope</i></td>
+    <td>the glide ramps from one pitch to another, at a certain fixed rate
+      so that it takes a longer time to cover a wider pitch range.</td>
+    </tr>
+  </table>
+<p>The Digital Chroma also allows the glide time to be modulated, via the
+  <span class="page" onclick="page('Glide_mod_select')">Glide mod select</span> and <span class="page" onclick="page('Glide_mod_depth')">Glide mod depth</span> parameters.</p>
+<p>Each <span class="popup" onclick="popup('_channel')">channel</span> in the <span class="popup" onclick="popup('_voice')">voice</span> has its own glide generator, which is
+  permanently connected to the oscillator in the same channel. However, the
+  glide can be routed to other things as well. It is common to select one of
+  the glide generators as a modulation source for the filter. As mentioned
+  above, if the modulation depth were set to 32, the filter would exactly track
+  the keyboard. But in most sounds, in which the filter isn&rsquo;t
+  self-oscillating at a particular pitch, a more natural scaling of the filter
+  tuning across the keyboard is attained by setting the modulation depth to
+  about half that amount.</p>
+<p>It is important to understand that the actual portamento and glissando
+  functions interact with the keyboard algorithms. For a normal polyphonic
+  algorithm (<span class="page" onclick="page('Common_keyboard_algorithm')">keyboard algorithm</span> <span class="popup" onclick="popup('_parameter')">parameter</span> set to zero),
+  glide is usually disabled, so the glide generator output acts as though its
+  Time parameter was set to zero. This is because there is no consistent way of
+  defining what note should glide to what note when chords are being played. In
+  monophonic modes, however, the choice is obvious, so glide is enabled by
+  default (assuming the Time parameter is nonzero). There are also two special
+  polyphonic algorithms that have glide enabled by default:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="15%"><i>pitch ordered</i></td>
+    <td>notes are delayed slightly to acquire an entire chord, and then notes
+      are assigned from highest to lowest.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>chord buffer</i></td>
+    <td>notes aren&rsquo;t directly played, but are added to a chord buffer,
+      and then played when the left footswitch is pressed.</td>
+    </tr>
+  </table>
+<p>In both cases, notes are placed in order before they are actually played, so
+  that glide can be meaningfully used from one chord to another.</p>
+<p>The <span class="page" onclick="page('Common_footswitch_mode')">footswitch mode</span> parameter also impacts glide, because
+  one of the possible functions of the left footswitch (which wasn&rsquo;t
+  present in the original Chroma) is glide enable. If this function is
+  selected, then it overrides the default choice made by the keyboard
+  algorithm. That is, it can forcibly disable the glide for those mono and poly
+  modes that normally use glide, and can also forcibly enable it for those poly
+  modes that normally don&rsquo;t use glide. When a regular polyphonic mode is
+  forced to use glide, it behaves like the Chroma Polaris: when the left
+  footswitch is pressed, each new note is assigned not to some idle voice but
+  to the most recently assigned voice in the same instrument. This means that
+  while the glide is enabled, the keyboard effectively becomes monophonic, even
+  though there may be a chord held over from before the footswitch was pressed.
+  Unlike the Polaris, this function is enabled by the Fsw Mode parameter, and
+  not the Glide Time, so it allows the footswitch to switch to monophonic
+  playing even if the Glide Time is set to zero.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

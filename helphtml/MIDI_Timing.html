@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_other_messages')">Other messages</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Start')">Start</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI Timing</h1>
+<p>MIDI defines the byte 248 as a Timing byte, and uses it to synchronize
+  devices that keep time. If the Digital Chroma receives this on any MIDI
+  input port, it is used to advance the phase of a timer that the sweep
+  generators in a Chroma program can synchronize to. This can also control the
+  arpeggiation rate. If these bytes stop, the internal timer continues to run
+  at its last rate. If this feature is used while recording a sequence, and the
+  synchronized sweep is used, rather than just arpeggiation, it is important
+  that the Timing bytes also be delivered to the Digital Chroma during
+  playback, to ensure that the sweeps run at the same speed.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

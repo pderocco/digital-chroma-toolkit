@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_peak_mod_select')">Envelope peak mod select</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_attack_time')">Envelope attack time</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>ENVELOPE peak mod depth</h1>
+<p>These control how much the peak amplitude of each <span class="popup" onclick="popup('_envelope')">envelope</span> generator can
+  be modulated. When turned off, the envelope is always one <span class="popup" onclick="popup('_unit')">unit</span>. At 100%,
+  the peak amplitude varies from zero to two units for the first seven
+  <span class="page" onclick="page('Envelope_peak_mod_select')"><i>mod select</i></span> settings, zero to one for the
+  rest:</p>
+<div><img src="envelope-peak-all.png" width=750></div>
+<p>The blue lines represent zero, and the green lines represent one <span class="popup" onclick="popup('_unit')">unit</span>.
+  The lever and pedal curves are always linear, and their values are sampled
+  once at the start of the attack.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the
+  <span class="page" onclick="page('Envelope_peak_cluster')">Envelope peak clusters</span> within the two
+  <span class="page" onclick="page('Envelope_sections')">Envelope sections</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>ENVELOPE 1</i> and <i>ENVELOPE 2</i> sections
+  of the right panel, under the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">Env 1</td>
+    <td class="i u">Env 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-13.png" height=48>
+      </td>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-20.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Env1/2 Peak Mod Depth.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">Env 1</td>
+    <td class="i u">Env 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,12</td>
+    <td>1,25</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,12</td>
+    <td>2,25</td>
+    </tr>
+  </table>
+<p>Since these are <span class="popup" onclick="popup('_bipolar')">bipolar</span> parameters, the values are offset by 64.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">&ndash;100%</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">64</td>
+    <td class="c">off</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    <td class="c s">&bull;<br>&bull;<br>&bull;</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">127</td>
+    <td class="c">+100%</td>
+    <td>(significant)</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

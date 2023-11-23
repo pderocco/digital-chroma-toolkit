@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma_quick-start')">Digital Chroma quick-start</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Initial_calibrations')">Initial calibrations</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Hookup</h1>
+<p>In case someone else installed the Digital Chroma upgrade kit for you, and
+  you&rsquo;re presented with the complete instrument for the first time,
+  you&rsquo;ll need to know how to set it up.</p>
+<ul>
+  <li>Connect the dual <span class="popup" onclick="popup('_footswitch')">footswitch</span> to the DUAL FSW jack on the rear
+    panel.</li>
+  <li>If you have one or two variable <span class="popup" onclick="popup('_pedal')">pedals</span>, connect them to the
+    PEDAL jacks.</li>
+  <li>For analog audio out, connect a stereo <sup>1</sup>/<sub>4</sub>" plug
+    to the LEFT/STEREO jack, or connect separate mono plugs to RIGHT and
+    LEFT/STEREO. The LEFT/STEREO jack is also usable with headphones.</li>
+  <li>If you&rsquo;re going to use the Digital Chroma Toolkit on a PC, Mac, or
+    Linux machine, connect a standard USB cable between the USB DEVICE jack and
+    the computer.</li>
+  <li>Connect a power cord to the POWER jack, and plug the unit in.</li>
+  </ul>
+<p>Since the Digital Chroma is based on a conventional desktop PC motherboard,
+  you turn it on the same way you turn on any other computer, by pressing the
+  POWER pushbutton firmly for a second or so. The display will say <i>Starting
+  up&hellip;</i>, and after a short interval, it will show <span class="popup" onclick="popup('_program')">program</span> 101 (bank 1,
+  program 1), and play normally.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

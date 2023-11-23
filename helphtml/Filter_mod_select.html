@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_tune')">Filter tune</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_mod_depth')">Filter mod depth</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>FILTER mod select</h1>
+<p>These select a filter modulation source, using the same choices that are
+  available for <span class="popup" onclick="popup('_oscillator')">oscillator</span> and <span class="popup" onclick="popup('_waveshaper')">waveshaper</span> inputs. The &ldquo;+&rdquo;
+  and &ldquo;&ndash;&rdquo; lever options use only one side of the lever. The
+  &ldquo;thresh&rdquo; options for the velocity and pressure yield no output
+  until the input is at mid-scale, and then rise at twice the slope to the
+  maximum value.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the <span class="page" onclick="page('Filter_mod_cluster')">Filter mod clusters</span> within
+  the <span class="page" onclick="page('Filter_section')">Filter section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>CUTOFF</i> section of the right panel, under
+  the following parameter numbers:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td width="15%" class="i u">mod 2</td>
+    <td width="15%" class="i u">mod 3</td>
+    <td width="15%" class="i u">mod 4</td>
+    <td class="i u">mod 5</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><img src="sw-40.png" height=48></td>
+    <td><img src="sw-42.png" height=48></td>
+    <td><img src="sw-44.png" height=48></td>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-42.png" height=48>
+      </td>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-44.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Filter Mod1-5 Select.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%"/>
+    <td width="15%" class="i u">mod 1</td>
+    <td width="15%" class="i u">mod 2</td>
+    <td width="15%" class="i u">mod 3</td>
+    <td width="15%" class="i u">mod 4</td>
+    <td class="i u">mod 5</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>A</td>
+    <td>1,59</td>
+    <td>1,62</td>
+    <td>1,64</td>
+    <td>1,66</td>
+    <td>1,68</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,59</td>
+    <td>2,62</td>
+    <td>2,64</td>
+    <td>2,66</td>
+    <td>2,68</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>glide A</td>
+    <td>(mod 1 default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>sweep A</td>
+    <td>(mod 2 default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>envelope 1A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>envelope 2A</td>
+    <td>(mod 3 default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>glide B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>sweep B</td>
+    <td>(mod 4 default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td>envelope 1B</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td>envelope 2B</td>
+    <td>(mod 5 default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">8</td>
+    <td>+lever 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td>+lever 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">10</td>
+    <td>lever 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">11</td>
+    <td>lever 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">12</td>
+    <td>&ndash;lever 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">13</td>
+    <td>&ndash;lever 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">14</td>
+    <td>pedal 1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">15</td>
+    <td>pedal 2</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">16</td>
+    <td>&plusmn;pedal 1</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">17</td>
+    <td>&plusmn;pedal 2</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">18</td>
+    <td>&ndash;pedal 1</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">19</td>
+    <td>&ndash;pedal 2</td>
+    <td>(bipolar pedal only)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">20</td>
+    <td>ribbon</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">21</td>
+    <td>noise</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">22</td>
+    <td>velocity</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">23</td>
+    <td>velocity thresh</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">24</td>
+    <td>pressure</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">25</td>
+    <td>pressure thresh</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

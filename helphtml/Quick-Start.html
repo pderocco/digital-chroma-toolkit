@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Quick-Start')">Quick-Start</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('index')">Home</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Navigation_bar')">Navigation bar</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Quick-Start</h1>
+<p>The Toolkit user interface is designed to work with touch, but you can use a
+  mouse&rsquo;s left button as well. The basic gestures are tapping (or
+  clicking), long-pressing (for more than a half-second), and dragging.</p>
+<h2>Navigation bar</h2>
+<p>The <span class="page" onclick="page('Navigation_bar')">Navigation bar</span> on the left side of the screen contains buttons that
+  are always accessible:</p>
+<ul>
+  <li>The third button is the <i>Connection</i> button. Once you&rsquo;ve
+    connected the Chroma (via its USB device port) and turned it on, tap this
+    to pop up a list of ports, and select one of the Chroma&rsquo;s four
+    virtual jacks. If you&rsquo;re not connected, but still want to explore the
+    Toolkit, select &ldquo;Demonstrator&rdquo;.</li>
+  <li>The four buttons in the middle switch the main part of the window among
+    four screens. This is the <em>Help</em> screen. The <em>Programs</em>
+    screen is where you select programs. The <em>Tools</em> screen allows old
+    Chroma programs to be imported, and lets you tweak certain global
+    parameters, such as the polarity of the levers. The <em>Editor</em> screen
+    is where you edit the current program.</li>
+  <li>The bottom buttons let you undo and redo any changes you make to the
+    current program, or to stored programs. With these, you can safely try
+    things out without worrying that you&rsquo;ll screw something up by
+    touching the wrong control.</li>
+  </ul>
+<h2>Context sensitive help</h2>
+<p>The <img src="question.png" height=16> buttons switch to the
+  <em>Help</em> screen on a page appropriate to the context. Use them
+  extensively to learn about the system; you can always get back to where you
+  were by tapping the appropriate screen button.</p>
+<h2>Programs screen</h2>
+<p>To select sounds, tap <em>PROGRAMS</em>, and tap the various program buttons
+  to try out various sounds. There are nine banks of 50 sounds (some empty),
+  and you can switch to different banks by tapping the nine numbered buttons at
+  the top.</p>
+<h2>Popups</h2>
+<p>The <em>Editor</em> screen has a lot of popups, which provide more detailed
+  imformation and control than is available on the main screen. A popup is a
+  box that appears in the middle of the screen, and dims the surrounding area
+  to indicate it is temporarily inaccessible. A popup is dismissed by tapping
+  in that dimmed area, or on its title.</p>
+<h2>Editing programs</h2>
+<p>Feel free to tinker with sounds. You can always tap <em>Undo</em> if you
+  want to get back to where you were. The wide controls with colored bars in
+  them are sliders you can drag. Most of the buttons pop up clusters of
+  secondary parameters.</p>
+<p>The wide buttons with &ldquo;=&rdquo; indicate that the parameters they
+  represent are ganged in parallel with the parameters to their left. Clicking
+  this button ungangs them.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

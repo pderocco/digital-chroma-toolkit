@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_section')">Filter section</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Editor_screen')">Editor screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>AMPLIFIER section</h1>
+<p><img src="amplifier-section.png" width=520></p>
+<p>An <span class="popup" onclick="popup('_amplifier')">amplifier</span> controls the volume of a sound. The volume is controlled by
+  up to two <span class="popup" onclick="popup('_envelope')">envelope</span> generators which are added together, and then
+  multiplied by a third post modulation such as a <span class="popup" onclick="popup('_pedal')">pedal</span> or <span class="popup" onclick="popup('_sweep')">sweep</span> signal.
+  If connected to the output, it also provides a panning control, which can be
+  modulated. In some settings of the <span class="popup" onclick="popup('_patch')">patch</span> <span class="popup" onclick="popup('_parameter')">parameter</span>, the <i>B</i>
+  amplifier controls the mix between the <i>A</i> and <i>B</i> oscillators, and
+  only the <i>A</i> amplifier goes to the output, so the <i>B</i> pan controls
+  are inactive.</p>
+<p>Each amplifier has four <span class="popup" onclick="popup('_cluster')">clusters</span>:</p>
+<ul>
+  <li>Two envelope <span class="page" onclick="page('Amplifier_mod_cluster')">mod</span> clusters, which are mixed
+    together.</li>
+  <li>One <span class="page" onclick="page('Amplifier_post_mod_cluster')">post mod</span> cluster, which applies after
+    the envelopes.</li>
+  <li>One <span class="page" onclick="page('Amplifier_pan_cluster')">pan</span> cluster</li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

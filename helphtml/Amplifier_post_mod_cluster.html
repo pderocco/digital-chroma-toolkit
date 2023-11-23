@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Amplifier_mod_cluster')">Amplifier mod cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Amplifier_section')">Amplifier section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Amplifier_pan_cluster')">Amplifier pan cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>AMPLIFIER post mod cluster</h1>
+<p><img src="amplifier-post-mod-cluster.png" width=373></p>
+<p>The <i>AMPLIFIER</i> section has one of these for each <span class="popup" onclick="popup('_channel')">channel</span>. It
+  contains a <span class="page" onclick="page('Amplifier_post_mod_select')"><i>mod select</i></span> <span class="popup" onclick="popup('_parameter')">parameter</span> that
+  chooses a post modulation that applies after <i>mod 1</i> and <i>mod 2</i>
+  are added together, and a <span class="page" onclick="page('Amplifier_post_mod_depth')"><i>mod depth</i></span>
+  parameter that controls how much to vary the volume.</p>
+<p>The <i>mod select</i> parameter gives you eight <span class="popup" onclick="popup('_lever')">lever</span> and <span class="popup" onclick="popup('_pedal')">pedal</span>
+  choices, the optional <span class="popup" onclick="popup('_ribbon')">ribbon</span> controller, pitch, velocity, the optional
+  pressure sensor, or either <span class="popup" onclick="popup('_sweep')">sweep</span> control signal for tremolo.</p>
+<p>The <i>mod depth</i> scales the post modulation around a value of one
+  <span class="popup" onclick="popup('_unit')">unit</span>, rather than zero. That is, if the depth is turned off (the default),
+  you always get 100% of the nominal volume. If it is set to 100%, the post mod
+  can vary the volume from zero to 100%. If it is set to 50%, it can vary the
+  volume from 50% to 100%. If it is set to a negative value, it can vary from
+  100% down to some lesser value.</p>
+<p>The rectangular box is actually a graph of the response, and varies when the
+  two parameters are adjusted. See the <i>mod depth</i> parameter for details
+  on how to interpret these graphs.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Common_sequence_program')">sequence program</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_detune')">detune</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>CONTROL patch</h1>
+<p>These select one of nineteen different ways the audio processing modules can
+  be interconnected. There are four basic topologies, plus four optional
+  special effects, although one of the combinations is meaningless:</p>
+<table class="p10">
+  <tr>
+    <td width="30%" class="rj">independent</td>
+    <td width="60%"><img src="patch1.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">independent + sync</td>
+    <td><img src="patch2.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">independent + ring mod</td>
+    <td><img src="patch3.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">independent + multiply</td>
+    <td><img src="patch4.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">independent + filter fm</td>
+    <td><img src="patch5.png" width=450></td>
+    </tr>
+  <tr><td/></tr>
+  <tr>
+    <td class="rj">parallel filters</td>
+    <td><img src="patch6.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">parallel filters + sync</td>
+    <td><img src="patch7.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">parallel filters + ring mod</td>
+    <td><img src="patch8.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">parallel filters + multiply</td>
+    <td><img src="patch9.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">parallel filters + filter fm</td>
+    <td><img src="patch10.png" width=450></td>
+    </tr>
+  <tr><td/></tr>
+  <tr>
+    <td class="rj">series filters</td>
+    <td><img src="patch11.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">series filters + sync</td>
+    <td><img src="patch12.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">series filters + ring mod</td>
+    <td><img src="patch13.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">series filters + multiply</td>
+    <td><img src="patch14.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">series filters + filter fm</td>
+    <td><img src="patch15.png" width=450></td>
+    </tr>
+  <tr><td/></tr>
+  <tr>
+    <td class="rj">vari-mix filters</td>
+    <td><img src="patch16.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">vari-mix filters + sync</td>
+    <td><img src="patch17.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">vari-mix filters + ring mod</td>
+    <td><img src="patch18.png" width=450></td>
+    </tr>
+  <tr>
+    <td class="rj">vari-mix filters + multiply</td>
+    <td><img src="patch19.png" width=450></td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Control_patch_cluster')">patch cluster</span> within the
+  <span class="page" onclick="page('Control_section')">Control section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>CONTROL</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td><img src="sw-1.png" height=48></td>
+    </tr>
+  </table>
+<p>This appears in the display as Patch.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via <span class="popup" onclick="popup('_NRPN')">NRPN</span> 0,24.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="c i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>independent</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td colspan=2>independent + sync</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td colspan=2>independent + ring mod</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td colspan=2>independent + multiply</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td colspan=2>independent + filter fm</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td colspan=2>parallel filters</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td colspan=2>parallel filters + sync</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">8</td>
+    <td colspan=2>parallel filters + ring mod</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td colspan=2>parallel filters + multiply</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">10</td>
+    <td colspan=2>parallel filters + filter fm</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">11</td>
+    <td colspan=2>series filters</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">12</td>
+    <td colspan=2>series filters + sync</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">13</td>
+    <td colspan=2>series filters + ring mod</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">14</td>
+    <td colspan=2>series filters + multiply</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">15</td>
+    <td colspan=2>series filters + filter fm</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">16</td>
+    <td colspan=2>vari-mix filters</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">17</td>
+    <td colspan=2>vari-mix filters + sync</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">18</td>
+    <td colspan=2>vari-mix filters + ring mod</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">19</td>
+    <td colspan=2>vari-mix filters + multiply</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

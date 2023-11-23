@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_tone_cluster')">Tone cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Control_section')">Control section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_voice_stack_cluster')">Voice Stack cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>CONTROL detune cluster</h1>
+<p><img src="control-detune-cluster.png" width=373></p>
+<p>The <i><span class="page" onclick="page('Control_detune')">detune</span></i> <span class="popup" onclick="popup('_parameter')">parameter</span> shifts the tuning of
+  <span class="popup" onclick="popup('_oscillator')">oscillator</span> B without altering oscillator A. The
+  <i><span class="page" onclick="page('Control_detune_scale')">scale</span></i> parameter determines how the detuning
+  varies across the keyboard, and has three choices, a constant cents detune,
+  a constant Hertz detune, or a compromise between the two.</p>
+<p>The <i><span class="page" onclick="page('Control_tune_shift')">tune shift</span></i> parameter alters the pitch of
+  both oscillators, either by stretching the tuning or randomizing it.</p>
+<p>Detuning is applied to the <span class="popup" onclick="popup('_glide')">glide</span> generators, and through them to the
+  oscillators. It therefore also affects <span class="popup" onclick="popup('_filter')">filter</span> tuning if glide is
+  used as a mod source, which is the normal case if a filter&rsquo;s
+  <span class="popup" onclick="popup('_resonance')">resonance</span> is turned all the way up to make it oscillate.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

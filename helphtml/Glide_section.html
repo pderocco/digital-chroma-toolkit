@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_section')">Control section</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Editor_screen')">Editor screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_section')">Sweep section</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>GLIDE section</h1>
+<p><img src="glide-section.png" width=384></p>
+<p>Each of the two &ldquo;<span class="popup" onclick="popup('_glide')">glide</span>&rdquo; generators takes the note number and turns it
+  into a control signal that varies an <span class="popup" onclick="popup('_oscillator')">oscillator</span> frequency. <i>GLIDE A</i>
+  always controls <i>OSCILLATOR A</i>, and <i>GLIDE B</i> always controls
+  <i>OSCILLATOR B</i>, but either of them can also used for modulating anything
+  else. The glide generators can also filter the changes in pitch, by applying
+  portamento, which causes pitches to slide from note to note, or glissando,
+  which causes them to go through chromatic steps from note to note.</p>
+<p>Since there are only four <span class="popup" onclick="popup('_parameter')">parameters</span> controlling the glide,
+  each glide only has one <span class="page" onclick="page('Glide_cluster')">glide</span> <span class="popup" onclick="popup('_cluster')">cluster</span>. The <span class="popup" onclick="popup('_button')">button</span> shows
+  the current <i>shape</i> parameter, and the <span class="popup" onclick="popup('_slider')">slider</span> controls the
+  <i>time</i>. The cluster also contains a <i>mod select</i> and <i>mod
+  depth</i> for modulating the time.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

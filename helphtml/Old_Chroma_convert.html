@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Old_Chroma_import')">Old Chroma import</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Tools_screen')">Tools screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Backup_restore')">Backup &amp; restore</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Old Chroma convert</h1>
+<p>Once you&rsquo;ve imported old Chroma programs into the Syntech Sysex
+  format, or if you already have Chroma files in that format and would like to
+  use them in the Digital Chroma, you can use this tool to convert them to the
+  Digital Chroma&rsquo;s format. Since each Sysex file contains up to 50
+  programs, the conversion produces fifty separate Digital Chroma <span class="popup" onclick="popup('_program')">program</span>
+  files.</p>
+<p>The Digital Chroma has almost twice as many <span class="popup" onclick="popup('_parameter')">parameters</span> as the
+  old Chroma, and most of the new ones are set to compatible default values. A
+  few, however, are presented in this tool, because you may not wish to rely on
+  the default values. They include:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="20%" class="i">tune shift</td>
+    <td>Positive settings stretch the tuning, making the high notes sharp and
+      the low notes flat. Negative settings introduce increasing amounts of
+      randomization into the tuning. If you like the old Chroma&rsquo;s sour
+      tuning, try something like &ldquo;random 5&cent;&rdquo;; if you just want
+      it to sound less dry, try &ldquo;stretch 5&cent;&rdquo;.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="i">invert</td>
+    <td>The preference in the Chroma factory sounds was for pulling <span class="popup" onclick="popup('_lever')">lever</span> 2
+      to raise the pitch, but the levers were wired up so that pushing the
+      levers produced positive modulation values. Therefore, most of the
+      programs were configured so that the lever 2 modulation depth was a
+      negative number. If your programs are mostly set up like this, then you
+      should use the &ldquo;inverted&rdquo; choice, at least for lever 2, which
+      causes these modulation depths to be made positive. This way, the results
+      will agree with your <span class="popup" onclick="popup('_global_parameter')">global</span>
+      <span class="page" onclick="page('Global_invert')"><i>invert</i></span> parameter settings, instead of
+      contradicting them.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="i">selective</td>
+    <td>These choose whether the levers are configured in normal or
+      <span class="popup" onclick="popup('_selective')">selective</span> mode. The latter is recommended, since this is a useful
+      feature, and it is rarely important that a lever <i>not</i> be
+      selective.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="i">voice count</td>
+    <td>Since the Digital Chroma has so many <span class="popup" onclick="popup('_voice')">voices</span>, it&rsquo;s often
+      worth spending them on fattening the sound, by setting the <i>voice
+      count</i> parameter to something greater than 1.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="i">pan spread</td>
+    <td>If the <i>voice count</i> is greater than 1, this parameter spreads out
+      the voices assigned to each note in the stereo field. The default value
+      of 90&deg; is a good choice, although 180&deg; results in less obvious
+      beating, because the mixing takes place more in the air.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="i">tune spread</td>
+    <td>If the <i>voice count</i> is greater than 1, this parameter should be
+      used to detune the voices a little. Something larger than the default
+      value of 1&cent; is probably optimum, perhaps 5&cent;.</td>
+    </tr>
+  </table>
+<p>Since the conversion is a quick operation, you can try a conversion, play
+  some of the resulting programs while tinkering with the parameters to find
+  the best conversion settings, and then redo the conversion. Of course, all
+  programs will end up with the same settings, so you should choose the most
+  generally useful settings, to minimize the number of programs you&rsquo;ll
+  want to edit individually.</p>
+<p>To do the conversion, tap the <i>input file</i> button, navigate to the
+  folder containing the Syntech Sysex file, and select the appropriate file.
+  After setting the various parameters, you can choose between two destinations
+  for the results:</p>
+
+<h2>Converting to a Digital Chroma bank</h2>
+<p><img src="old-chroma-convert-bank.png" width=346></p>
+<p>Tapping the &ldquo;to bank&rdquo; button presents you with nine numbered
+  bank buttons. Choose the bank you wish to overwrite, and then tap
+  &ldquo;convert&rdquo;. As soon as the conversion is complete, you can begin
+  playing on those programs.</p>
+<p>This overwrites an entire bank of programs. However, all changes to programs
+  stored inside the Chroma are protected by the Undo mechanism, so you can undo
+  the conversion operation if you write to the wrong bank.</p>
+
+<h2>Converting to a folder</h2>
+<p><img src="old-chroma-convert-folder.png" width=346></p>
+<p>Tapping the &ldquo;to folder&rdquo; button presents you with a button that
+  lets you choose a folder on the computer. The conversion creates fifty files
+  in that folder, called &ldquo;01.chr&rdquo; through &ldquo;50.chr&rdquo;. You can later copy them
+  into the Digital Chroma using the <span class="page" onclick="page('Backup_restore')">Backup &amp; restore</span> tool.</p>
+<p>If you convert into an existing folder, any old files of those names are
+  overwritten. Since these are not inside the Digital Chroma, they are not
+  protected by the Undo mechanism.</p>
+
+<h2>Program metadata</h2>
+<p>This tool provides one more feature. If you want to give all your programs
+  names, you can use a plain text editor (e.g., Notepad in Windows, TextEdit on
+  the Mac) to prepare a file with the names, one to a line, and store it in the
+  same folder as the Syntech Sysex file, with the same name but with the
+  extension &ldquo;.txt&rdquo;. The conversion will use the text in line 1 for
+  the name of program 1, and so on. If a line is empty, that program
+  won&rsquo;t be named. If there are too few lines, the trailing programs
+  won&rsquo;t be named. If there are too many lines, the excess will be
+  ignored. Because of the limits of the Digital Chroma&rsquo;s display, you can
+  only use basic ASCII characters.</p>
+<p>If you screw up the names, it&rsquo;s easy to tweak the text file and re-run
+  the conversion, since it is a quick operation.</p>
+<p>No comparable function is provided for descriptions. Those must be entered
+  manually after the conversion, using the <span class="page" onclick="page('Program_popup')">Program popup</span> on each program.</p>
+<p>The timestamp assigned to each program reflects when the conversion took
+  place. All programs will have slightly different timestamps.</p>
+
+<h2>Errors</h2>
+<p>Normally, after a conversion, a light green box saying &ldquo;success&rdquo; appears to
+  the left of the &ldquo;convert&rdquo; button for a second. If any error occurs, a pink
+  box with an error message appears instead. In this case, the button changes
+  to &ldquo;dismiss&rdquo;, and you must tap it to dismiss the message before you can retry
+  the operation.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('All_global_parameters')">All global parameters</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Reference')">Reference</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Calibrations')">Calibrations</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>All switch functions</h1>
+<p>In this section, upper case names refer to named switches and numbers refer
+  to numbered switches. In addition, the following notations apply:</p>
+<table class="vt">
+  <tr>
+    <td width="5%"/>
+    <td width="20%">Seq Prog</td>
+    <td>the Sequence Program footswitch.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>key</td>
+    <td>any key on the keyboard.</td>
+    <tr>
+  <tr>
+    <td/>
+    <td><i>x&hellip;y</i></td>
+    <td>any numbered switch from <i>x</i> to <i>y</i>. Usually, 1&hellip;50 refers
+      to a program or parameter, 1&hellip;9 refers to a bank.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>X, Y</i></td>
+    <td>press <i>X</i> followed by <i>Y</i> in sequence, with no overlap.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>X + Y</i></td>
+    <td>hold <i>X</i> like a shift key, and press <i>Y</i>.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td><i>X &amp; Y</i></td>
+    <td>press X and Y together, in either order.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>(Parameter Select)</td>
+    <td>the function only applies in Parameter Select mode (or one of the Copy
+      From modes).</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>(Program Select)</td>
+    <td>the function only applies in Program Select mode.</td>
+    </tr>
+  </table>
+
+<h2>Program selection</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">PROG SELECT</td>
+    <td>Enters Program Select mode.</td>
+    </tr>
+  <tr>
+    <td>(Program Select) 1&hellip;50</td>
+    <td>Selects the specified program in the current bank.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, 1&hellip;50</td>
+    <td>Enters Program Select mode, switches to the specified bank, selects the
+      specified program.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 26</td>
+    <td>Loads a scratch program into the main instrument, keeping the current
+      number.</td>
+    </tr>
+  </table>
+<p>PROG SELECT also aborts any pending operation that is flashing an LED,
+  except calibration.</p>
+
+<h2>Parameter selection</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">PARAM SELECT</td>
+    <td>Enters Parameter Select mode.</td>
+    </tr>
+  <tr>
+    <td>PARAM SELECT + 1&hellip;50</td>
+    <td>Enters Parameter Select mode, selects and clears the specified regular
+      parameter. Multiple parameters may be cleared while holding PARAM
+      SELECT.</td>
+    </tr>
+  <tr>
+    <td>(Parameter Select) 1&hellip;50</td>
+    <td>Selects the specified regular parameter.</td>
+    </tr>
+  <tr>
+    <td>(Parameter Select) SET SPLIT, 1&hellip;50</td>
+    <td>Selects the specified extended parameter.</td>
+    </tr>
+  <tr>
+    <td>(Parameter Select) SET SPLIT + 1&hellip;50</td>
+    <td>Selects and clears the specified extended parameter. Multiple
+      parameters may be cleared while holding SET SPLIT.</td>
+    </tr>
+  </table>
+<p>PARAM SELECT also aborts any pending operation that is flashing an LED,
+  except calibration.</p>
+
+<h2>Parameter copying</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">COPY FROM A, COPY FROM A</td>
+    <td>Selects Copy From A mode, copying from the current program in the main
+      instrument.</td>
+    </tr>
+  <tr>
+    <td>COPY FROM A, 1&hellip;50</td>
+    <td>Selects Copy From A mode, copying from the specified program in the
+      current bank.</td>
+    </tr>
+  <tr>
+    <td>COPY FROM A + 1&hellip;9, 1&hellip;50</td>
+    <td>Selects Copy From A mode, copying from the specified program in the
+      specified bank.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, COPY FROM A, 1&hellip;50</td>
+    <td>Another way to specify a different bank.</td>
+    </tr>
+  <tr>
+    <td>COPY FROM B &hellip;</td>
+    <td>All functions are analogous to Copy from A.</td>
+    </tr>
+  </table>
+
+<h2>Edit mode</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">EDIT A</td>
+    <td>Connects the parameter slider to the A channel, whenever a channel
+      parameter is selected.</td>
+    </tr>
+  <tr>
+    <td>EDIT B</td>
+    <td>Connects the parameter slider to the B channel, whenever a channel
+      parameter is selected.</td>
+    </tr>
+  <tr>
+    <td>EDIT A &amp; EDIT B</td>
+    <td>Connects the parameter slider to both channels, whenever a channel
+      parameter is selected.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, EDIT A</td>
+    <td>Selects Edit A mode, but temporarily mutes the B channel oscillator
+      until the program is stored, a new program is selected, or any of the
+      PANEL MODE switches are pressed. The mute isn&rsquo;t part of the
+      program, just a programming aid.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, EDIT B</td>
+    <td>Selects Edit B mode, but temporarily mutes the A channel
+      oscillator.</td>
+    </tr>
+  </table>
+
+<h2>Program storing</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">STORE, STORE</td>
+    <td>Stores the current program under its same program number.</td>
+    </tr>
+  <tr>
+    <td>STORE, 1&hellip;50</td>
+    <td>Stores the current program under the specified program number in the
+      same bank.</td>
+    </tr>
+  <tr>
+    <td>STORE + 1&hellip;9, 1&hellip;50</td>
+    <td>Stores the current program under the specified bank and program
+      number.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, STORE, 1&hellip;50</td>
+    <td>Another way to specify a different bank.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, STORE, STORE</td>
+    <td>Swap the current program with the stored version of the same
+      number.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, STORE, 1&hellip;50</td>
+    <td>Swap the current program with the specified program in the current
+      bank.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, STORE + 1&hellip;9, 1&hellip;50</td>
+    <td>Swap the current program with the specified program in the specified
+      bank.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, SET SPLIT, STORE, 1&hellip;50</td>
+    <td>Another way to specify a different bank.</td>
+    </tr>
+  </table>
+
+<h2>Keyboard splits</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">SET SPLIT, key</td>
+    <td>Sets the keyboard split in the current program.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, SET SPLIT</td>
+    <td>Sets the keyboard split in the current program to the same place it was
+      last manually set.</td>
+    </tr>
+  </table>
+
+<h2>External drive functions</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">LOAD ONE</td>
+    <td>Loads the current bank from an external drive.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, LOAD ONE</td>
+    <td>Loads the specified bank from an external drive.</td>
+    </tr>
+  <tr>
+    <td>LOAD ONE + 1&hellip;9</td>
+    <td>Loads the specified bank from an external drive into the current bank
+      in the Chroma.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, LOAD ONE + 1&hellip;9</td>
+    <td>Loads the specified bank from an external drive into a different
+      specified bank in the Chroma.</td>
+    </tr>
+  <tr>
+    <td>SAVE ONE</td>
+    <td>Saves the current bank to an external drive.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, SAVE ONE</td>
+    <td>Saves the specified bank to an external drive.</td>
+    </tr>
+  <tr>
+    <td>SAVE ONE + 1&hellip;9</td>
+    <td>Saves the current bank to the specified bank on an external drive.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, SAVE ONE + 1&hellip;9</td>
+    <td>Saves the specified bank to a different specified bank on an external
+      drive.</td>
+    </tr>
+  <tr>
+    <td>LOAD ALL</td>
+    <td>Loads all nine banks from an external drive.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LOAD ALL</td>
+    <td>Loads all nine banks from an external drive, prompting before each
+      bank.</td>
+    </tr>
+  <tr>
+    <td>LOAD ALL + 1&hellip;9</td>
+    <td>Loads all nine banks from a specific Chroma number folder on an
+      external drive.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LOAD ALL + 1&hellip;9</td>
+    <td>Loads all nine banks from a specific Chroma number folder, prompting 
+      before each bank.</td>
+    </tr>
+  <tr>
+    <td>SAVE ALL</td>
+    <td>Saves all nine banks to an external drive.</td>
+    </tr>
+  <tr>
+    <td>SAVE ALL + 1&hellip;9</td>
+    <td>Saves all nine banks to a specific Chroma number folder on an external
+      drive.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, SAVE ALL</td>
+    <td>Saves all nine banks to an external drive, prompting before each
+      bank.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, SAVE ALL + 1&hellip;9</td>
+    <td>Saves all nine banks to a specific Chroma number folder, prompting 
+      before each bank.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LOAD ONE</td>
+    <td>Loads the miscellaneous files from an external drive, prompting before
+      each file or group of files.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, SAVE ONE</td>
+    <td>Saves the miscellaneous files to an external drive, prompting before
+      each file or group of files.</td>
+    </tr>
+  </table>
+<p>(The functions that start with PROG SELECT also put the panel into Program
+  Select mode.)</p>
+
+<h2>Transposition</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">MAIN DOWN 1 OCT</td>
+    <td>Transposes the main instrument down an octave, or cancels the
+      transposition if already on.</td>
+    </tr>
+  <tr>
+    <td>MAIN UP 1 OCT</td>
+    <td>Transposes the main instrument up an octave, or cancels the
+      transposition if already on.</td>
+    </tr>
+  <tr>
+    <td>LINK DOWN 1 OCT</td>
+    <td>Transposes the link instrument down an octave, or cancels the
+      transposition if already on.</td>
+    </tr>
+  <tr>
+    <td>LINK UP 1 OCT</td>
+    <td>Transposes the link instrument up an octave, or cancels the
+      transposition if already on.</td>
+    </tr>
+  </table>
+<p>A main switch and a link switch may be pressed at the same time.</p>
+
+<h2>Program linking</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">NO LINK, NO LINK</td>
+    <td>Turns off the link.</td>
+    </tr>
+  <tr>
+    <td>NO LINK, 1&hellip;50</td>
+    <td>Selects the specified program in the current bank, but leaves all
+      link-related parameters unchanged.</td>
+    </tr>
+  <tr>
+    <td>NO LINK + 1&hellip;9, 1&hellip;50</td>
+    <td>Selects the specified program in the specified bank, but leaves all
+      link-related parameters unchanged.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, NO LINK, 1&hellip;50</td>
+    <td>Another way to specify a different bank.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER, LINK LOWER</td>
+    <td>Selects a Link Lower, without changing the link program number.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER + PROG SELECT</td>
+    <td>Selects a Link Lower, setting the link program number to 0, or
+      &ldquo;self&rdquo;.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER, 1&hellip;50</td>
+    <td>Selects a Link Lower to the specified program in
+      the current bank.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER + 1&hellip;9, 1&hellip;50</td>
+    <td>Selects a Link Lower to the specified program in the specified
+      bank.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, LINK LOWER, 1&hellip;50</td>
+    <td>Another way to specify a different bank.</td>
+    </tr>
+  <tr>
+    <td>LINK UNISON &hellip;</td>
+    <td>All functions are analogous to LINK LOWER, but select a Link
+      Unison.</td>
+    </tr>
+  <tr>
+    <td>LINK UPPER &hellip;</td>
+    <td>All functions are analogous to LINK LOWER, but select a Link
+      Upper.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER &amp; LINK UNISON &hellip;</td>
+    <td>All functions are analogous to LINK LOWER, but select a Link Lower
+      Unison.</td>
+    </tr>
+  <tr>
+    <td>LINK UPPER &amp; LINK UNISON &hellip;</td>
+    <td>All functions are analogous to LINK LOWER, but select a Link Upper
+      Unison.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER &amp; LINK UPPER &hellip;</td>
+    <td>All functions are analogous to LINK LOWER, but select a Link
+      External.</td>
+    </tr>
+  <tr>
+    <td>LINK LOWER &amp; LINK UNISON &amp; LINK UPPER &hellip;</td>
+    <td>All functions are analogous to LINK LOWER, but select a Link
+      Internal.</td>
+    </tr>
+  </table>
+
+<h2>Sequence program functions</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">Seq Prog</td>
+    <td>Selects the program specified by the Sequence Program parameters in the
+      current program. It can select a specific program in a specific bank, a
+      specific program in the current bank, or the previously selected
+      program.</td>
+    </tr>
+  <tr>
+    <td>Seq Prog + 1&hellip;50</td>
+    <td>Sets the Sequence Program parameters to the specified program in the
+      current bank, but does not switch to it.</td>
+    </tr>
+  <tr>
+    <td>Seq Prog + PROG SELECT</td>
+    <td>Sets the Sequence Program parameters to the &ldquo;previous&rdquo; program, but
+      does not switch to it.</td>
+    </tr>
+  <tr>
+    <td>PROG SELECT + 1&hellip;9, Seq Prog + 1&hellip;50</td>
+    <td>Sets the Sequence Program parameters to the specified program in the
+      specified bank, but does not switch to it. (Also puts the panel into
+      Program Select mode.)</td>
+    </tr>
+  </table>
+
+<h2>Miscellaneous functions</h2>
+<table class="vt">
+  <tr>
+    <td width="50%">AUTO TUNE</td>
+    <td>Undoes the last undoable operation.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, AUTO TUNE</td>
+    <td>Redoes the last Undo, if any. Also separates previous edits to the
+      main program from subsequent ones, for Undo purposes.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, MAIN UP 1 OCT</td>
+    <td>Displays the datestamps of the three Digital Chroma firmware
+      components.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LINK DOWN 1 OCT</td>
+    <td>Sends All Sounds Off and All Controllers Off to all 64 USB device port
+      MIDI players.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LINK UP 1 OCT</td>
+    <td>Sends All Sounds Off (but not All Controllers Off) to the main and link
+      players.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LINK UNISON</td>
+    <td>Sends the complete state of all controllers and the current program via
+      MIDI.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, LINK UPPER</td>
+    <td>Displays the date for one second, then the time. The display reverts on
+      most other operations.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, COPY FROM A</td>
+    <td>Connects the parameter slider to the pedal 1 input, so that it can be
+      manipulated in the absence of a pedal.</td>
+    </tr>
+  <tr>
+    <td>SET SPLIT, COPY FROM B</td>
+    <td>Same, but for pedal 2.</td>
+    </tr>
+  <tr>
+    <td>(Program Select) SET SPLIT, 1&hellip;23</td>
+    <td>Selects the specified global parameter.</td>
+    </tr>
+  <tr>
+    <td>(Program Select) SET SPLIT, 26&hellip;49</td>
+    <td>Enters calibration mode, selects the specified calibration. Other
+      numbers may subsequently be pressed, to select different calibrations.
+      This mode is exited with STORE to save all changes, or SET SPLIT to undo
+      any changes.</td>
+    </tr>
+  <tr>
+    <td>(Program Select) SET SPLIT, 50</td>
+    <td>Restarts the Chroma firmware.</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

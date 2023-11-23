@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Program_Copy')">Program Copy</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_NRPN_functions')">MIDI NRPN functions</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Program_Swap')">Program Swap</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI Program Move</h1>
+<p>NRPN 26,0 on the Editor input moves a program file into another location.
+  The Bank MSB and Data MSB specify the destination, and the Bank LSB and Data
+  LSB specify the source. This is echoed back to the editor.</p>
+<p>If the source and destination both exist, the source overwrites the
+  destination; if the source doesn&rsquo;t exist, the destination is deleted. The
+  source ends up empty.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

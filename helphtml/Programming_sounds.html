@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Digital_Chroma_architecture')">Digital Chroma architecture</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Digital_Chroma')">Digital Chroma</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('User_interface')">User interface</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Programming sounds</h1>
+<p>This section delves more deeply into the things that you can do with the
+  various <span class="popup" onclick="popup('_parameter')">parameters</span>. For more complete parameter documentation,
+  go <span class="page" onclick="page('All_parameters')">here</span>. This section covers most of the features of the
+  Digital Chroma, including explaining its enhancements over the original
+  Chroma.</p>
+<ul>
+  <li><span class="page" onclick="page('Modulation_units')">Modulation units</span></li>
+  <li><span class="page" onclick="page('Glide_generator')">Glide generator</span></li>
+  <li><span class="page" onclick="page('Sweep_generator')">Sweep generator</span></li>
+  <li><span class="page" onclick="page('Envelope_generators')">Envelope generators</span></li>
+  <li><span class="page" onclick="page('Oscillator_controls')">Oscillator controls</span></li>
+  <li><span class="page" onclick="page('Waveshaper_controls')">Waveshaper controls</span></li>
+  <li><span class="page" onclick="page('Filter_controls')">Filter controls</span></li>
+  <li><span class="page" onclick="page('Amplifier_controls')">Amplifier controls</span></li>
+  <li><span class="page" onclick="page('Tone_controls')">Tone controls</span></li>
+  <li><span class="page" onclick="page('Reverb')">Reverb</span></li>
+  <li><span class="page" onclick="page('The_patch')">The patch</span></li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

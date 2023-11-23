@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Portamento_Controller')">Portamento Controller</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_note_semantics')">Note semantics</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI polyphonic controls</h1>
+<p>The Digital Chroma also uses CC84, Portamento Controller, which it calls
+  &ldquo;Note Select&rdquo;, for another purpose: to direct an immediately
+  following control to a specific note. If that control doesn&rsquo;t support
+  polyphony, it is ignored, rather than being treated as a mono control. But
+  whether it is ignored or not, the Note Select control is consumed so that
+  subsequent controls are unaffected.</p>
+<p>This feature works on Pitch Bend, and Control Changes for the levers,
+  pedals, ribbon, volume, and pan. It doesn&rsquo;t work for Mono Pressure,
+  because MIDI already provides a Poly Pressure message. Also, only one Note
+  Select control is needed before hi-res controls.</p>
+<p>The Digital Chroma only generates these when an External input port is
+  placed in MPE Mode, an external controller uses it to generate polyphonic
+  controls, and the MIDI output is being sent to an external DAW for
+  recording.</p>
+<p class="extra">Portamento Controller/Note Control isn&rsquo;t recognized on
+  any of the channels in an MPE zone.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

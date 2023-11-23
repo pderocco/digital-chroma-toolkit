@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_trigger_cluster')">Envelope trigger cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Envelope_sections')">Envelope sections</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_attack_cluster')">Envelope attack cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>ENVELOPE peak cluster</h1>
+<p><img src="envelope-peak-cluster.png" width=373></p>
+<p>This sets how the peak amplitude of the envelope is affected by either
+  <span class="popup" onclick="popup('_velocity')">velocity</span>, a <span class="popup" onclick="popup('_lever')">lever</span> position, or a <span class="popup" onclick="popup('_pedal')">pedal</span> position. The
+  <span class="page" onclick="page('Envelope_peak_mod_select')"><i>mod select</i></span> <span class="popup" onclick="popup('_parameter')">parameter</span> determines what
+  controls the peak amplitude, and for velocity, what the shape of the response
+  curve is. The <span class="page" onclick="page('Envelope_peak_mod_depth')"><i>mod depth</i></span> <span class="popup" onclick="popup('_slider')">slider</span> determines
+  how much the peak can vary. The small box contains a graph that shows the
+  relationship of the velocity or other input value and the resulting peak. If
+  the range is turned off, the peak is always one <span class="popup" onclick="popup('_unit')">unit</span>. If the range is
+  turned up, the peak can vary from zero to two units for the first seven
+  selections, zero to one for the rest.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

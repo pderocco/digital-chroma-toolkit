@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_pitch_controls')">Pitch controls</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('MIDI_controls')">MIDI controls</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('MIDI_Portamento_Controller')">Portamento Controller</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>MIDI pitch changes</h1>
+<p>To change the pitch of a note while it is sounding, use Pitch MSB/LSB
+  prefixes followed by this Digital Chroma-specific control:</p>
+<table>
+  <tr>
+    <td width="5%"/>
+    <td width="10%">CC111</td>
+    <td>Note Change</td>
+    </tr>
+  </table>
+<p>The value of this control is a note number, and it modifies the pitch of the
+  specified note. The default pitch MSB and LSB in this case are their current
+  values, unrelated to the note number. This naturally works on notes that are
+  released, if they are still sounding.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

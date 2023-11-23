@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_detune_cluster')">Detune cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Control_section')">Control section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>CONTROL voice stack cluster</h1>
+<p><img src="control-voice-stack-cluster.png" width=373></p>
+<p>This <span class="popup" onclick="popup('_cluster')">cluster</span> allows multiple <span class="popup" onclick="popup('_voice')">voices</span> to be played for each note.
+  The <i><span class="page" onclick="page('Control_voice_count')">voice count</span></i> parameter specifies the number
+  of voices, up to four. All voices have the same sound, but the following
+  <span class="popup" onclick="popup('_parameter')">parameters</span> introduce differences; they have no effect if the
+  Voice count is one.</p>
+<p>The <i><span class="page" onclick="page('Control_tune_spread')">tune spread</span></i> parameter causes the voices to
+  be detuned. This is a half-scale detuning, in which the beat frequency
+  doubles for each two-octave increase in pitch. The range is zero to 50&cent;,
+  with a default value of 1&cent; so that the instrument doesn&rsquo;t sound
+  completely dry. However, there are two special values at the high end of
+  range, which connect this parameter to either <span class="popup" onclick="popup('_pedal')">pedal</span>. You can quickly set
+  either of these values with the <span class="popup" onclick="popup('_button')">buttons</span> below the <span class="popup" onclick="popup('_slider')">slider</span>.</p>
+<p>The <i><span class="page" onclick="page('Control_pan_spread')">pan spread</span></i> parameter causes the voices to be
+  spread out across the pan range. At zero, it does nothing, and all voices are
+  controlled by the same Pan parameters so have the same position. At 45&deg;
+  (the default), the pan range is cut in half, so that when two voices are
+  assigned to the same note, the first can be panned from left to center
+  (centered around &ndash;45&deg;) and the second can be panned from center to
+  right (centered around +45&deg;). 90&deg; forces one voice all the way to the
+  left and the other all the way to the right, no matter what the Pan
+  parameters say.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Glide_section')">Glide section</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Editor_screen')">Editor screen</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Envelope_sections')">Envelope sections</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>SWEEP section</h1>
+<p><img src="sweep-section.png" width=520></p>
+<p>A &ldquo;<span class="popup" onclick="popup('_sweep')">sweep</span>&rdquo; generator is what many other synthesizers
+  call a &ldquo;low frequency oscillator&rdquo;, or simply &ldquo;LFO&rdquo;.
+  Each of the two sweeps outputs repetitive low frequency patterns, most
+  commonly sine waves, for producing effects such as vibrato, but also for
+  triggering <span class="popup" onclick="popup('_envelope')">envelopes</span> or running the <span class="popup" onclick="popup('_arpeggiation')">arpeggiation</span> keyboard
+  algorithms. The sweep parameters fall into two categories, so each sweep has
+  two parameter clusters:</p>
+<ul>
+  <li>The <span class="page" onclick="page('Sweep_rate_cluster')">rate</span> cluster contains parameters that pertain to
+    rate or time. The <span class="popup" onclick="popup('_button')">button</span> shows the current sweep <i>mode</i> parameter,
+    and the <span class="popup" onclick="popup('_slider')">slider</span> controls the basic <i>rate</i>.</li>
+  <li>The <span class="page" onclick="page('Sweep_amplitude_cluster')">amplitude</span> cluster contains parameters that
+    pertain to amplitude or shape. The button shows the current amplitude
+    <i>mod select</i> parameter, and the slider controls the <i>mod
+    depth</i>.</li>
+  </ul>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

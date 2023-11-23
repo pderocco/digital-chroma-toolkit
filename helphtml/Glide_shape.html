@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_reverb_send')">reverb send</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Glide_time')">Glide time</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>GLIDE shape</h1>
+<p>These select one of four shapes for the <span class="popup" onclick="popup('_glide')">glide</span> generators. Three of them
+  produce &ldquo;portamento&rdquo;, which is a smooth sliding from note to
+  note; one produces &ldquo;glissando&rdquo;, which is a chromatic scale from
+  note to note.</p>
+<table>
+  <tr>
+    <td width="2%"/>
+    <td  width="60%"><em>Constant time</em>: This takes a certain
+      amount of time, adjustable from 10ms to 15s, to get from one note to the
+      next.</td>
+    <td  width="20%"><img src="glide-constant-time.png" width=128></td>
+    </tr>
+  <tr>
+    <td/>
+    <td><em>Exponential</em>: This slows down as it approaches the
+      target pitch, and theoretically never quite gets there, so the time is
+      actually a &ldquo;time constant&rdquo;, the time it would have taken to
+      get to the pitch if it hadn&rsquo;t slowed down. It is also adjustable
+      from 10ms to 15s.</td>
+    <td><img src="glide-exponential.png" width=128></td>
+    </tr>
+  <tr>
+    <td/>
+    <td><em>Constant slope</em>: This changes with a certain number
+      milliseconds per semitone, so it takes longer the further it has to go.
+      It is adjustable from 40ms to 980ms per semitone.</td>
+    <td><img src="glide-constant-slope.png" width=128></td>
+    </tr>
+  <tr>
+    <td/>
+    <td><em>Glissando</em>: This is just like the constant slope
+      shape, but is quantized to semitones.</td>
+    <td><img src="glide-glissando.png" width=128></td>
+    </tr>
+  </table>
+<p>Glide normally only functions in monophonic
+  <span class="page" onclick="page('Common_keyboard_algorithm')">keyboard algorithm</span> and the poly ordered and poly
+  buffered algorithms. However, it can also be enabled on the normal poly mode
+  via the left <span class="page" onclick="page('Common_footswitch_mode')">footswitch mode</span>. When the footswitch is
+  pressed, voice assignment temporarily becomes monophonic, and glides from
+  note to note.</p>
+<p>Glide A always controls <span class="popup" onclick="popup('_oscillator')">oscillator</span> A, and glide B always controls
+  oscillator B, so to use glide one normally <span class="popup" onclick="popup('_gang')">gangs</span> the
+  <span class="page" onclick="page('Glide_cluster')">glide clusters</span> together. When used elsewhere as a modulation
+  source, middle C is zero, and 32 semitones equals one <span class="popup" onclick="popup('_unit')">unit</span>, so the Digital
+  Chroma&rsquo;s internal keyboard goes from &ndash;1 to almost +1 unit.</p>
+
+<h2>Toolkit</h2>
+<p>These are contained in the <span class="page" onclick="page('Glide_cluster')">Glide clusters</span> within the
+  <span class="page" onclick="page('Glide_section')">Glide section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>These are contained in the <i>GLIDE</i> section of the right panel, under
+  the following parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td><img src="sw-7.png" height=48></td>
+    </tr>
+  </table>
+<p>These appear in the display as Glide Shape.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,1</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,1</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>constant time</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>exponential</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>constant slope</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>glissando</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

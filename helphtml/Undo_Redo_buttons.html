@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Screen_buttons')">Screen buttons</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Navigation_bar')">Navigation bar</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('')"></div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Undo/Redo buttons</h1>
+<p><img src="undo-redo-buttons.png" width=192></p>
+<p>These <span class="popup" onclick="popup('_button')">buttons</span> in the <span class="popup" onclick="popup('_Navigation_bar')">Navigation bar</span> invoke the Undo and Redo
+  functions of the Digital Chroma. They also show what changes are next in line
+  for undoing or redoing. This feature makes it really hard to lose any of your
+  program data.</p>
+<p>The Digital Chroma records undo information for all edits to the
+  <span class="popup" onclick="popup('_current_program')">current program</span>, as well as all changes to stored programs. This even
+  includes bulk changes to stored programs, as a result of importing programs
+  from an external flash drive. (It doesn&rsquo;t include changes made to the
+  flash drive, though.)</p>
+<p>As edits are made to the current program, the Digital Chroma
+  doesn&rsquo;t record each tiny change as a separate undoable event.
+  Instead, it combines consecutive edits into a single change until a certain
+  period of inactivity elapses. Other operations, like loading and storing, are
+  always recorded as distinct operations. Loading a bank of programs, or all
+  programs, from a flash drive is treated as a single operation.</p>
+<p class="extra">You can adjust this time with the <span class="popup" onclick="popup('_global_parameter')">global</span>
+  <i>edit timeout</i> parameter in the <em>TOOLS</em> <span class="popup" onclick="popup('_screen')">screen</span>, but it is
+  initially set to five seconds</p>
+<p>When you undo something, the change is moved from the undo list to the
+  redo list, so that you can redo it if you change your mind. This means
+  that you can go back in time to see what your program sounded like
+  earlier, and then go back to the &ldquo;present&rdquo; and proceed with your
+  editing.</p>
+<p>Note however that if you have undone something, and then you perform any
+  other undoable operation, all your redo information is discarded.</p>
+<p class="extra">This is identical to the way undo and redo work in
+  programs like word processors, or the way the Back and Forward buttons
+  work in web browsers (and in this help browser).</p>
+<p class="extra">Since &ldquo;doing&rdquo; anything leaves the redo list empty,
+  you can use Redo to start a new undoable edit operation, rather than waiting
+  for the timeout, if you think you might want to get back to the current
+  state.</p>
+<h2>Hotkeys</h2>
+  <p>You can press <b>R</b> or <b>U</b> on the keyboard to invoke these
+  functions.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

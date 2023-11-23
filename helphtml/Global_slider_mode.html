@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Global_tapper_mode')">Global tapper mode</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_global_parameters')">All global parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Global_edit_timeout')">Global edit timeout</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>GLOBAL slider mode</h1>
+<p>This controls how the Digital Chroma&rsquo;s sliders acquire control of a
+  parameter, when assigned to a new parameter, or when the parameter value was
+  changed by some other means. The choices are:</p>
+
+<table class="vt">
+  <tr>
+    <td width="5%">
+    <td width="10%">jump</td>
+    <td>Sets the parameter to the value corresponding to the slider position as
+      soon as it moves. Until then, a small triangle next to the value shows
+      which direction the current value is, relative to the slider
+      position.</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>capture</td>
+    <td>The slider must be moved through the position that corresponds to the
+      current parameter value, before it takes control of the parameter. Until
+      then, the triangle shows which direction the slider must be moved to
+      capture the parameter.</td></tr>
+  <tr><td/>
+    <td>smooth</td>
+    <td>The parameter changes whenever the slider is moved, along a slope that
+      reaches the minimum or maximum value at the end of the slider travel.
+      However, the slope is limited to 4x the normal slope, so the minimum or
+      maximum value can be unreachable if the slider is already too close to
+      that end. In this zone, the triangle shows which direction the slider
+      must be moved to escape this zone.</td>
+    </tr>
+  </table>
+
+<h2>Toolkit</h2>
+<p>This is contained in the <span class="page" onclick="page('Global_parameters')">Global parameters</span> section of the
+  <span class="page" onclick="page('Tools_screen')">Tools screen</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>This is accessed in <span class="popup" onclick="popup('_program_select_mode')">PROGRAM SELECT mode</span> using the
+  following global parameter number:</p>
+<table class="p0">
+  <tr>
+    <td width="10%"/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-24.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>This appears in the display as Slider Mode.</p>
+
+<h2>MIDI</h2>
+<p>This is accessed via <span class="popup" onclick="popup('_NRPN')">NRPN</span> 15,24.</p>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">MIDI</td>
+    <td width="10%" class="c i u">display</td>
+    <td/>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td class="c">jump</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td class="c">capture</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td class="c">smooth</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

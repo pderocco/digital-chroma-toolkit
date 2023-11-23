@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Sweep_generator')">Sweep generator</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Programming_sounds')">Programming sounds</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Oscillator_controls')">Oscillator controls</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>Envelope generators</h1>
+<p>Each <span class="popup" onclick="popup('_envelope')">envelope</span> generator is an ADR type, meaning it has an Attack phase
+  that rises to a peak value, a Decay phase that decays toward zero, and a
+  Release phase when the key and Sustain <span class="popup" onclick="popup('_footswitch')">footswitch</span> are released, which also
+  decays toward zero. The second envelope in each channel also has an initial
+  delay of up to 2.5 seconds, or can be set to be triggered by various things
+  such as a <span class="popup" onclick="popup('_sweep')">sweep</span> generator or key release.</p>
+<p>Although velocity can be used directly as a modulation in most places, touch
+  sensitivity is usually attained by using the velocity to control the peak
+  amplitudes of envelopes. The original Chroma had a single Ampl Touch
+  <span class="popup" onclick="popup('_parameter')">parameter</span>, which had the following choices:</p>
+<ul>
+  <li>Touch sensitivity could be turned off, producing a peak value of one
+    unit.</li>
+  <li>Touch sensitivity could be turned on, producing a peak value that ranges
+    from zero to two units with velocity, with five different warping
+    functions that alter the peak value for moderate strikes.</li>
+  <li>Threshold and inverted threshold settings, which either produce a
+    one-unit envelope or no envelope at all, depending upon whether the
+    velocity is below or above a threshold. The threshold itself was set by a
+    global parameter.</li>
+  </ul>
+<p>In the Digital Chroma, the Ampl Touch parameter is renamed Peak Mod Select,
+  and a second Peak Mod Depth parameter is added. The select parameter provides
+  a larger set of warping functions; it also provides a threshold functions
+  with five different velocity thresholds. Finally, it allows the peak
+  amplitude to be controlled by a lever or pedal. The depth parameter has a
+  &plusmn;100% range, but the depth is adjusted relative to one unit, not zero.
+  That is, when the depth turned off, you don&rsquo;t get a zero amplitude, you
+  get a fixed one-unit amplitude that doesn&rsquo;t vary with velocity or
+  anything else. As you raise the depth, you get more and more variation, so
+  10% gives you a 0.9 to 1.1 unit range, 50% gives you a 0.5 to 1.5 unit range,
+  and 100% gives you the full 0 to 2 unit range. Negative depths work too,
+  although they&rsquo;re not as generally useful.</p>
+<p>The full family of shapes available with these two parameters is shown
+  <span class="page" onclick="page('Envelope_peak_mod_depth')">here</span>, and the current shape is shown in the
+  <span class="page" onclick="page('Envelope_peak_cluster')">Envelope peak cluster</span> in the Toolkit as a live graph that varies as
+  the parameters are varied.</p>
+<p>Another extended parameter added to the Digital Chroma is called
+  <span class="page" onclick="page('Envelope_attack_conservation')">Conservation</span>. It determines how much of the
+  previous note&rsquo;s envelope is conserved when a note is restruck. Higher
+  values cause a repeated note to build in volume, while zero avoids that.
+  However, zero still starts each attack at whatever value is left over from
+  the preceding note. If you want an envelope that always starts at zero,
+  truncating any preceding note, use the truncate setting.</p>
+<p>As in the original Chroma, the attack and decay times can be modulated by
+  different things. The Digital Chroma, however, has extended Attack Mod Depth
+  and Decay Mod Depth parameters that allow the depth of this modulation to be
+  varied so that one unit of modulation can cover up to the entire range of
+  the parameter, in either direction.</p>
+<p>The Digital Chroma also adds the ability to modulate the attack and decay
+  times by &ldquo;self&rdquo;, meaning the value of the envelope itself. If
+  Attack Mod is set to &ldquo;self&rdquo;, and the depth is positive, it will
+  slow down as it gets higher; this isn&rsquo;t exactly an exponential shape,
+  but it sounds more like it than a linear ramp. More usefully, if the decay
+  time is modulated by itself, and the depth is negative, the envelope decay
+  will initially be faster, but will slow down to its nominal setting as it
+  decays toward zero. This allows fast initial decays and slow final decays to
+  be attained with a single envelope, instead of by adding two different
+  envelopes with different decay settings. It also produces the initial fast
+  decay only on the louder notes. Since this is so useful, it is given its own
+  extended parameter, called <span class="page" onclick="page('Envelope_decay_self_mod')">Decay Self Mod</span>, so that
+  it can be combined with other Decay Mod choices.</p>
+<p>Finally, the release is more versatile in the Digital Chroma. While the
+  original Chroma had a threshold release setting that provided two different
+  release times based on whether the release velocity was below or above a
+  threshold, the threshold and two rates were global parameters. In the
+  Digital Chroma, an extended <span class="page" onclick="page('Envelope_release_mod_select')">Release Mod</span>
+  parameter allows the release time to be either varied according to pitch,
+  varied from the release setting to the decay setting by one of the pedals
+  (like a variable sustain pedal), or lengthened by various ratios for a slow
+  release (the fast/slow threshold is still <span class="popup" onclick="popup('_global_parameter')">global</span>).</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

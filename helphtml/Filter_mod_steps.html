@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_mod_depth')">Filter mod depth</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('All_parameters')">All parameters</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Filter_resonance')">Filter resonance</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>FILTER mod steps</h1>
+<p>These select an optional sampling or quantization for the Filter A or B Mod
+  1 input. Sampling causes the modulation value to change only at certain
+  points in time, when either sweep starts a new cycle, rather than
+  continuously. Quantizing causes the value to change in discrete steps by
+  rounding the value to the nearest multiple of the quantization interval. The
+  &ldquo;soft semitones&rdquo; is a special kind of partial quantization that
+  puts &ldquo;flat spots&rdquo; into the modulation curve at each semitone, so
+  that it is easier to make a lever or pedal stop on an exact scale pitch.
+  These are primarily useful when the <span class="popup" onclick="popup('_resonance')">resonance</span> is cranked all the way up,
+  so the filter becomes an oscillator.</p>
+
+<h2>Toolkit</h2>
+<p>This is are contained in the first <span class="page" onclick="page('Filter_mod1_cluster')">Filter mod cluster</span>
+  within the <span class="page" onclick="page('Filter_section')">Filter section</span>.</p>
+
+<h2>Chroma panel</h2>
+<p>This is contained in the <i>CUTOFF</i> section of the right panel, under the
+  following parameter number:</p>
+<table class="p0">
+  <tr>
+  <tr>
+    <td width="10%"/>
+    <td>
+      <img src="sw-set-split.png" height=48>
+      <img src="sw-41.png" height=48>
+      </td>
+    </tr>
+  </table>
+<p>These appear in the display as Filter Mod1 Steps.</p>
+
+<h2>MIDI</h2>
+<p>These are accessed via the following <span class="popup" onclick="popup('_NRPN')">NRPNs</span>:</p>
+<table class="p0">
+  <tr>
+    <td width="6%"/>
+    <td width="4%">A</td>
+    <td>1,61</td>
+    </tr>
+  <tr>
+    <td/>
+    <td>B</td>
+    <td>2,61</td>
+    </tr>
+  </table>
+
+<h2>Values</h2>
+<table class="p0">
+  <tr>
+    <td width="5%"/>
+    <td width="10%" class="c i u">internal</td>
+    <td width="15%" class="i u">display</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">0</td>
+    <td>none</td>
+    <td>(default)</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">1</td>
+    <td>soft semitones</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">2</td>
+    <td>semitones</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">3</td>
+    <td>whole tones</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">4</td>
+    <td>minor thirds</d>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">5</td>
+    <td>major thirds</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">6</td>
+    <td>fourths</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">7</td>
+    <td>tritones</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">8</td>
+    <td>fifths</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">9</td>
+    <td>sweep A</td>
+    </tr>
+  <tr>
+    <td/>
+    <td class="c">10</td>
+    <td>sweep B</td>
+    </tr>
+  </table>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>

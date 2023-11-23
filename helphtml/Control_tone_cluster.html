@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="us-ascii">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
+    </head>
+  <body onclick="dismiss()">
+    <div class="fixedwidth">
+      <div id="popup-bg">
+        <div id="popup-fg" onclick="dismiss()">
+          </div>
+        </div>
+      <table class="navbar">
+        <tr>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_selectivity_cluster')">Selectivity cluster</div>
+            <div class="navleft">&#x25C4</div>
+            <div class="navright">&#x25C4</div>
+            </td>
+          <td width="34%">
+            <div class="navtitle" onclick="page('Control_section')">Control section</div>
+            <div class="navleft">&#x25B2</div>
+            <div class="navright">&#x25B2</div>
+            </td>
+          <td width="33%">
+            <div class="navtitle" onclick="page('Control_detune_cluster')">Detune cluster</div>
+            <div class="navleft">&#x25BA</div>
+            <div class="navright">&#x25BA</div>
+            </td>
+          </tr>
+        </table>
+      <div class="content">
+<h1>CONTROL tone cluster</h1>
+<p><img src="control-tone-cluster.png" width=373></p>
+<p>All <span class="popup" onclick="popup('_voice')">voices</span> that belong to a particular virtual <span class="popup" onclick="popup('_instrument')">instrument</span> are
+  combined together and fed into a stereo three-band parametric equalizer, then
+  a stereo distortion effect, and finally into one of the reverb rooms. This
+  <span class="popup" onclick="popup('_cluster')">cluster</span> contains seven <span class="popup" onclick="popup('_parameter')">parameters</span> for controlling the tone,
+  one for controlling the distortion, and two for overriding the reverb
+  performance controls.</p>
+<p>The tone control has long <span class="popup" onclick="popup('_slider')">sliders</span> for the
+  <i><span class="page" onclick="page('Control_treble_gain')">treble gain</span></i>, the <i><span class="page" onclick="page('Control_middle_gain')">middle gain</span></i>, and
+  the <i><span class="page" onclick="page('Control_bass_gain')">bass gain</span></i>, and short sliders for the
+  treble <i><span class="page" onclick="page('Control_treble_frequency')">frequency</span></i>, the
+  middle <i><span class="page" onclick="page('Control_middle_frequency')">frequency</span></i>, the
+  middle <i><span class="page" onclick="page('Control_middle_resonance')">resonance</span></i>, and the
+  bass <i><span class="page" onclick="page('Control_bass_frequency')">frequency</span></i>.</p>
+<p>The <i><span class="page" onclick="page('Control_distortion')">distortion</span></i> control has one long slider,
+  which introduces symmetric (odd harmonic distortion) on the positive side,
+  and asymmeteric (even harmonic) on the negative side.</p>
+<p>The <i><span class="page" onclick="page('Control_reverb_room')">reverb room</span></i> control has five buttons for
+  selecting the room size, and the <i><span class="page" onclick="page('Control_reverb_send')">reverb send</span></i>
+  slider sets the send level. If <i>reverb room</i> is set to
+  &ldquo;performance&rdquo;, the reverb performance controls derived from the
+  <span class="popup" onclick="popup('_global_parameter')">global</span> <i>reverb room</i> and <i>reverb send</i>
+  parameters take effect, and the program&rsquo;s <i>reverb send</i> is ignored.</p>
+        </div>
+      </div>
+    <script src="page.js"></script>
+    </body>
+  </html>
